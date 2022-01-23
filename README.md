@@ -1,4 +1,8 @@
-# Do you know all United Nations Countries ? 
+# Geo Nerd 
 
-## Let's find out
+Connais tu tous les pays du monde ? 
+
+Et les capitales ?
+
+Ou encore les drapeaux ?
 
