@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA","file":"app.js","sourcesContent":["document.addEventListener(\"DOMContentLoaded\", () => {\n\tconsole.log(\"app started\");\n});\n"]}

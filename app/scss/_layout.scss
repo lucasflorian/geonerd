@@ -1,0 +1,23 @@
+html {
+	font-size: $base-font-size;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: $font-base;
+	background: $color-blue;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+
+.pages {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+}

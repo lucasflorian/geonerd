@@ -1,0 +1,16 @@
+@import "variables";
+@import "fonts";
+@import "layout";
+@import "titles";
+
+@import "partials/buttons";
+@import "partials/footer";
+@import "partials/game-card";
+@import "partials/header";
+@import "partials/page-1";
+
+body {
+	background-color: $color-blue;
+	color: white;
+	font-family: $font-base;
+}

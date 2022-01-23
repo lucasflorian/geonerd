@@ -1,0 +1,67 @@
+.game-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 2rem;
+	padding: 2rem;
+	width: 15rem;
+	max-width: 100%;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: $color-blue-darker;
+		border-radius: 2rem;
+		transition: transform 0.2s ease;
+		will-change: transform;
+	}
+
+	.card-title {
+		margin-top: 0;
+	}
+
+	.card-link {
+		color: white;
+		text-decoration: none;
+		max-width: 10rem;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+		}
+	}
+
+	.card-top {
+	}
+
+	.card-bottom {
+		display: flex;
+		justify-content: center;
+
+		.btn {
+			transition: transform 0.2s ease;
+			will-change: transform;
+		}
+	}
+
+	&:hover {
+		&::before {
+			transform: scale(1.05);
+		}
+
+		.btn {
+			transform: scale(1.15);
+		}
+	}
+}

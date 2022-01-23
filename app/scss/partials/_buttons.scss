@@ -1,0 +1,60 @@
+.btn {
+	position: relative;
+
+	padding: 1.5rem 3rem;
+	width: fit-content;
+	min-width: 6rem;
+
+	color: white;
+
+	border-radius: 1000px;
+
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
+	overflow: hidden;
+	transition: transform 0.2s ease;
+	will-change: transform;
+
+	&::before {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: $color-red;
+		border-radius: 1000px;
+		z-index: -1;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: 30rem;
+		width: 30rem;
+		top: 50%;
+		left: 1%;
+		transform: translate(-50%, -50%) scale(0);
+		background-color: darken($color-red, 5);
+		border-radius: 50%;
+		z-index: -1;
+		transition: transform 0.2s ease;
+		will-change: transform;
+	}
+
+	&:hover {
+		transform: scale(1.05);
+		&::after {
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+	&:active{
+		transform: scale(0.95);
+	}
+}
+

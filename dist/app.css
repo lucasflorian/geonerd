@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "Bangers";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(""), url("./fonts/bangers-v13-latin-regular.woff2") format("woff2"), url("./fonts/bangers-v13-latin-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(""), url("./fonts/roboto-v29-latin-regular.woff2") format("woff2"), url("./fonts/roboto-v29-latin-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""), url("./fonts/roboto-v29-latin-700.woff2") format("woff2"), url("./fonts/roboto-v29-latin-700.woff") format("woff");
+}
+html {
+  font-size: clamp(14px, 11px + 0.35vw, 50px);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto;
+  background: #402DB3;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h1 {
+  font-family: Bangers;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+h2 {
+  font-family: Bangers;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+.btn {
+  position: relative;
+  padding: 1.5rem 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 6rem;
+  color: white;
+  border-radius: 1000px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
+          box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #F05050;
+  border-radius: 1000px;
+  z-index: -1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  height: 30rem;
+  width: 30rem;
+  top: 50%;
+  left: 1%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  background-color: #ee3939;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.btn:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.btn:hover::after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+.btn:active {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+footer {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer .copyrights {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.game-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  width: 15rem;
+  max-width: 100%;
+}
+.game-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #231961;
+  border-radius: 2rem;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.game-card .card-title {
+  margin-top: 0;
+}
+.game-card .card-link {
+  color: white;
+  text-decoration: none;
+  max-width: 10rem;
+}
+.game-card .card-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.game-card .card-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.game-card .card-bottom .btn {
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.game-card:hover::before {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.game-card:hover .btn {
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+header {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  background-color: #231961;
+  border-radius: 1000px;
+  padding: 0 1.4rem;
+}
+header .logo img {
+  width: 1.7rem;
+}
+header .menu {
+  height: 4rem;
+  width: 4rem;
+  background-color: #231961;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  -webkit-box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(0, 0, 0, 0.08);
+          box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(0, 0, 0, 0.08);
+}
+header .menu::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 50%;
+  top: 38%;
+  right: 26%;
+  background-color: white;
+}
+header .menu::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 40%;
+  top: 55%;
+  right: 26%;
+  background-color: white;
+}
+
+.page-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+}
+
+body {
+  background-color: #402DB3;
+  color: white;
+  font-family: Roboto;
+}
+/*# sourceMappingURL=app.css.map */
