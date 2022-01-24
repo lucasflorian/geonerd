@@ -184,11 +184,14 @@
 		display: none;
 		opacity: 0;
 		flex-direction: column;
+		align-items: center;
 		gap: 2rem;
+		width: 100%;
 	}
 
 	.input-container {
 		display: flex;
+		justify-content: center;
 		gap: 1rem;
 	}
 
@@ -200,6 +203,7 @@
 		font-size: 2rem;
 		text-transform: uppercase;
 		height: 4rem;
+		max-width: 40%;
 	}
 
 	.validate-input {
@@ -217,13 +221,17 @@
 	.answers {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 2rem;
 		margin-top: 2rem;
+		width: 100%;
 
 		.answer {
 			padding: 0.5rem;
 			border-bottom: 1px solid white;
+			width: 100%;
 			min-width: 15rem;
+			max-width: 80%;
 			font-size: 1.5rem;
 			text-transform: uppercase;
 

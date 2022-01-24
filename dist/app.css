@@ -352,12 +352,19 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 2rem;
+  width: 100%;
 }
 .page.country-nerd .input-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1rem;
 }
 .page.country-nerd .answer-input {
@@ -368,6 +375,7 @@ h2 {
   font-size: 2rem;
   text-transform: uppercase;
   height: 4rem;
+  max-width: 40%;
 }
 .page.country-nerd .validate-input {
   height: 4rem;
@@ -388,13 +396,19 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
 }
 .page.country-nerd .answers .answer {
   padding: 0.5rem;
   border-bottom: 1px solid white;
+  width: 100%;
   min-width: 15rem;
+  max-width: 80%;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
