@@ -9,7 +9,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 0.6rem;
-		max-width: 50rem;
+		max-width: 45rem;
 
 		&.hide {
 			.letter {
@@ -247,5 +247,16 @@
 				}
 			}
 		}
+	}
+
+	.tip{
+		background-color: $color-red;
+		color: white;
+		width: fit-content;
+		border-radius: 1000px;
+		padding: 0.8rem 1.2rem;
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
 	}
 }

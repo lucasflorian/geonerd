@@ -13,6 +13,8 @@ class CountryNerd {
 		this.answerButton = document.querySelector("#country-answer-validate");
 		this.letters = document.querySelectorAll(".letter");
 		this.wonLink = document.querySelector(".won-link");
+		this.tipCurrent = document.querySelector(".tip .found");
+		this.tipTotal = document.querySelector(".tip .total");
 
 		this.buildLetters();
 		this.buildInputs();
@@ -43,6 +45,7 @@ class CountryNerd {
 					delay: 0.5
 				});
 				letterPlaceholder.innerHTML = letterText;
+				this.tipTotal.innerHTML = this.countries[this.currentLetter].length;
 				this.firstAnswer.innerHTML = letterText;
 				setTimeout(() => {
 					lettersContainer.style.display = "none";
@@ -94,6 +97,7 @@ class CountryNerd {
 				rightAnswer.innerHTML = country.name;
 				rightAnswer.classList.add("valid");
 				this.countriesFound++;
+				this.tipCurrent.innerHTML = this.countriesFound;
 				if (this.countriesFound === this.countries[this.currentLetter].length) {
 					this.finished = true;
 				}

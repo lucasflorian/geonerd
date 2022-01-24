@@ -146,7 +146,7 @@ h2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 0.6rem;
-  max-width: 50rem;
+  max-width: 45rem;
 }
 .page.country-nerd .letters.hide .letter {
   opacity: 0;
@@ -377,6 +377,11 @@ h2 {
   height: 4rem;
   max-width: 40%;
 }
+@media (min-width: 768px) {
+  .page.country-nerd .answer-input {
+    max-width: 30rem;
+  }
+}
 .page.country-nerd .validate-input {
   height: 4rem;
   width: 6rem;
@@ -412,8 +417,25 @@ h2 {
   font-size: 1.5rem;
   text-transform: uppercase;
 }
+@media (min-width: 768px) {
+  .page.country-nerd .answers .answer {
+    max-width: 25rem;
+  }
+}
 .page.country-nerd .answers .answer.valid::after {
   content: "✓";
+}
+.page.country-nerd .tip {
+  background-color: #F05050;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1000px;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -541,6 +563,30 @@ footer .copyrights {
 }
 .game-card .card-title {
   margin-top: 0;
+  position: relative;
+}
+.game-card .card-title .icon {
+  position: absolute;
+  top: -0.2em;
+  right: -0.4em;
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+.game-card .card-title .icon.icon-country {
+  background-image: url("/img/icon-country-nerd.svg");
+}
+.game-card .card-title .icon.icon-capital {
+  background-image: url("/img/icon-capital-city-nerd.svg");
+}
+.game-card .card-title .icon.icon-flag {
+  background-image: url("/img/icon-flag-nerd.svg");
 }
 .game-card .card-link {
   color: white;

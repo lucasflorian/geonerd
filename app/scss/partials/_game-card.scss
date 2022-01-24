@@ -28,6 +28,32 @@
 
 	.card-title {
 		margin-top: 0;
+		position: relative;
+
+		.icon {
+			position: absolute;
+			top: -0.2em;
+			right: -0.4em;
+			display: block;
+			height: 1.5em;
+			width: 1.5em;
+			background-size: 70%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: white;
+			border-radius: 50%;
+			margin-left: 0.5rem;
+
+			&.icon-country {
+				background-image: url('/img/icon-country-nerd.svg');
+			}
+			&.icon-capital {
+				background-image: url('/img/icon-capital-city-nerd.svg');
+			}
+			&.icon-flag {
+				background-image: url('/img/icon-flag-nerd.svg');
+			}
+		}
 	}
 
 	.card-link {
