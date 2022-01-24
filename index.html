@@ -12,7 +12,7 @@
 	<meta property="og:description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
 	<!--	<meta property="og:image" content="img/og.jpg"/>-->
 
-	<link rel="stylesheet" href="dist/app.css">
+	<link rel="stylesheet" href="dist/app.css?test=test">
 </head>
 <body>
 <header>
@@ -60,15 +60,14 @@
 			<h1>Connais tu tous les<br>
 				pays du monde ?</h1>
 			<div class="game-title">
-				<span class="text">Les pays en : </span>
-				<div class="letter-placeholder"></div>
+				Trouves les pays<br> commençant par<br> la lettre : <span class="letter letter-placeholder"></span>
 			</div>
 		</div>
 		<div class="letters">
 			<div class="letter">A</div>
 			<div class="letter">B</div>
 			<div class="letter">C</div>
-			<div class="letter completed">D</div>
+			<div class="letter">D</div>
 			<div class="letter">E</div>
 			<div class="letter">F</div>
 			<div class="letter">G</div>
@@ -92,12 +91,26 @@
 			<div class="letter">Y</div>
 			<div class="letter">Z</div>
 		</div>
+		<div class="answer-container">
+			<div class="input-container">
+				<input type="text" class="answer-input" id="country-answer-input">
+				<button type="button" class="validate-input" id="country-answer-validate">OK</button>
+			</div>
+			<div class="answers">
+				<div class="answer"></div>
+			</div>
+			<a href="/" class="btn won-link hidden">Bravo</a>
+		</div>
 	</div>
 	<div id="capital-nerd" class="page capital-nerd">
-		capital-nerd
+		<div style="width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3rem;">
+			Coming soon
+		</div>
 	</div>
 	<div id="flag-nerd" class="page flag-nerd">
-		flag-nerd
+		<div style="width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3rem;">
+			Coming soon
+		</div>
 	</div>
 	<!--	<div class="page page-3">-->
 	<!--		page 3-->

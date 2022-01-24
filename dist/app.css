@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Bangers";
   font-style: normal;
@@ -69,6 +70,18 @@ body {
   display: flex;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+.hidden.show {
+  opacity: 1;
+  pointer-events: initial;
+}
+
 h1 {
   font-family: Bangers;
   font-size: 2.5rem;
@@ -115,12 +128,13 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 .page.country-nerd .letters {
   display: -webkit-box;
@@ -134,7 +148,140 @@ h2 {
   gap: 0.6rem;
   max-width: 50rem;
 }
-.page.country-nerd .letters .letter {
+.page.country-nerd .letters.hide .letter {
+  opacity: 0;
+}
+.page.country-nerd .letters .letter:nth-child(1) {
+  -webkit-transition: opacity 0.2s ease 0.1s;
+  -o-transition: opacity 0.2s ease 0.1s;
+  transition: opacity 0.2s ease 0.1s;
+}
+.page.country-nerd .letters .letter:nth-child(2) {
+  -webkit-transition: opacity 0.2s ease 0.2s;
+  -o-transition: opacity 0.2s ease 0.2s;
+  transition: opacity 0.2s ease 0.2s;
+}
+.page.country-nerd .letters .letter:nth-child(3) {
+  -webkit-transition: opacity 0.2s ease 0.11s;
+  -o-transition: opacity 0.2s ease 0.11s;
+  transition: opacity 0.2s ease 0.11s;
+}
+.page.country-nerd .letters .letter:nth-child(4) {
+  -webkit-transition: opacity 0.2s ease 0.3s;
+  -o-transition: opacity 0.2s ease 0.3s;
+  transition: opacity 0.2s ease 0.3s;
+}
+.page.country-nerd .letters .letter:nth-child(5) {
+  -webkit-transition: opacity 0.2s ease 0.18s;
+  -o-transition: opacity 0.2s ease 0.18s;
+  transition: opacity 0.2s ease 0.18s;
+}
+.page.country-nerd .letters .letter:nth-child(6) {
+  -webkit-transition: opacity 0.2s ease 0.13s;
+  -o-transition: opacity 0.2s ease 0.13s;
+  transition: opacity 0.2s ease 0.13s;
+}
+.page.country-nerd .letters .letter:nth-child(7) {
+  -webkit-transition: opacity 0.2s ease 0.21s;
+  -o-transition: opacity 0.2s ease 0.21s;
+  transition: opacity 0.2s ease 0.21s;
+}
+.page.country-nerd .letters .letter:nth-child(8) {
+  -webkit-transition: opacity 0.2s ease 0.05s;
+  -o-transition: opacity 0.2s ease 0.05s;
+  transition: opacity 0.2s ease 0.05s;
+}
+.page.country-nerd .letters .letter:nth-child(9) {
+  -webkit-transition: opacity 0.2s ease 0.35s;
+  -o-transition: opacity 0.2s ease 0.35s;
+  transition: opacity 0.2s ease 0.35s;
+}
+.page.country-nerd .letters .letter:nth-child(10) {
+  -webkit-transition: opacity 0.2s ease 0.4s;
+  -o-transition: opacity 0.2s ease 0.4s;
+  transition: opacity 0.2s ease 0.4s;
+}
+.page.country-nerd .letters .letter:nth-child(11) {
+  -webkit-transition: opacity 0.2s ease 0.22s;
+  -o-transition: opacity 0.2s ease 0.22s;
+  transition: opacity 0.2s ease 0.22s;
+}
+.page.country-nerd .letters .letter:nth-child(12) {
+  -webkit-transition: opacity 0.2s ease 0.17s;
+  -o-transition: opacity 0.2s ease 0.17s;
+  transition: opacity 0.2s ease 0.17s;
+}
+.page.country-nerd .letters .letter:nth-child(13) {
+  -webkit-transition: opacity 0.2s ease 0.03s;
+  -o-transition: opacity 0.2s ease 0.03s;
+  transition: opacity 0.2s ease 0.03s;
+}
+.page.country-nerd .letters .letter:nth-child(14) {
+  -webkit-transition: opacity 0.2s ease 0.09s;
+  -o-transition: opacity 0.2s ease 0.09s;
+  transition: opacity 0.2s ease 0.09s;
+}
+.page.country-nerd .letters .letter:nth-child(15) {
+  -webkit-transition: opacity 0.2s ease 0.11s;
+  -o-transition: opacity 0.2s ease 0.11s;
+  transition: opacity 0.2s ease 0.11s;
+}
+.page.country-nerd .letters .letter:nth-child(16) {
+  -webkit-transition: opacity 0.2s ease 0.4s;
+  -o-transition: opacity 0.2s ease 0.4s;
+  transition: opacity 0.2s ease 0.4s;
+}
+.page.country-nerd .letters .letter:nth-child(17) {
+  -webkit-transition: opacity 0.2s ease 0.35s;
+  -o-transition: opacity 0.2s ease 0.35s;
+  transition: opacity 0.2s ease 0.35s;
+}
+.page.country-nerd .letters .letter:nth-child(18) {
+  -webkit-transition: opacity 0.2s ease 0.31s;
+  -o-transition: opacity 0.2s ease 0.31s;
+  transition: opacity 0.2s ease 0.31s;
+}
+.page.country-nerd .letters .letter:nth-child(19) {
+  -webkit-transition: opacity 0.2s ease 0.2s;
+  -o-transition: opacity 0.2s ease 0.2s;
+  transition: opacity 0.2s ease 0.2s;
+}
+.page.country-nerd .letters .letter:nth-child(20) {
+  -webkit-transition: opacity 0.2s ease 0.14s;
+  -o-transition: opacity 0.2s ease 0.14s;
+  transition: opacity 0.2s ease 0.14s;
+}
+.page.country-nerd .letters .letter:nth-child(21) {
+  -webkit-transition: opacity 0.2s ease 0.25s;
+  -o-transition: opacity 0.2s ease 0.25s;
+  transition: opacity 0.2s ease 0.25s;
+}
+.page.country-nerd .letters .letter:nth-child(22) {
+  -webkit-transition: opacity 0.2s ease 0.06s;
+  -o-transition: opacity 0.2s ease 0.06s;
+  transition: opacity 0.2s ease 0.06s;
+}
+.page.country-nerd .letters .letter:nth-child(23) {
+  -webkit-transition: opacity 0.2s ease 0.17s;
+  -o-transition: opacity 0.2s ease 0.17s;
+  transition: opacity 0.2s ease 0.17s;
+}
+.page.country-nerd .letters .letter:nth-child(24) {
+  -webkit-transition: opacity 0.2s ease 0.24s;
+  -o-transition: opacity 0.2s ease 0.24s;
+  transition: opacity 0.2s ease 0.24s;
+}
+.page.country-nerd .letters .letter:nth-child(25) {
+  -webkit-transition: opacity 0.2s ease 0.36s;
+  -o-transition: opacity 0.2s ease 0.36s;
+  transition: opacity 0.2s ease 0.36s;
+}
+.page.country-nerd .letters .letter:nth-child(26) {
+  -webkit-transition: opacity 0.2s ease 0.37s;
+  -o-transition: opacity 0.2s ease 0.37s;
+  transition: opacity 0.2s ease 0.37s;
+}
+.page.country-nerd .letter {
   height: 4rem;
   width: 4rem;
   border-radius: 0.4rem;
@@ -161,14 +308,14 @@ h2 {
   transition: transform 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
   will-change: transform;
 }
-.page.country-nerd .letters .letter:hover {
+.page.country-nerd .letter:hover {
   -webkit-transform: translate(0.05rem, 0.05rem);
       -ms-transform: translate(0.05rem, 0.05rem);
           transform: translate(0.05rem, 0.05rem);
   -webkit-box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15);
 }
-.page.country-nerd .letters .letter.completed {
+.page.country-nerd .letter.completed {
   background: -o-radial-gradient(67.68% 35.44%, 43.04% 43.04%, #F3CC3F 0%, #FFE600 0.01%, #FFCB46 85.94%);
   background: radial-gradient(43.04% 43.04% at 67.68% 35.44%, #F3CC3F 0%, #FFE600 0.01%, #FFCB46 85.94%);
 }
@@ -179,23 +326,80 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1.5rem;
   opacity: 0;
   pointer-events: none;
   font-family: Bangers;
   font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: 0.04em;
+  white-space: nowrap;
+  line-height: 1.3em;
 }
 .page.country-nerd .title-container .letter-placeholder {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transform: translate(0.1em, -0.2em);
+      -ms-transform: translate(0.1em, -0.2em);
+          transform: translate(0.1em, -0.2em);
+}
+.page.country-nerd .answer-container {
+  display: none;
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+.page.country-nerd .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+.page.country-nerd .answer-input {
+  padding: 0 2rem;
+  border: none;
+  outline: none;
+  border-radius: 1000px;
+  font-size: 2rem;
+  text-transform: uppercase;
   height: 4rem;
-  width: 4rem;
-  -webkit-transform: translateY(-1rem);
-      -ms-transform: translateY(-1rem);
-          transform: translateY(-1rem);
+}
+.page.country-nerd .validate-input {
+  height: 4rem;
+  width: 6rem;
+  border-radius: 1000px;
+  background-color: white;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.page.country-nerd .answers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.page.country-nerd .answers .answer {
+  padding: 0.5rem;
+  border-bottom: 1px solid white;
+  min-width: 15rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.page.country-nerd .answers .answer.valid::after {
+  content: "✓";
 }
 
 .btn {
@@ -296,8 +500,13 @@ footer .copyrights {
           justify-content: space-between;
   gap: 2rem;
   padding: 2rem;
-  width: 15rem;
+  width: 70%;
   max-width: 100%;
+}
+@media (min-width: 768px) {
+  .game-card {
+    width: 15rem;
+  }
 }
 .game-card::before {
   content: "";

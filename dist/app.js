@@ -1,48 +1,141 @@
-document.addEventListener("DOMContentLoaded", () => {
-	new GeoNerdNavigation();
-	new CountryNerd();
-});
+class GeoNerdApp{
+	constructor(props) {
+		document.addEventListener("DOMContentLoaded", () => {
+			new GeoNerdNavigation();
+			new CountryNerd();
+		});
+	}
+
+	static loadCountries(callback){
+		var xobj = new XMLHttpRequest();
+		xobj.overrideMimeType("application/json");
+		xobj.open('GET', './data/countries-fr.json', true); // Replace 'my_data' with the path to your file
+		xobj.onreadystatechange = function () {
+			if (xobj.readyState === 4 && xobj.status === 200) {
+				callback(xobj.responseText);
+			}
+		};
+		xobj.send(null);
+	}
+}
+
+new GeoNerdApp();
 
 class CountryNerd {
 	constructor() {
-		this.letterPlaceholder = document.querySelector(".letter-placeholder");
-		this.mainTitle = document.querySelector(".country-nerd h1");
-		this.gameTitle = document.querySelector(".game-title");
+
+		this.countries = {};
+		this.currentLetter = "a";
+		this.countriesFound = 0;
+		this.loadCountries();
+
+		this.firstAnswer = document.querySelector(".answers .answer");
+		this.answers = document.querySelector(".answers");
+		this.answerContainer = document.querySelector(".answer-container");
+		this.answerInput = document.querySelector("#country-answer-input");
+		this.answerButton = document.querySelector("#country-answer-validate");
 		this.letters = document.querySelectorAll(".letter");
+		this.wonLink = document.querySelector(".won-link");
+
+		this.buildLetters();
+		this.buildInputs();
+
+	}
+
+	buildLetters() {
+		const letterPlaceholder = document.querySelector(".letter-placeholder");
+		const mainTitle = document.querySelector(".country-nerd h1");
+		const gameTitle = document.querySelector(".game-title");
+		const lettersContainer = document.querySelector(".letters");
+
 		this.letters.forEach(letter => {
+			const letterText = letter.innerHTML.toLowerCase();
+			if(localStorage.getItem("countrynerd.letter." + letterText) === "true"){
+				letter.classList.add("completed");
+			}
 			letter.addEventListener("click", () => {
-				letter.classList.add("active");
-				const otherLetters = document.querySelectorAll(".letter:not(.active)");
-				console.log(this.letterPlaceholder.getBoundingClientRect())
-				console.log(letter.getBoundingClientRect());
-				gsap.to(otherLetters, {
-					opacity: 0,
-					pointerEvents: "none",
-					onComplete: () => {
-						const placeHolderX = this.letterPlaceholder.getBoundingClientRect().x;
-						const letterX = letter.getBoundingClientRect().x;
-						const placeHolderY = this.letterPlaceholder.getBoundingClientRect().y;
-						const letterY = letter.getBoundingClientRect().y;
-
-
-						gsap.to(letter, {
-							x: placeHolderX - letterX,
-							y: (letterY - placeHolderY) * -1,
-							ease: "power2.inOut"
-						})
-					}
-				});
-				gsap.to(this.mainTitle, {
+				this.currentLetter = letterText;
+				lettersContainer.classList.add("hide");
+				gsap.to(mainTitle, {
 					opacity: 0,
 					pointerEvents: "none",
 					delay: 0.2
 				});
-				gsap.to(this.gameTitle, {
+				gsap.to(gameTitle, {
 					opacity: 1,
 					delay: 0.5
 				});
+				letterPlaceholder.innerHTML = letterText;
+				this.firstAnswer.innerHTML = letterText;
+				setTimeout(() => {
+					lettersContainer.style.display = "none";
+					this.answerContainer.style.display = "flex";
+					gsap.to(this.answerContainer, {
+						opacity: 1,
+						delay: 0.1
+					});
+					this.answerInput.focus();
+				}, 400);
 			});
 		});
+	}
+
+	loadCountries() {
+
+		GeoNerdApp.loadCountries(json => {
+			JSON.parse(json).forEach(country => {
+				const letter = this.sanitize(country.name.substr(0, 1));
+				if (!this.countries[letter]) {
+					this.countries[letter] = [];
+				}
+				this.countries[letter].push({
+					sanitize: this.sanitize(country.name),
+					name: country.name,
+					code: country.code
+				});
+			});
+		});
+	}
+
+	buildInputs() {
+		this.answerInput.addEventListener("change", e => {
+			this.validateAnswer(e.target.value);
+		});
+		this.answerButton.addEventListener("click", e => {
+			this.validateAnswer(this.answerInput.value);
+		});
+	}
+
+	validateAnswer(answer) {
+		let win = false;
+		this.countries[this.currentLetter].forEach(country => {
+			if (answer === country.sanitize && !country.found) {
+				win = true;
+				this.answerInput.value = "";
+				country.found = true;
+				const rightAnswer = document.querySelector(".answers .answer:last-child");
+				rightAnswer.innerHTML = country.name;
+				rightAnswer.classList.add("valid");
+				this.countriesFound++;
+				if (this.countriesFound === this.countries[this.currentLetter].length) {
+					this.finished = true;
+				}
+			}
+		});
+		if (win) {
+			if (this.finished) {
+				this.wonLink.classList.add("show");
+				localStorage.setItem("countrynerd.letter." + this.currentLetter, "true");
+			} else {
+				this.answers.insertAdjacentHTML("beforeend", `<div class="answer">${this.currentLetter}</div>`);
+			}
+		} else {
+			this.answerInput.value = "";
+		}
+	}
+
+	sanitize(value) {
+		return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 	}
 }
 
