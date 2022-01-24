@@ -204,6 +204,9 @@
 		text-transform: uppercase;
 		height: 4rem;
 		max-width: 40%;
+		@media (min-width: 768px) {
+			max-width: 30rem;
+		}
 	}
 
 	.validate-input {
@@ -232,6 +235,9 @@
 			width: 100%;
 			min-width: 15rem;
 			max-width: 80%;
+			@media (min-width: 768px) {
+				max-width: 25rem;
+			}
 			font-size: 1.5rem;
 			text-transform: uppercase;
 
