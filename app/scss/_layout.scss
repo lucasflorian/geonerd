@@ -1,18 +1,21 @@
 html {
 	font-size: $base-font-size;
+}
+
+html,
+body {
 	height: 100%;
+	width: 100%;
 	padding: 0;
 	margin: 0;
 }
 
 body {
-	font-family: $font-base;
 	background: $color-blue;
-	height: 100%;
+	font-family: $font-base;
+	color: white;
 	display: flex;
 	flex-direction: column;
-	padding: 0;
-	margin: 0;
 }
 
 .pages {
@@ -20,4 +23,12 @@ body {
 	flex: 1;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.page {
+	display: none;
+
+	&.active {
+		display: flex;
+	}
 }

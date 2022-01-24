@@ -1,7 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-	new GeoNerdNavigation();
-});
-
 class GeoNerdNavigation {
 	constructor() {
 		this.pages = document.querySelectorAll(".pages .page");
@@ -21,4 +17,3 @@ class GeoNerdNavigation {
 		}
 	}
 }
-//# sourceMappingURL=app.js.map

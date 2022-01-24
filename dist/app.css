@@ -21,15 +21,20 @@
 }
 html {
   font-size: clamp(14px, 11px + 0.35vw, 50px);
+}
+
+html,
+body {
   height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
 }
 
 body {
-  font-family: Roboto;
   background: #402DB3;
-  height: 100%;
+  font-family: Roboto;
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,8 +42,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0;
-  margin: 0;
 }
 
 .pages {
@@ -57,6 +60,15 @@ body {
           justify-content: center;
 }
 
+.page {
+  display: none;
+}
+.page.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 h1 {
   font-family: Bangers;
   font-size: 2.5rem;
@@ -71,6 +83,31 @@ h2 {
   font-size: 1.8rem;
   letter-spacing: 0.05em;
   font-weight: 400;
+}
+
+.page.home {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
 }
 
 .btn {
@@ -291,39 +328,5 @@ header .menu::after {
   top: 55%;
   right: 26%;
   background-color: white;
-}
-
-.page-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.game-cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 2rem;
-}
-
-body {
-  background-color: #402DB3;
-  color: white;
-  font-family: Roboto;
 }
 /*# sourceMappingURL=app.css.map */

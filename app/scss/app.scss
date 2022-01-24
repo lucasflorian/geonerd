@@ -3,14 +3,11 @@
 @import "layout";
 @import "titles";
 
+@import "pages/home";
+@import "pages/country-nerd";
+
 @import "partials/buttons";
 @import "partials/footer";
 @import "partials/game-card";
 @import "partials/header";
-@import "partials/page-1";
 
-body {
-	background-color: $color-blue;
-	color: white;
-	font-family: $font-base;
-}
