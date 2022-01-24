@@ -1,3 +1,67 @@
 .page.country-nerd {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
+	.letters {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		max-width: 50rem;
+
+		.letter {
+			height: 4rem;
+			width: 4rem;
+			border-radius: 0.4rem;
+			background-color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+
+			color: black;
+			font-size: 2rem;
+			font-family: $font-alt;
+
+			box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.25);
+
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+			will-change: transform;
+
+			&:hover {
+				transform: translate(0.05rem, 0.05rem);
+				box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.15);
+			}
+
+			&.completed {
+				background: radial-gradient(43.04% 43.04% at 67.68% 35.44%, #F3CC3F 0%, #FFE600 0.01%, #FFCB46 85.94%);
+			}
+		}
+	}
+
+	.title-container {
+		position: relative;
+
+		.game-title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			gap: 1.5rem;
+			opacity: 0;
+			pointer-events: none;
+
+			font-family: $font-alt;
+			font-size: 2.5rem;
+			font-weight: 400;
+			letter-spacing: 0.04em;
+		}
+
+		.letter-placeholder {
+			height: 4rem;
+			width: 4rem;
+			transform: translateY(-1rem);
+		}
+	}
 }
