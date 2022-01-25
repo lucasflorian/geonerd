@@ -136,7 +136,7 @@
 	},
 	{
 		"code": "bn",
-		"name": "Brunéi Darussalam",
+		"name": "Brunéi",
 		"date": "Date d'admission : 21-09-1984"
 	},
 	{
@@ -156,7 +156,7 @@
 	},
 	{
 		"code": "cv",
-		"name": "Cabo Verde",
+		"name": "Cap-Vert",
 		"date": "Date d'admission : 16-09-1975"
 	},
 	{
@@ -246,7 +246,7 @@
 	},
 	{
 		"code": "sv",
-		"name": "El Salvador",
+		"name": "Salvador",
 		"date": "Date d'admission : 24-10-1945"
 	},
 	{
@@ -281,7 +281,7 @@
 	},
 	{
 		"code": "us",
-		"name": "États-Unis d'Amérique",
+		"name": "États-Unis",
 		"date": "Date d'admission : 24-10-1945"
 	},
 	{
@@ -291,7 +291,7 @@
 	},
 	{
 		"code": "ru",
-		"name": "Fédération de Russie",
+		"name": "Russie",
 		"date": "Date d'admission : 24-10-1945"
 	},
 	{
@@ -692,7 +692,7 @@
 	{
 		"code": "pl",
 		"name": "Pologne",
-		"date": "Date d'admission  : 24-10-1945"
+		"date": "Date d'admission : 24-10-1945"
 	},
 	{
 		"code": "pt",
@@ -706,7 +706,7 @@
 	},
 	{
 		"code": "sy",
-		"name": "République arabe syrienne",
+		"name": "Syrie",
 		"date": "Date d'admission : 24-10-1945"
 	},
 	{
@@ -716,22 +716,22 @@
 	},
 	{
 		"code": "kr",
-		"name": "République de Corée",
+		"name": "Corée du Sud",
 		"date": "Date d'admission : 17-09-1991"
 	},
 	{
 		"code": "cd",
-		"name": "République démocratique du Congo",
+		"name": "Congo",
 		"date": "Date d'admission : 20-09-1960"
 	},
 	{
 		"code": "la",
-		"name": "République démocratique populaire lao",
+		"name": "Laos",
 		"date": "Date d'admission : 14-12-1955"
 	},
 	{
 		"code": "md",
-		"name": "République de Moldova",
+		"name": "Moldavie",
 		"date": "Date d'admission : 02-03-1992"
 	},
 	{
@@ -741,17 +741,17 @@
 	},
 	{
 		"code": "kp",
-		"name": "République populaire démocratique de Corée",
+		"name": "Corée du Nord",
 		"date": "Date d'admission : 17-09-1991"
 	},
 	{
 		"code": "cz",
-		"name": "République tchèque",
+		"name": "Tchéquie",
 		"date": "Date d'admission : 19-01-1993"
 	},
 	{
 		"code": "tz",
-		"name": "République-Unie de Tanzanie",
+		"name": "Tanzanie",
 		"date": "Date d'admission : 14-12-1961"
 	},
 	{
@@ -761,7 +761,7 @@
 	},
 	{
 		"code": "gb",
-		"name": "Royaume-Uni de Grande-Bretagne et d'Irlande du Nord",
+		"name": "Royaume-Uni",
 		"date": "Date d'admission : 24-10-1945"
 	},
 	{
@@ -886,7 +886,7 @@
 	},
 	{
 		"code": "tl",
-		"name": "Timor-Leste",
+		"name": "Timor oriental",
 		"date": "Date d'admission : 27-09-2002"
 	},
 	{
