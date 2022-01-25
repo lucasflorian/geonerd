@@ -5,11 +5,10 @@
 	justify-content: space-between;
 	gap: 2rem;
 	padding: 2rem;
-	width: 70%;
-	max-width: 100%;
+	width: 100%;
 
 	@media (min-width: 768px) {
-		width: 15rem;
+		width: 20rem;
 	}
 
 	&::before {

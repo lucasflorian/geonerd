@@ -12,7 +12,7 @@
 	<meta property="og:description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
 	<!--	<meta property="og:image" content="img/og.jpg"/>-->
 
-	<link rel="stylesheet" href="dist/app.css?test=test">
+	<link rel="stylesheet" href="dist/app.css?v=1.0.1">
 </head>
 <body>
 <header>
@@ -20,7 +20,7 @@
 		<img src="img/logo.svg" alt="">
 		<span>Geo Nerd</span>
 	</a>
-<!--	<div class="menu"></div>-->
+	<!--	<div class="menu"></div>-->
 </header>
 <div class="pages">
 	<div id="home" class="page home active">
@@ -29,7 +29,8 @@
 			<div class="game-card">
 				<div class="card-top">
 					<h2 class="card-title">Country Nerd<span class="icon icon-country"></span></h2>
-					<a href="#country-nerd" class="subtitle card-link">Connais tu tous les pays du monde ?</a>
+					<a href="#country-nerd" class="subtitle card-link">Connais tu tous les pays du monde ?</a><br>
+					<small><i>( pays membres de l'ONU, nom en version courte )</i></small>
 				</div>
 				<div class="card-bottom">
 					<div class="btn">GO</div>
@@ -94,22 +95,24 @@
 				<input type="text" class="answer-input" id="country-answer-input">
 				<button type="button" class="validate-input" id="country-answer-validate">OK</button>
 			</div>
+			<div class="tip">Pays trouvés : <span class="found">0</span> / <span class="total"></span></div>
+			<a href="/" class="btn won-link hidden">Bien joué, on essaie une autre lettre ?</a>
 			<div class="answers">
 				<div class="answer"></div>
 			</div>
-			<div class="tip">Pays trouvés : <span class="found">0</span> / <span class="total"></span></div>
-			<a href="/" class="btn won-link hidden">Bravo</a>
 		</div>
 	</div>
 	<div id="capital-nerd" class="page capital-nerd">
-		<div style="width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3rem;">
+		<div style="width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3rem; text-transform: uppercase; font-weight: 700;">
 			Coming soon
 		</div>
 	</div>
 	<div id="flag-nerd" class="page flag-nerd">
-		<div style="width: 100%; display: flex; justify-content: center; align-items: center; font-size: 3rem;">
-			Coming soon
+		<div class="title-container">
+			<h1>Connais tu tous les<br>
+				drapeaux du monde ?</h1>
 		</div>
+		<div class="flags-container"></div>
 	</div>
 	<!--	<div class="page page-3">-->
 	<!--		page 3-->
@@ -120,7 +123,7 @@
 		© 2022 - Florian Lucas
 	</div>
 </footer>
-<script src="dist/app.js"></script>
+<script src="dist/app.js?v=1.0.1"></script>
 <script src="dist/libs/gsap.min.js"></script>
 </body>
 </html>

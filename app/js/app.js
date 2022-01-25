@@ -1,22 +1,47 @@
-class GeoNerdApp{
+class GeoNerdApp {
 	constructor(props) {
 		document.addEventListener("DOMContentLoaded", () => {
-			new GeoNerdNavigation();
-			new CountryNerd();
+			this.countries = {};
+			this.letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","y","z"];
+			this.loadCountries(() => {
+				new GeoNerdNavigation();
+				new CountryNerd();
+				new FlagNerd();
+			});
 		});
 	}
 
-	static loadCountries(callback){
-		var xobj = new XMLHttpRequest();
-		xobj.overrideMimeType("application/json");
-		xobj.open('GET', './data/countries-fr.json', true); // Replace 'my_data' with the path to your file
-		xobj.onreadystatechange = function () {
-			if (xobj.readyState === 4 && xobj.status === 200) {
-				callback(xobj.responseText);
+	loadCountries(callback) {
+		const request = new XMLHttpRequest();
+		request.overrideMimeType("application/json");
+		request.open('GET', '/data/countries-fr.json', true);
+		request.onreadystatechange = () => {
+			if (request.readyState === 4 && request.status === 200) {
+				JSON.parse(request.responseText).forEach(country => {
+					const letter = GeoNerdApp.sanitize(country.name.substr(0, 1));
+					if (!this.countries[letter]) {
+						this.countries[letter] = [];
+					}
+					this.countries[letter].push({
+						sanitize: GeoNerdApp.sanitize(country.name),
+						name: country.name,
+						code: country.code
+					});
+				});
+				console.log("countries loaded");
+				callback();
 			}
 		};
-		xobj.send(null);
+		request.send(null);
+	}
+
+	static sanitize(value) {
+		return value.toLowerCase().normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.replace(/-/g, " ")
+			.replace(/'/g, " ")
+			.replace(/’/g, " ");
 	}
 }
 
-new GeoNerdApp();
+const geoNerdApp = new GeoNerdApp();

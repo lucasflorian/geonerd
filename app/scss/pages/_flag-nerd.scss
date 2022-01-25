@@ -1,0 +1,21 @@
+.page.flag-nerd {
+	flex-direction: column;
+	align-items: center;
+
+	.flags-container {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		max-width: 90%;
+
+		@media (min-width: 768px) {
+			max-width: 45rem;
+		}
+
+		.flag {
+			height: 3rem;
+			width: 5rem;
+		}
+	}
+}

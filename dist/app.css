@@ -44,6 +44,11 @@ body {
           flex-direction: column;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .pages {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,6 +63,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0 2rem;
 }
 
 .page {
@@ -70,14 +76,14 @@ body {
 }
 
 .hidden {
-  opacity: 0;
+  display: none;
   pointer-events: none;
   -webkit-transition: opacity 0.4s ease;
   -o-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
 }
 .hidden.show {
-  opacity: 1;
+  display: block;
   pointer-events: initial;
 }
 
@@ -135,6 +141,13 @@ h2 {
           align-items: center;
   height: 100%;
 }
+@media (min-width: 768px) {
+  .page.country-nerd {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 .page.country-nerd .letters {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,7 +158,11 @@ h2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 0.6rem;
-  max-width: 45rem;
+}
+@media (min-width: 768px) {
+  .page.country-nerd .letters {
+    max-width: 45rem;
+  }
 }
 .page.country-nerd .letters.hide .letter {
   opacity: 0;
@@ -321,6 +338,11 @@ h2 {
 .page.country-nerd .title-container {
   position: relative;
 }
+@media (max-width: 767px) {
+  .page.country-nerd .title-container {
+    width: 100%;
+  }
+}
 .page.country-nerd .title-container .game-title {
   position: absolute;
   top: 0;
@@ -357,6 +379,9 @@ h2 {
   gap: 2rem;
   width: 100%;
 }
+.page.country-nerd .answer-container.win .tip {
+  background-color: #1dd710;
+}
 .page.country-nerd .input-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -374,7 +399,7 @@ h2 {
   font-size: 2rem;
   text-transform: uppercase;
   height: 4rem;
-  max-width: 40%;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .page.country-nerd .answer-input {
@@ -404,16 +429,29 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
-  margin-top: 2rem;
   width: 100%;
 }
 .page.country-nerd .answers .answer {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
   padding: 0.5rem;
   border-bottom: 1px solid white;
   width: 100%;
   min-width: 15rem;
-  max-width: 80%;
+  max-width: 100%;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
@@ -421,6 +459,11 @@ h2 {
   .page.country-nerd .answers .answer {
     max-width: 25rem;
   }
+}
+.page.country-nerd .answers .answer .flag {
+  -webkit-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+          transform: translateY(1px);
 }
 .page.country-nerd .answers .answer.valid::after {
   content: "";
@@ -447,6 +490,41 @@ h2 {
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+.page.country-nerd .won-link:after {
+  height: 60rem;
+  width: 60rem;
+}
+
+.page.flag-nerd {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.flag-nerd .flags-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 90%;
+}
+@media (min-width: 768px) {
+  .page.flag-nerd .flags-container {
+    max-width: 45rem;
+  }
+}
+.page.flag-nerd .flags-container .flag {
+  height: 3rem;
+  width: 5rem;
 }
 
 .btn {
@@ -519,6 +597,594 @@ h2 {
           transform: scale(0.95);
 }
 
+.flag {
+  display: inline-block;
+  height: 1.5rem;
+  width: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.flag.af {
+  background-image: url("/img/flags/af.svg");
+}
+.flag.za {
+  background-image: url("/img/flags/za.svg");
+}
+.flag.al {
+  background-image: url("/img/flags/al.svg");
+}
+.flag.dz {
+  background-image: url("/img/flags/dz.svg");
+}
+.flag.de {
+  background-image: url("/img/flags/de.svg");
+}
+.flag.ad {
+  background-image: url("/img/flags/ad.svg");
+}
+.flag.ao {
+  background-image: url("/img/flags/ao.svg");
+}
+.flag.ag {
+  background-image: url("/img/flags/ag.svg");
+}
+.flag.sa {
+  background-image: url("/img/flags/sa.svg");
+}
+.flag.ar {
+  background-image: url("/img/flags/ar.svg");
+}
+.flag.am {
+  background-image: url("/img/flags/am.svg");
+}
+.flag.au {
+  background-image: url("/img/flags/au.svg");
+}
+.flag.at {
+  background-image: url("/img/flags/at.svg");
+}
+.flag.az {
+  background-image: url("/img/flags/az.svg");
+}
+.flag.bs {
+  background-image: url("/img/flags/bs.svg");
+}
+.flag.bh {
+  background-image: url("/img/flags/bh.svg");
+}
+.flag.bd {
+  background-image: url("/img/flags/bd.svg");
+}
+.flag.bb {
+  background-image: url("/img/flags/bb.svg");
+}
+.flag.by {
+  background-image: url("/img/flags/by.svg");
+}
+.flag.be {
+  background-image: url("/img/flags/be.svg");
+}
+.flag.bz {
+  background-image: url("/img/flags/bz.svg");
+}
+.flag.bj {
+  background-image: url("/img/flags/bj.svg");
+}
+.flag.bt {
+  background-image: url("/img/flags/bt.svg");
+}
+.flag.bo {
+  background-image: url("/img/flags/bo.svg");
+}
+.flag.ba {
+  background-image: url("/img/flags/ba.svg");
+}
+.flag.bw {
+  background-image: url("/img/flags/bw.svg");
+}
+.flag.br {
+  background-image: url("/img/flags/br.svg");
+}
+.flag.bn {
+  background-image: url("/img/flags/bn.svg");
+}
+.flag.bg {
+  background-image: url("/img/flags/bg.svg");
+}
+.flag.bf {
+  background-image: url("/img/flags/bf.svg");
+}
+.flag.bi {
+  background-image: url("/img/flags/bi.svg");
+}
+.flag.cv {
+  background-image: url("/img/flags/cv.svg");
+}
+.flag.kh {
+  background-image: url("/img/flags/kh.svg");
+}
+.flag.cm {
+  background-image: url("/img/flags/cm.svg");
+}
+.flag.ca {
+  background-image: url("/img/flags/ca.svg");
+}
+.flag.cl {
+  background-image: url("/img/flags/cl.svg");
+}
+.flag.cn {
+  background-image: url("/img/flags/cn.svg");
+}
+.flag.cy {
+  background-image: url("/img/flags/cy.svg");
+}
+.flag.co {
+  background-image: url("/img/flags/co.svg");
+}
+.flag.km {
+  background-image: url("/img/flags/km.svg");
+}
+.flag.cg {
+  background-image: url("/img/flags/cg.svg");
+}
+.flag.cr {
+  background-image: url("/img/flags/cr.svg");
+}
+.flag.ci {
+  background-image: url("/img/flags/ci.svg");
+}
+.flag.hr {
+  background-image: url("/img/flags/hr.svg");
+}
+.flag.cu {
+  background-image: url("/img/flags/cu.svg");
+}
+.flag.dk {
+  background-image: url("/img/flags/dk.svg");
+}
+.flag.dj {
+  background-image: url("/img/flags/dj.svg");
+}
+.flag.dm {
+  background-image: url("/img/flags/dm.svg");
+}
+.flag.eg {
+  background-image: url("/img/flags/eg.svg");
+}
+.flag.sv {
+  background-image: url("/img/flags/sv.svg");
+}
+.flag.ae {
+  background-image: url("/img/flags/ae.svg");
+}
+.flag.ec {
+  background-image: url("/img/flags/ec.svg");
+}
+.flag.er {
+  background-image: url("/img/flags/er.svg");
+}
+.flag.es {
+  background-image: url("/img/flags/es.svg");
+}
+.flag.ee {
+  background-image: url("/img/flags/ee.svg");
+}
+.flag.sz {
+  background-image: url("/img/flags/sz.svg");
+}
+.flag.us {
+  background-image: url("/img/flags/us.svg");
+}
+.flag.et {
+  background-image: url("/img/flags/et.svg");
+}
+.flag.ru {
+  background-image: url("/img/flags/ru.svg");
+}
+.flag.fj {
+  background-image: url("/img/flags/fj.svg");
+}
+.flag.fi {
+  background-image: url("/img/flags/fi.svg");
+}
+.flag.fr {
+  background-image: url("/img/flags/fr.svg");
+}
+.flag.ga {
+  background-image: url("/img/flags/ga.svg");
+}
+.flag.gm {
+  background-image: url("/img/flags/gm.svg");
+}
+.flag.ge {
+  background-image: url("/img/flags/ge.svg");
+}
+.flag.gh {
+  background-image: url("/img/flags/gh.svg");
+}
+.flag.gr {
+  background-image: url("/img/flags/gr.svg");
+}
+.flag.gd {
+  background-image: url("/img/flags/gd.svg");
+}
+.flag.gt {
+  background-image: url("/img/flags/gt.svg");
+}
+.flag.gn {
+  background-image: url("/img/flags/gn.svg");
+}
+.flag.gw {
+  background-image: url("/img/flags/gw.svg");
+}
+.flag.gq {
+  background-image: url("/img/flags/gq.svg");
+}
+.flag.gy {
+  background-image: url("/img/flags/gy.svg");
+}
+.flag.ht {
+  background-image: url("/img/flags/ht.svg");
+}
+.flag.hn {
+  background-image: url("/img/flags/hn.svg");
+}
+.flag.hu {
+  background-image: url("/img/flags/hu.svg");
+}
+.flag.mh {
+  background-image: url("/img/flags/mh.svg");
+}
+.flag.sb {
+  background-image: url("/img/flags/sb.svg");
+}
+.flag.in {
+  background-image: url("/img/flags/in.svg");
+}
+.flag.id {
+  background-image: url("/img/flags/id.svg");
+}
+.flag.ir {
+  background-image: url("/img/flags/ir.svg");
+}
+.flag.iq {
+  background-image: url("/img/flags/iq.svg");
+}
+.flag.ie {
+  background-image: url("/img/flags/ie.svg");
+}
+.flag.is {
+  background-image: url("/img/flags/is.svg");
+}
+.flag.il {
+  background-image: url("/img/flags/il.svg");
+}
+.flag.it {
+  background-image: url("/img/flags/it.svg");
+}
+.flag.jm {
+  background-image: url("/img/flags/jm.svg");
+}
+.flag.jp {
+  background-image: url("/img/flags/jp.svg");
+}
+.flag.jo {
+  background-image: url("/img/flags/jo.svg");
+}
+.flag.kz {
+  background-image: url("/img/flags/kz.svg");
+}
+.flag.ke {
+  background-image: url("/img/flags/ke.svg");
+}
+.flag.kg {
+  background-image: url("/img/flags/kg.svg");
+}
+.flag.ki {
+  background-image: url("/img/flags/ki.svg");
+}
+.flag.kw {
+  background-image: url("/img/flags/kw.svg");
+}
+.flag.ls {
+  background-image: url("/img/flags/ls.svg");
+}
+.flag.lv {
+  background-image: url("/img/flags/lv.svg");
+}
+.flag.lb {
+  background-image: url("/img/flags/lb.svg");
+}
+.flag.lr {
+  background-image: url("/img/flags/lr.svg");
+}
+.flag.ly {
+  background-image: url("/img/flags/ly.svg");
+}
+.flag.li {
+  background-image: url("/img/flags/li.svg");
+}
+.flag.lt {
+  background-image: url("/img/flags/lt.svg");
+}
+.flag.lu {
+  background-image: url("/img/flags/lu.svg");
+}
+.flag.mk {
+  background-image: url("/img/flags/mk.svg");
+}
+.flag.mg {
+  background-image: url("/img/flags/mg.svg");
+}
+.flag.my {
+  background-image: url("/img/flags/my.svg");
+}
+.flag.mw {
+  background-image: url("/img/flags/mw.svg");
+}
+.flag.mv {
+  background-image: url("/img/flags/mv.svg");
+}
+.flag.ml {
+  background-image: url("/img/flags/ml.svg");
+}
+.flag.mt {
+  background-image: url("/img/flags/mt.svg");
+}
+.flag.ma {
+  background-image: url("/img/flags/ma.svg");
+}
+.flag.mu {
+  background-image: url("/img/flags/mu.svg");
+}
+.flag.mr {
+  background-image: url("/img/flags/mr.svg");
+}
+.flag.mx {
+  background-image: url("/img/flags/mx.svg");
+}
+.flag.fm {
+  background-image: url("/img/flags/fm.svg");
+}
+.flag.mc {
+  background-image: url("/img/flags/mc.svg");
+}
+.flag.mn {
+  background-image: url("/img/flags/mn.svg");
+}
+.flag.me {
+  background-image: url("/img/flags/me.svg");
+}
+.flag.mz {
+  background-image: url("/img/flags/mz.svg");
+}
+.flag.mm {
+  background-image: url("/img/flags/mm.svg");
+}
+.flag.na {
+  background-image: url("/img/flags/na.svg");
+}
+.flag.nr {
+  background-image: url("/img/flags/nr.svg");
+}
+.flag.np {
+  background-image: url("/img/flags/np.svg");
+}
+.flag.ni {
+  background-image: url("/img/flags/ni.svg");
+}
+.flag.ne {
+  background-image: url("/img/flags/ne.svg");
+}
+.flag.ng {
+  background-image: url("/img/flags/ng.svg");
+}
+.flag.no {
+  background-image: url("/img/flags/no.svg");
+}
+.flag.nz {
+  background-image: url("/img/flags/nz.svg");
+}
+.flag.om {
+  background-image: url("/img/flags/om.svg");
+}
+.flag.ug {
+  background-image: url("/img/flags/ug.svg");
+}
+.flag.uz {
+  background-image: url("/img/flags/uz.svg");
+}
+.flag.pk {
+  background-image: url("/img/flags/pk.svg");
+}
+.flag.pw {
+  background-image: url("/img/flags/pw.svg");
+}
+.flag.pa {
+  background-image: url("/img/flags/pa.svg");
+}
+.flag.pg {
+  background-image: url("/img/flags/pg.svg");
+}
+.flag.py {
+  background-image: url("/img/flags/py.svg");
+}
+.flag.nl {
+  background-image: url("/img/flags/nl.svg");
+}
+.flag.pe {
+  background-image: url("/img/flags/pe.svg");
+}
+.flag.ph {
+  background-image: url("/img/flags/ph.svg");
+}
+.flag.pl {
+  background-image: url("/img/flags/pl.svg");
+}
+.flag.pt {
+  background-image: url("/img/flags/pt.svg");
+}
+.flag.qa {
+  background-image: url("/img/flags/qa.svg");
+}
+.flag.sy {
+  background-image: url("/img/flags/sy.svg");
+}
+.flag.cf {
+  background-image: url("/img/flags/cf.svg");
+}
+.flag.kr {
+  background-image: url("/img/flags/kr.svg");
+}
+.flag.cd {
+  background-image: url("/img/flags/cd.svg");
+}
+.flag.la {
+  background-image: url("/img/flags/la.svg");
+}
+.flag.md {
+  background-image: url("/img/flags/md.svg");
+}
+.flag.do {
+  background-image: url("/img/flags/do.svg");
+}
+.flag.kp {
+  background-image: url("/img/flags/kp.svg");
+}
+.flag.cz {
+  background-image: url("/img/flags/cz.svg");
+}
+.flag.tz {
+  background-image: url("/img/flags/tz.svg");
+}
+.flag.ro {
+  background-image: url("/img/flags/ro.svg");
+}
+.flag.gb {
+  background-image: url("/img/flags/gb.svg");
+}
+.flag.rw {
+  background-image: url("/img/flags/rw.svg");
+}
+.flag.lc {
+  background-image: url("/img/flags/lc.svg");
+}
+.flag.kn {
+  background-image: url("/img/flags/kn.svg");
+}
+.flag.sm {
+  background-image: url("/img/flags/sm.svg");
+}
+.flag.vc {
+  background-image: url("/img/flags/vc.svg");
+}
+.flag.ws {
+  background-image: url("/img/flags/ws.svg");
+}
+.flag.st {
+  background-image: url("/img/flags/st.svg");
+}
+.flag.sn {
+  background-image: url("/img/flags/sn.svg");
+}
+.flag.rs {
+  background-image: url("/img/flags/rs.svg");
+}
+.flag.sc {
+  background-image: url("/img/flags/sc.svg");
+}
+.flag.sl {
+  background-image: url("/img/flags/sl.svg");
+}
+.flag.sg {
+  background-image: url("/img/flags/sg.svg");
+}
+.flag.sk {
+  background-image: url("/img/flags/sk.svg");
+}
+.flag.si {
+  background-image: url("/img/flags/si.svg");
+}
+.flag.so {
+  background-image: url("/img/flags/so.svg");
+}
+.flag.sd {
+  background-image: url("/img/flags/sd.svg");
+}
+.flag.ss {
+  background-image: url("/img/flags/ss.svg");
+}
+.flag.lk {
+  background-image: url("/img/flags/lk.svg");
+}
+.flag.se {
+  background-image: url("/img/flags/se.svg");
+}
+.flag.ch {
+  background-image: url("/img/flags/ch.svg");
+}
+.flag.sr {
+  background-image: url("/img/flags/sr.svg");
+}
+.flag.tj {
+  background-image: url("/img/flags/tj.svg");
+}
+.flag.td {
+  background-image: url("/img/flags/td.svg");
+}
+.flag.th {
+  background-image: url("/img/flags/th.svg");
+}
+.flag.tl {
+  background-image: url("/img/flags/tl.svg");
+}
+.flag.tg {
+  background-image: url("/img/flags/tg.svg");
+}
+.flag.to {
+  background-image: url("/img/flags/to.svg");
+}
+.flag.tt {
+  background-image: url("/img/flags/tt.svg");
+}
+.flag.tn {
+  background-image: url("/img/flags/tn.svg");
+}
+.flag.tm {
+  background-image: url("/img/flags/tm.svg");
+}
+.flag.tr {
+  background-image: url("/img/flags/tr.svg");
+}
+.flag.tv {
+  background-image: url("/img/flags/tv.svg");
+}
+.flag.ua {
+  background-image: url("/img/flags/ua.svg");
+}
+.flag.uy {
+  background-image: url("/img/flags/uy.svg");
+}
+.flag.vu {
+  background-image: url("/img/flags/vu.svg");
+}
+.flag.ve {
+  background-image: url("/img/flags/ve.svg");
+}
+.flag.vn {
+  background-image: url("/img/flags/vn.svg");
+}
+.flag.ye {
+  background-image: url("/img/flags/ye.svg");
+}
+.flag.zm {
+  background-image: url("/img/flags/zm.svg");
+}
+.flag.zw {
+  background-image: url("/img/flags/zw.svg");
+}
+
 footer {
   padding: 2rem;
   display: -webkit-box;
@@ -547,12 +1213,11 @@ footer .copyrights {
           justify-content: space-between;
   gap: 2rem;
   padding: 2rem;
-  width: 70%;
-  max-width: 100%;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .game-card {
-    width: 15rem;
+    width: 20rem;
   }
 }
 .game-card::before {
