@@ -136,6 +136,16 @@ class CountryNerd {
 				if (this.countriesFound === geoNerdApp.countries[this.currentLetter].length) {
 					this.finished = true;
 				}
+				gsap.to(this.answerInput,{
+					backgroundColor: "#25961c",
+					duration: 0.2,
+					onComplete: ()=>{
+						gsap.to(this.answerInput, {
+							backgroundColor: "white",
+							duration: 0.2
+						});
+					}
+				});
 			}
 		});
 		if (win) {
@@ -147,6 +157,17 @@ class CountryNerd {
 				this.answers.insertAdjacentHTML("afterbegin", `<div class="answer">${this.currentLetter}</div>`);
 			}
 		} else {
+
+			gsap.to(this.answerInput,{
+				backgroundColor: "#F05050",
+				duration: 0.2,
+				onComplete: ()=>{
+					gsap.to(this.answerInput, {
+						backgroundColor: "white",
+						duration: 0.2
+					});
+				}
+			});
 			this.answerInput.value = "";
 		}
 	}
