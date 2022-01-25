@@ -19,6 +19,27 @@
   font-display: swap;
   src: local(""), url("./fonts/roboto-v29-latin-700.woff2") format("woff2"), url("./fonts/roboto-v29-latin-700.woff") format("woff");
 }
+@font-face {
+  font-family: "Albula";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(""), url("./fonts/Albula-Regular.woff2") format("woff2"), url("./fonts/Albula-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Albula";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""), url("./fonts/Albula-Bold.woff2") format("woff2"), url("./fonts/Albula-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Albula";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local(""), url("./fonts/Albula-Heavy.woff2") format("woff2"), url("./fonts/Albula-Heavy.woff") format("woff");
+}
 html {
   font-size: clamp(14px, 11px + 0.35vw, 50px);
 }
@@ -88,19 +109,19 @@ body {
 }
 
 h1 {
-  font-family: Bangers;
+  font-family: Albula, sans-serif;
   font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-weight: 700;
   margin-bottom: 2em;
   text-align: center;
+  line-height: 1.1em;
 }
 
 h2 {
-  font-family: Bangers;
+  font-family: Albula, sans-serif;
   font-size: 1.8rem;
-  letter-spacing: 0.05em;
-  font-weight: 400;
+  font-weight: 700;
+  line-height: 1.1em;
 }
 
 .page.home {
@@ -312,9 +333,10 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  color: black;
+  color: #1c1c1c;
   font-size: 2rem;
-  font-family: Bangers;
+  font-weight: 900;
+  font-family: Albula, sans-serif;
   -webkit-box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.25);
   -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
@@ -349,10 +371,9 @@ h2 {
   left: 0;
   opacity: 0;
   pointer-events: none;
-  font-family: Bangers;
+  font-family: Albula, sans-serif;
   font-size: 2.5rem;
   font-weight: 400;
-  letter-spacing: 0.04em;
   white-space: nowrap;
   line-height: 1.3em;
 }
@@ -362,9 +383,11 @@ h2 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transform: translate(0.1em, -0.2em);
-      -ms-transform: translate(0.1em, -0.2em);
-          transform: translate(0.1em, -0.2em);
+  -webkit-transform: translate(0.1em, 0.1em);
+      -ms-transform: translate(0.1em, 0.1em);
+          transform: translate(0.1em, 0.1em);
+  text-transform: uppercase;
+  line-height: 1em;
 }
 .page.country-nerd .answer-container {
   display: none;
@@ -397,7 +420,6 @@ h2 {
   outline: none;
   border-radius: 1000px;
   font-size: 2rem;
-  text-transform: uppercase;
   height: 4rem;
   width: 100%;
 }
@@ -428,7 +450,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2rem;
+  gap: 0.6rem;
   width: 100%;
 }
 .page.country-nerd .answers .answer {
@@ -447,13 +469,13 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0 1rem 0;
   border-bottom: 1px solid white;
   width: 100%;
   min-width: 15rem;
   max-width: 100%;
   font-size: 1.5rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 @media (min-width: 768px) {
   .page.country-nerd .answers .answer {
@@ -470,7 +492,7 @@ h2 {
   position: absolute;
   height: 1.2em;
   width: 1.2em;
-  top: 50%;
+  top: 40%;
   right: 0;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -536,9 +558,10 @@ h2 {
   min-width: 6rem;
   color: white;
   border-radius: 1000px;
+  font-family: Albula, sans-serif;
   text-align: center;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
   -webkit-box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
           box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
@@ -1323,8 +1346,9 @@ header .logo {
           align-items: center;
   gap: 1rem;
   height: 4rem;
+  font-family: Albula, sans-serif;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 900;
   color: white;
   text-decoration: none;
   background-color: #231961;
@@ -1333,6 +1357,12 @@ header .logo {
 }
 header .logo img {
   width: 1.7rem;
+}
+header .logo span {
+  display: block;
+  -webkit-transform: translateY(-0.1em);
+      -ms-transform: translateY(-0.1em);
+          transform: translateY(-0.1em);
 }
 header .menu {
   height: 4rem;

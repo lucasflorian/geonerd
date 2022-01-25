@@ -27,3 +27,34 @@
 	url('./fonts/roboto-v29-latin-700.woff2') format('woff2'),
 	url('./fonts/roboto-v29-latin-700.woff') format('woff');
 }
+
+@font-face {
+	font-family: 'Albula';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url('./fonts/Albula-Regular.woff2') format('woff2'),
+	url('./fonts/Albula-Regular.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'Albula';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url('./fonts/Albula-Bold.woff2') format('woff2'),
+	url('./fonts/Albula-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Albula';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: local(''),
+	url('./fonts/Albula-Heavy.woff2') format('woff2'),
+	url('./fonts/Albula-Heavy.woff') format('woff');
+}
