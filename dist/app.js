@@ -84,7 +84,6 @@ class CountryNerd {
 	}
 
 	loadCountries() {
-
 		GeoNerdApp.loadCountries(json => {
 			JSON.parse(json).forEach(country => {
 				const letter = this.sanitize(country.name.substr(0, 1));
@@ -97,6 +96,7 @@ class CountryNerd {
 					code: country.code
 				});
 			});
+			// console.log(this.countries);
 		});
 	}
 
@@ -110,6 +110,7 @@ class CountryNerd {
 	}
 
 	validateAnswer(answer) {
+		answer = this.sanitize(answer);
 		let win = false;
 		this.countries[this.currentLetter].forEach(country => {
 			if (answer === country.sanitize && !country.found) {
@@ -139,7 +140,12 @@ class CountryNerd {
 	}
 
 	sanitize(value) {
-		return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+		const sanitized = value.toLowerCase().normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.replace(/-/g, " ")
+			.replace(/'/g, " ")
+			.replace(/’/g, " ");
+		return sanitized;
 	}
 }
 

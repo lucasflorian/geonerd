@@ -230,6 +230,7 @@
 		width: 100%;
 
 		.answer {
+			position: relative;
 			padding: 0.5rem;
 			border-bottom: 1px solid white;
 			width: 100%;
@@ -243,13 +244,22 @@
 
 			&.valid {
 				&::after {
-					content: "✓";
+					content: "";
+					position: absolute;
+					height: 1.2em;
+					width: 1.2em;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+					background-image: url('/img/checkmark.svg');
+					background-size: contain;
+					background-repeat: no-repeat;
 				}
 			}
 		}
 	}
 
-	.tip{
+	.tip {
 		background-color: $color-red;
 		color: white;
 		width: fit-content;

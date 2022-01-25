@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Bangers";
   font-style: normal;
@@ -409,6 +408,7 @@ h2 {
   width: 100%;
 }
 .page.country-nerd .answers .answer {
+  position: relative;
   padding: 0.5rem;
   border-bottom: 1px solid white;
   width: 100%;
@@ -423,7 +423,18 @@ h2 {
   }
 }
 .page.country-nerd .answers .answer.valid::after {
-  content: "✓";
+  content: "";
+  position: absolute;
+  height: 1.2em;
+  width: 1.2em;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url("/img/checkmark.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .page.country-nerd .tip {
   background-color: #F05050;
