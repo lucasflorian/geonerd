@@ -415,9 +415,31 @@ h2 {
 .page.country-nerd .title-container {
   position: relative;
 }
+.page.country-nerd .title-container h1 {
+  padding-left: 2em;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: left;
+}
+.page.country-nerd .title-container h1 .icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-45%);
+      -ms-transform: translateY(-45%);
+          transform: translateY(-45%);
+}
 @media (max-width: 767px) {
   .page.country-nerd .title-container {
     width: 100%;
+  }
+  .page.country-nerd .title-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .page.country-nerd .title-container .game-title {
@@ -427,10 +449,33 @@ h2 {
   opacity: 0;
   pointer-events: none;
   font-family: Albula, sans-serif;
-  font-size: 2.5rem;
   font-weight: 400;
   white-space: nowrap;
   line-height: 1.3em;
+  font-size: 2.5rem;
+  padding-left: 2em;
+}
+@media (max-width: 767px) {
+  .page.country-nerd .title-container .game-title {
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+.page.country-nerd .title-container .game-title .icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-45%);
+      -ms-transform: translateY(-45%);
+          transform: translateY(-45%);
 }
 .page.country-nerd .title-container .letter-placeholder {
   height: 2.5rem;
@@ -458,6 +503,11 @@ h2 {
   gap: 2rem;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .page.country-nerd .answer-container {
+    gap: 1rem;
+  }
+}
 .page.country-nerd .answer-container.win .tip {
   background-color: #1dd710;
 }
@@ -475,13 +525,15 @@ h2 {
   border: none;
   outline: none;
   border-radius: 1000px;
-  font-size: 2rem;
-  height: 4rem;
+  font-size: 1.2rem;
+  height: 3rem;
   width: 100%;
 }
 @media (min-width: 768px) {
   .page.country-nerd .answer-input {
     max-width: 30rem;
+    height: 4rem;
+    font-size: 2rem;
   }
 }
 .page.country-nerd .validate-input {
@@ -494,6 +546,13 @@ h2 {
   font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .page.country-nerd .validate-input {
+    height: 3rem;
+    width: 6rem;
+    font-size: 1.4rem;
+  }
 }
 .page.country-nerd .answers {
   display: -webkit-box;
@@ -1328,24 +1387,7 @@ footer .copyrights {
   position: absolute;
   top: -0.2em;
   right: -0.4em;
-  display: block;
-  height: 1.5em;
-  width: 1.5em;
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: white;
-  border-radius: 50%;
   margin-left: 0.5rem;
-}
-.game-card .card-title .icon.icon-country {
-  background-image: url("/img/icon-country-nerd.svg");
-}
-.game-card .card-title .icon.icon-capital {
-  background-image: url("/img/icon-capital-city-nerd.svg");
-}
-.game-card .card-title .icon.icon-flag {
-  background-image: url("/img/icon-flag-nerd.svg");
 }
 .game-card .card-link {
   color: white;
@@ -1397,6 +1439,11 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media (max-width: 767px) {
+  header {
+    padding: 1rem;
+  }
+}
 header .logo {
   position: relative;
   display: -webkit-box;
@@ -1424,14 +1471,16 @@ header .logo {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
 }
+@media (max-width: 767px) {
+  header .logo {
+    height: 3rem;
+  }
+}
 header .logo img {
   width: 1.7rem;
 }
 header .logo span {
   display: block;
-  -webkit-transform: translateY(-0.1em);
-      -ms-transform: translateY(-0.1em);
-          transform: translateY(-0.1em);
 }
 header .logo::before {
   content: "";
@@ -1501,5 +1550,25 @@ header .menu::after {
   top: 55%;
   right: 26%;
   background-color: white;
+}
+
+.icon {
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-radius: 50%;
+}
+.icon.icon-country {
+  background-image: url("/img/icon-country-nerd.svg");
+}
+.icon.icon-capital {
+  background-image: url("/img/icon-capital-city-nerd.svg");
+}
+.icon.icon-flag {
+  background-image: url("/img/icon-flag-nerd.svg");
 }
 /*# sourceMappingURL=app.css.map */

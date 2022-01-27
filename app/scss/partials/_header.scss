@@ -2,6 +2,9 @@ header {
 	padding: 2rem;
 	display: flex;
 	justify-content: space-between;
+	@media (max-width: 767px) {
+		padding: 1rem;
+	}
 
 	.logo {
 		position: relative;
@@ -9,6 +12,10 @@ header {
 		align-items: center;
 		gap: 1rem;
 		height: 4rem;
+
+		@media (max-width: 767px) {
+			height: 3rem;
+		}
 
 		font-family: $font-alt;
 		font-size: 1.4rem;
@@ -30,7 +37,6 @@ header {
 
 		span {
 			display: block;
-			transform: translateY(-0.1em);
 		}
 
 		&::before {

@@ -163,8 +163,28 @@
 	.title-container {
 		position: relative;
 
+		h1 {
+			padding-left: 2em;
+			position: relative;
+			width: fit-content;
+			text-align: left;
+
+			.icon{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-45%);
+			}
+		}
+
 		@media (max-width: 767px) {
 			width: 100%;
+			h1 {
+				font-size: 1.5rem;
+				margin-bottom: 2rem;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 
 		.game-title {
@@ -175,10 +195,28 @@
 			pointer-events: none;
 
 			font-family: $font-alt;
-			font-size: 2.5rem;
 			font-weight: 400;
 			white-space: nowrap;
 			line-height: 1.3em;
+			font-size: 2.5rem;
+
+			padding-left: 2em;
+
+			@media (max-width: 767px) {
+				font-size: 1.5rem;
+				margin-left: auto;
+				margin-right: auto;
+				width: fit-content;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.icon{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-45%);
+			}
 		}
 
 		.letter-placeholder {
@@ -200,6 +238,10 @@
 		gap: 2rem;
 		width: 100%;
 
+		@media (max-width: 767px) {
+			gap: 1rem;
+		}
+
 		&.win {
 			.tip {
 				background-color: $color-green;
@@ -218,11 +260,13 @@
 		border: none;
 		outline: none;
 		border-radius: 1000px;
-		font-size: 2rem;
-		height: 4rem;
+		font-size: 1.2rem;
+		height: 3rem;
 		width: 100%;
 		@media (min-width: 768px) {
 			max-width: 30rem;
+			height: 4rem;
+			font-size: 2rem;
 		}
 	}
 
@@ -236,6 +280,11 @@
 		font-size: 1.8rem;
 		font-weight: 700;
 		cursor: pointer;
+		@media (max-width: 767px) {
+			height: 3rem;
+			width: 6rem;
+			font-size: 1.4rem;
+		}
 	}
 
 	.answers {
