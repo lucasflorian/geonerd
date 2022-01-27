@@ -185,7 +185,8 @@
 			height: 2.5rem;
 			width: 2.5rem;
 			display: inline-flex;
-			transform: translate(0.1em, 0.1em);
+			font-size: 1.5rem;
+			transform: translate(0.1em, -0.1em);
 			text-transform: uppercase;
 			line-height: 1em;
 		}
@@ -295,10 +296,13 @@
 	}
 
 	.won-link {
+
 		&:before {
+			background-color:  $color-blue-darker;
 		}
 
 		&:after {
+			background-color:  lighten($color-blue-darker, 5);
 			height: 60rem;
 			width: 60rem;
 		}

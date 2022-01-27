@@ -54,6 +54,9 @@ body {
 
 body {
   background: #402DB3;
+  background: -o-linear-gradient(86deg, #0e0a67 0%, #241977 0%, #402bbb 58%);
+  background: linear-gradient(4deg, #0e0a67 0%, #241977 0%, #402bbb 58%);
+  background-attachment: fixed;
   font-family: Roboto;
   color: white;
   display: -webkit-box;
@@ -383,9 +386,10 @@ h2 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transform: translate(0.1em, 0.1em);
-      -ms-transform: translate(0.1em, 0.1em);
-          transform: translate(0.1em, 0.1em);
+  font-size: 1.5rem;
+  -webkit-transform: translate(0.1em, -0.1em);
+      -ms-transform: translate(0.1em, -0.1em);
+          transform: translate(0.1em, -0.1em);
   text-transform: uppercase;
   line-height: 1em;
 }
@@ -513,7 +517,11 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
 }
+.page.country-nerd .won-link:before {
+  background-color: #231961;
+}
 .page.country-nerd .won-link:after {
+  background-color: #2a1e76;
   height: 60rem;
   width: 60rem;
 }
@@ -1338,6 +1346,7 @@ header {
           justify-content: space-between;
 }
 header .logo {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1351,9 +1360,17 @@ header .logo {
   font-weight: 900;
   color: white;
   text-decoration: none;
-  background-color: #231961;
   border-radius: 1000px;
   padding: 0 1.4rem;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem 1rem rgba(0, 0, 0, 0.05);
+          box-shadow: 0.5rem 0.5rem 1rem 1rem rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
 }
 header .logo img {
   width: 1.7rem;
@@ -1363,6 +1380,47 @@ header .logo span {
   -webkit-transform: translateY(-0.1em);
       -ms-transform: translateY(-0.1em);
           transform: translateY(-0.1em);
+}
+header .logo::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #231961;
+  border-radius: 1000px;
+  z-index: -1;
+}
+header .logo::after {
+  content: "";
+  position: absolute;
+  height: 30rem;
+  width: 30rem;
+  top: 50%;
+  left: 1%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  background-color: #2a1e76;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+header .logo:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+header .logo:hover::after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 header .menu {
   height: 4rem;
