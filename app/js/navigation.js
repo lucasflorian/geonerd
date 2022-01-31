@@ -7,6 +7,12 @@ class GeoNerdNavigation {
 		window.addEventListener("hashchange", e => {
 			this.changePage();
 		});
+
+		document.querySelectorAll(".reload").forEach(elem => {
+			elem.addEventListener("click", ()=>{
+				window.location.reload();
+			});
+		});
 	}
 
 	changePage() {

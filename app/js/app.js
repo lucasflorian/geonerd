@@ -44,9 +44,10 @@ class GeoNerdApp {
 	static sanitize(value) {
 		return value.toLowerCase().normalize("NFD")
 			.replace(/[\u0300-\u036f]/g, "")
-			.replace(/-/g, " ")
-			.replace(/'/g, " ")
-			.replace(/’/g, " ");
+			.replace(/-/g, "")
+			.replace(/'/g, "")
+			.replace(/ /g, "")
+			.replace(/’/g, "");
 	}
 }
 

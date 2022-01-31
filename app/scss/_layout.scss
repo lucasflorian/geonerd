@@ -12,7 +12,7 @@ body {
 
 body {
 	background: $color-blue;
-	background: linear-gradient(4deg, rgb(14, 10, 103) 0%, rgb(36, 25, 119) 0%, rgba(64,43,187,1) 58%);
+	background: linear-gradient(4deg, rgb(14, 10, 103) 0%, rgb(36, 25, 119) 0%, rgba(64, 43, 187, 1) 58%);
 	background-attachment: fixed;
 	font-family: $font-base;
 	color: white;
@@ -41,12 +41,12 @@ body {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 	pointer-events: none;
 	transition: opacity 0.4s ease;
 
 	&.show {
-		display: block;
+		display: block !important;
 		pointer-events: initial;
 	}
 }

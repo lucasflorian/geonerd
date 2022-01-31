@@ -12,7 +12,7 @@
 	<meta property="og:description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
 	<!--	<meta property="og:image" content="img/og.jpg"/>-->
 
-	<link rel="stylesheet" href="dist/app.css?v=1.0.7">
+	<link rel="stylesheet" href="dist/app.css?v=1.0.8">
 </head>
 <body>
 <header>
@@ -24,12 +24,12 @@
 </header>
 <div class="pages">
 	<div id="home" class="page home">
-		<h1>Geo Nerd - Connais tu le monde ?</h1>
+		<h1>Geo Nerd - Connais tu le monde&nbsp;?</h1>
 		<div class="game-cards">
 			<div class="game-card">
 				<div class="card-top">
 					<h2 class="card-title">Country Nerd<span class="icon icon-country"></span></h2>
-					<a href="#country-nerd" class="subtitle card-link">Connais tu tous les pays du monde ?</a><br>
+					<a href="#country-nerd" class="subtitle card-link">Connais tu tous les pays du monde&nbsp;?</a><br>
 					<small><i>( pays membres de l'ONU, nom en version courte )</i></small>
 				</div>
 				<div class="card-bottom">
@@ -39,7 +39,7 @@
 			<div class="game-card">
 				<div class="card-top">
 					<h2 class="card-title">Capital City Nerd<span class="icon icon-capital"></span></h2>
-					<a href="#capital-nerd" class="subtitle card-link">Et les capitales ?</a>
+					<a href="#capital-nerd" class="subtitle card-link">Et les capitales&nbsp;?</a>
 				</div>
 				<div class="card-bottom">
 					<div class="btn btn-big">GO</div>
@@ -48,7 +48,7 @@
 			<div class="game-card">
 				<div class="card-top">
 					<h2 class="card-title">Flag Nerd<span class="icon icon-flag"></span></h2>
-					<a href="#flag-nerd" class="subtitle card-link">Es-tu un pro des drapeaux ?</a>
+					<a href="#flag-nerd" class="subtitle card-link">Es-tu un pro des drapeaux&nbsp;?</a>
 				</div>
 				<div class="card-bottom">
 					<div class="btn btn-big">GO</div>
@@ -59,7 +59,7 @@
 	<div id="country-nerd" class="page country-nerd">
 		<div class="title-container">
 			<h1><span class="icon icon-country"></span>Connais tu tous les<br>
-				pays du monde ?</h1>
+				pays du monde&nbsp;?</h1>
 			<div class="game-title">
 				<span class="icon icon-country"></span>Trouve les pays<br> commençant par : <span class="letter letter-placeholder"></span>
 			</div>
@@ -96,7 +96,7 @@
 				<button type="button" class="validate-input" id="country-answer-validate">OK</button>
 			</div>
 			<div class="tip">Pays trouvés : <span class="found">0</span> / <span class="total"></span></div>
-			<p onclick="window.location.href='/#country-nerd';window.location.reload()" class="btn won-link hidden">Bien joué, on essaie une autre lettre ?</p>
+			<p onclick="window.location.href='/#country-nerd';window.location.reload()" class="btn won-link hidden">Bien joué, on essaie une autre lettre&nbsp;?</p>
 			<div class="answers">
 				<div class="answer"></div>
 			</div>
@@ -114,22 +114,50 @@
 		</div>
 		<div class="progress-container">
 			<div class="progress">
-				<span>Pays trouvés :</span>
-				<span class="found"></span>
-				<span class="separator">/</span>
-				<div class="total"></div>
+				<div class="current">
+					Pays trouvés : <span class="found"></span>
+				</div>
+				<div class="best">
+					(&nbsp;Record : <span class="value"></span>&nbsp;)
+				</div>
 			</div>
-			<div class="attempts">
-				<span>Nombre de tentatives :</span>
-				<span class="number"></span>
+			<div class="life-remaining">
+				<div class="heart heart-1">
+					<svg width="60" height="56" version="1.1" viewBox="150 95 400 370" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<path
+							stroke-width="10"
+							stroke="red"
+							d="m259.17 100.8c-65.176 0-105.17 56.996-105.17 103.75 0 101.09 114.9 194.92 196 254.65 81.102-59.734 196-153.57 196-254.65 0-46.75-39.996-103.75-105.17-103.75-36.398 0-67.496 29.02-90.828 56.59-23.332-27.57-54.43-56.59-90.828-56.59z" fill="red"/>
+					</svg>
+				</div>
+				<div class="heart heart-2">
+					<svg width="60" height="56" version="1.1" viewBox="150 95 400 370" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<path
+							stroke-width="10"
+							stroke="red"
+							d="m259.17 100.8c-65.176 0-105.17 56.996-105.17 103.75 0 101.09 114.9 194.92 196 254.65 81.102-59.734 196-153.57 196-254.65 0-46.75-39.996-103.75-105.17-103.75-36.398 0-67.496 29.02-90.828 56.59-23.332-27.57-54.43-56.59-90.828-56.59z" fill="red"/>
+					</svg>
+				</div>
+				<div class="heart heart-3">
+					<svg width="60" height="56" version="1.1" viewBox="150 95 400 370" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<path
+							stroke-width="10"
+							stroke="red"
+							d="m259.17 100.8c-65.176 0-105.17 56.996-105.17 103.75 0 101.09 114.9 194.92 196 254.65 81.102-59.734 196-153.57 196-254.65 0-46.75-39.996-103.75-105.17-103.75-36.398 0-67.496 29.02-90.828 56.59-23.332-27.57-54.43-56.59-90.828-56.59z" fill="red"/>
+					</svg>
+				</div>
 			</div>
 		</div>
-		<div class="flag-container"></div>
-		<div class="answer-container"></div>
-		<div class="win">
-			<p>Bravo, tu connais tous les pays du monde</p>
-			Peux tu le faire avec moins d'erreurs ? <br>
-			<a class="btn" href="#settings">Recommencer</a>
+		<div class="game-container">
+			<div class="flag-container"></div>
+			<div class="answer-container"></div>
+			<div class="win-message">
+				<p>Bravo, tu connais tous les pays du monde</p>
+			</div>
+			<div class="loose-message">
+				<p>C'est fini, peux-tu battre ton record</p>
+				<div class="btn reload">Rejouer ?</div>
+			</div>
 		</div>
 	</div>
 	<div id="settings" class="page settings">
@@ -141,16 +169,13 @@
 			</div>
 		</div>
 	</div>
-	<!--	<div class="page page-3">-->
-	<!--		page 3-->
-	<!--	</div>-->
 </div>
 <footer>
 	<div class="copyrights">
 		© Florian LUCAS - 2022
 	</div>
 </footer>
-<script src="dist/app.js?v=1.0.7"></script>
+<script src="dist/app.js?v=1.0.8"></script>
 <script src="dist/libs/gsap.min.js"></script>
 </body>
 </html>

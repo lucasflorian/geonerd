@@ -100,14 +100,14 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
   pointer-events: none;
   -webkit-transition: opacity 0.4s ease;
   -o-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
 }
 .hidden.show {
-  display: block;
+  display: block !important;
   pointer-events: initial;
 }
 
@@ -115,6 +115,7 @@ h1 {
   font-family: Albula, sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
+  margin-top: 0;
   margin-bottom: 2em;
   text-align: center;
   line-height: 1.1em;
@@ -716,10 +717,13 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
+  margin: 1rem 0;
 }
-.page.flag-nerd .progress,
-.page.flag-nerd .attempts {
+.page.flag-nerd .progress {
   background-color: #231961;
   color: white;
   width: -webkit-fit-content;
@@ -727,15 +731,51 @@ h2 {
   width: fit-content;
   border-radius: 1000px;
   padding: 0.8rem 1.2rem;
-  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
+  font-size: 1.1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
 }
-.page.flag-nerd .win {
+.page.flag-nerd .progress .best {
+  font-size: 0.7rem;
+}
+.page.flag-nerd .life-remaining {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.3rem;
+}
+.page.flag-nerd .life-remaining .heart {
+  height: 2rem;
+  width: 2rem;
+}
+.page.flag-nerd .life-remaining .heart svg {
+  height: 100%;
+  width: 100%;
+}
+.page.flag-nerd .life-remaining .heart.loose path {
+  fill: none;
+}
+.page.flag-nerd .game-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.flag-nerd .win-message {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -746,12 +786,43 @@ h2 {
           align-items: center;
   font-size: 1.2rem;
 }
-.page.flag-nerd .win.show {
+.page.flag-nerd .win-message.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.page.flag-nerd .win .btn {
+.page.flag-nerd .win-message .btn {
+  margin-top: 1rem;
+}
+.page.flag-nerd .loose-message {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 90%;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+.page.flag-nerd .loose-message.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page.flag-nerd .loose-message .btn {
   margin-top: 1rem;
 }
 
@@ -1577,17 +1648,13 @@ header .logo {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
-  height: 4rem;
+  text-transform: uppercase;
   font-family: Albula, sans-serif;
-  font-size: 1.4rem;
+  font-size: 2rem;
+  line-height: 1em;
   font-weight: 900;
   color: white;
   text-decoration: none;
-  border-radius: 1000px;
-  padding: 0 1.4rem;
-  -webkit-box-shadow: 0.5rem 0.5rem 1rem 1rem rgba(0, 0, 0, 0.05);
-          box-shadow: 0.5rem 0.5rem 1rem 1rem rgba(0, 0, 0, 0.05);
-  overflow: hidden;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
   -o-transition: transform 0.2s ease;
@@ -1595,62 +1662,29 @@ header .logo {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
 }
-@media (max-width: 767px) {
-  header .logo {
-    height: 3rem;
-  }
-}
 header .logo img {
   width: 1.7rem;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  -webkit-transform: translateY(0.15rem);
+      -ms-transform: translateY(0.15rem);
+          transform: translateY(0.15rem);
 }
 header .logo span {
   display: block;
 }
-header .logo::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #231961;
-  border-radius: 1000px;
-  z-index: -1;
-}
-header .logo::after {
-  content: "";
-  position: absolute;
-  height: 30rem;
-  width: 30rem;
-  top: 50%;
-  left: 1%;
-  -webkit-transform: translate(-50%, -50%) scale(0);
-      -ms-transform: translate(-50%, -50%) scale(0);
-          transform: translate(-50%, -50%) scale(0);
-  background-color: #2a1e76;
-  border-radius: 50%;
-  z-index: -1;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  -o-transition: transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-  will-change: transform;
-}
-header .logo:hover {
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
-}
-header .logo:hover::after {
-  -webkit-transform: translate(-50%, -50%) scale(1);
-      -ms-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+header .logo:hover img {
+  -webkit-transform: translateY(0.15rem) scale(1.2);
+      -ms-transform: translateY(0.15rem) scale(1.2);
+          transform: translateY(0.15rem) scale(1.2);
 }
 header .menu {
   height: 4rem;
   width: 4rem;
-  background-color: #231961;
+  background-color: #31238a;
   border-radius: 50%;
   position: relative;
   cursor: pointer;

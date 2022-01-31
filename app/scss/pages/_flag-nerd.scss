@@ -57,25 +57,83 @@
 
 	.progress-container {
 		display: flex;
+		align-items: center;
 		gap: 1rem;
+		margin: 1rem 0;
 	}
 
-	.progress,
-	.attempts {
+	.progress {
 		background-color: $color-blue-darker;
 		color: white;
 		width: fit-content;
 		border-radius: 1000px;
 		padding: 0.8rem 1.2rem;
-		font-size: 0.7rem;
 		font-weight: 700;
 		text-transform: uppercase;
+		font-size: 1.1rem;
 		display: flex;
-		gap: 0.25rem;
+		align-items: center;
+		gap: 1rem;
+
+		.best {
+			font-size: 0.7rem;
+		}
 	}
 
-	.win {
+	.life-remaining {
+		display: flex;
+		gap: 0.3rem;
+
+		.heart {
+			height: 2rem;
+			width: 2rem;
+
+			svg {
+				height: 100%;
+				width: 100%;
+			}
+
+			&.loose {
+				path {
+					fill: none;
+				}
+			}
+		}
+	}
+
+	.game-container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.win-message {
 		display: none;
+
+		&.show {
+			display: flex;
+		}
+
+		flex-direction: column;
+		align-items: center;
+		font-size: 1.2rem;
+
+		.btn {
+			margin-top: 1rem;
+		}
+	}
+
+	.loose-message {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		display: none;
+		width: fit-content;
+		max-width: 90%;
+		text-transform: uppercase;
+		font-weight: 700;
 
 		&.show {
 			display: flex;
