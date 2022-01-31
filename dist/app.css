@@ -1690,28 +1690,17 @@ header .logo img {
   -o-transition: transform 0.2s ease;
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-}
-@media (min-width: 768px) {
-  header .logo img {
-    -webkit-transform: translateY(0.15rem);
-        -ms-transform: translateY(0.15rem);
-            transform: translateY(0.15rem);
-  }
+  -webkit-transform: translateY(0.15rem);
+      -ms-transform: translateY(0.15rem);
+          transform: translateY(0.15rem);
 }
 header .logo span {
   display: block;
 }
 header .logo:hover img {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-}
-@media (min-width: 768px) {
-  header .logo:hover img {
-    -webkit-transform: translateY(0.15rem) scale(1.2);
-        -ms-transform: translateY(0.15rem) scale(1.2);
-            transform: translateY(0.15rem) scale(1.2);
-  }
+  -webkit-transform: translateY(0.15rem) scale(1.2);
+      -ms-transform: translateY(0.15rem) scale(1.2);
+          transform: translateY(0.15rem) scale(1.2);
 }
 header .menu {
   height: 4rem;
