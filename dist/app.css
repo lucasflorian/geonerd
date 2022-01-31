@@ -806,6 +806,7 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.2rem;
+  text-align: center;
 }
 .page.flag-nerd .win-message.show {
   display: -webkit-box;
@@ -829,6 +830,7 @@ h2 {
   max-width: 90%;
   text-transform: uppercase;
   font-weight: 700;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
