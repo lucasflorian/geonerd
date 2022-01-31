@@ -1,6 +1,5 @@
 class CountryNerd {
 	constructor() {
-		console.log("country nerd");
 		this.currentLetter = "a";
 		this.countriesFound = 0;
 		this.loadCountries();
@@ -44,7 +43,7 @@ class CountryNerd {
 					delay: 0.5
 				});
 				letterPlaceholder.innerHTML = letterText;
-				this.tipTotal.innerHTML = geoNerdApp.countries[this.currentLetter].length;
+				this.tipTotal.innerHTML = geoNerdApp.countriesByLetter[this.currentLetter].length;
 				this.firstAnswer.innerHTML = letterText;
 				setTimeout(() => {
 					lettersContainer.style.display = "none";
@@ -75,7 +74,7 @@ class CountryNerd {
 	validateAnswer(answer) {
 		answer = GeoNerdApp.sanitize(answer);
 		let win = false;
-		geoNerdApp.countries[this.currentLetter].forEach(country => {
+		geoNerdApp.countriesByLetter[this.currentLetter].forEach(country => {
 			if (answer === country.sanitize && !country.found) {
 				win = true;
 				this.answerInput.value = "";
@@ -85,7 +84,7 @@ class CountryNerd {
 				rightAnswer.classList.add("valid");
 				this.countriesFound++;
 				this.tipCurrent.innerHTML = this.countriesFound;
-				if (this.countriesFound === geoNerdApp.countries[this.currentLetter].length) {
+				if (this.countriesFound === geoNerdApp.countriesByLetter[this.currentLetter].length) {
 					this.finished = true;
 				}
 				gsap.to(this.answerInput,{

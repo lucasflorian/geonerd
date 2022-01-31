@@ -1,7 +1,8 @@
 .btn {
 	position: relative;
+	display: block;
 
-	padding: 1.5rem 3rem;
+	padding: 1.2rem 3rem 1.5rem 3rem;
 	width: fit-content;
 	min-width: 6rem;
 
@@ -12,13 +13,13 @@
 	font-family: $font-alt;
 	text-align: center;
 	text-decoration: none;
-	font-weight: 900;
-	text-transform: uppercase;
 
 	box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
 	overflow: hidden;
 	transition: transform 0.2s ease;
 	will-change: transform;
+
+	cursor: pointer;
 
 	&::before {
 		content: '';
@@ -56,6 +57,11 @@
 
 	&:active{
 		transform: scale(0.95);
+	}
+
+	&.btn-big{
+		font-weight: 900;
+		text-transform: uppercase;
 	}
 }
 

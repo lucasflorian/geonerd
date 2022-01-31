@@ -169,7 +169,7 @@
 			width: fit-content;
 			text-align: left;
 
-			.icon{
+			.icon {
 				position: absolute;
 				left: 0;
 				top: 50%;
@@ -211,7 +211,7 @@
 				transform: translateX(-50%);
 			}
 
-			.icon{
+			.icon {
 				position: absolute;
 				left: 0;
 				top: 50%;
@@ -345,6 +345,7 @@
 	}
 
 	.won-link {
+		cursor: pointer;
 
 		&:before {
 			background-color: $color-blue-darker;

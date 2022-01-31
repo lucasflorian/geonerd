@@ -68,6 +68,7 @@ header {
 
 		&:hover {
 			transform: scale(1.05);
+
 			&::after {
 				transform: translate(-50%, -50%) scale(1);
 			}
@@ -82,25 +83,44 @@ header {
 		position: relative;
 		cursor: pointer;
 		box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(0, 0, 0, 0.08);
+		transition: transform 0.2s ease;
+		will-change: transform;
 
 		&::before {
 			content: '';
 			position: absolute;
-			height: 2px;
-			width: 50%;
-			top: 38%;
-			right: 26%;
-			background-color: white;
+			height: 70%;
+			width: 70%;
+			top: 55%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-image: url('/img/settings.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 
-		&::after {
-			content: '';
-			position: absolute;
-			height: 2px;
-			width: 40%;
-			top: 55%;
-			right: 26%;
-			background-color: white;
+		&:hover {
+			transform: scale(1.05);
 		}
+
+		//&::before {
+		//	content: '';
+		//	position: absolute;
+		//	height: 2px;
+		//	width: 50%;
+		//	top: 38%;
+		//	right: 26%;
+		//	background-color: white;
+		//}
+		//
+		//&::after {
+		//	content: '';
+		//	position: absolute;
+		//	height: 2px;
+		//	width: 40%;
+		//	top: 55%;
+		//	right: 26%;
+		//	background-color: white;
+		//}
 	}
 }

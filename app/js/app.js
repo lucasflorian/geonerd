@@ -1,13 +1,15 @@
 class GeoNerdApp {
 	constructor(props) {
 		document.addEventListener("DOMContentLoaded", () => {
-			this.countries = {};
-			this.letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","y","z"];
+			this.countries = [];
+			this.countriesByLetter = {};
+			this.letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "z"];
 			this.loadCountries(() => {
 				new GeoNerdNavigation();
 				new CountryNerd();
 				new FlagNerd();
 			});
+			new Settings();
 		});
 	}
 
@@ -19,16 +21,20 @@ class GeoNerdApp {
 			if (request.readyState === 4 && request.status === 200) {
 				JSON.parse(request.responseText).forEach(country => {
 					const letter = GeoNerdApp.sanitize(country.name.substr(0, 1));
-					if (!this.countries[letter]) {
-						this.countries[letter] = [];
+					if (!this.countriesByLetter[letter]) {
+						this.countriesByLetter[letter] = [];
 					}
-					this.countries[letter].push({
+					this.countriesByLetter[letter].push({
+						sanitize: GeoNerdApp.sanitize(country.name),
+						name: country.name,
+						code: country.code
+					});
+					this.countries.push({
 						sanitize: GeoNerdApp.sanitize(country.name),
 						name: country.name,
 						code: country.code
 					});
 				});
-				console.log("countries loaded");
 				callback();
 			}
 		};

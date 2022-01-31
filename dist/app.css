@@ -119,6 +119,11 @@ h1 {
   text-align: center;
   line-height: 1.1em;
 }
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 
 h2 {
   font-family: Albula, sans-serif;
@@ -628,6 +633,9 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
 }
+.page.country-nerd .won-link {
+  cursor: pointer;
+}
 .page.country-nerd .won-link:before {
   background-color: #231961;
 }
@@ -646,31 +654,144 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.page.flag-nerd .flags-container {
+.page.flag-nerd h1 {
+  margin-bottom: 1rem;
+}
+.page.flag-nerd .flag-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.page.flag-nerd .flag-container .flag {
+  height: 10rem;
+  width: 15rem;
+}
+.page.flag-nerd .answer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.page.flag-nerd .answer-container .country {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: white;
+  color: #231961;
+  padding: 1rem 2rem;
+  border-radius: 1000px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
+          box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
+  -webkit-transition: background-color 0.2s ease, -webkit-transform 0.2s ease;
+  transition: background-color 0.2s ease, -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.page.flag-nerd .answer-container .country:hover {
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.page.flag-nerd .answer-container .valid {
+  background-color: #1dd710;
+  color: white;
+  font-weight: 700;
+}
+.page.flag-nerd .answer-container .invalid {
+  background-color: #F05050;
+  color: white;
+}
+.page.flag-nerd .progress-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: 1rem;
-  max-width: 90%;
 }
-@media (min-width: 768px) {
-  .page.flag-nerd .flags-container {
-    max-width: 45rem;
-  }
+.page.flag-nerd .progress,
+.page.flag-nerd .attempts {
+  background-color: #231961;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1000px;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.25rem;
 }
-.page.flag-nerd .flags-container .flag {
-  height: 3rem;
-  width: 5rem;
+.page.flag-nerd .win {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+.page.flag-nerd .win.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page.flag-nerd .win .btn {
+  margin-top: 1rem;
+}
+
+.page.settings {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.settings h1 {
+  margin-bottom: 1rem;
+}
+.page.settings .settings-inner {
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+.page.settings .btn.done::before, .page.settings .btn.done::after {
+  background-color: #1dd710;
 }
 
 .btn {
   position: relative;
-  padding: 1.5rem 3rem;
+  display: block;
+  padding: 1.2rem 3rem 1.5rem 3rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -680,8 +801,6 @@ h2 {
   font-family: Albula, sans-serif;
   text-align: center;
   text-decoration: none;
-  font-weight: 900;
-  text-transform: uppercase;
   -webkit-box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
           box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
   overflow: hidden;
@@ -691,6 +810,7 @@ h2 {
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
+  cursor: pointer;
 }
 .btn::before {
   content: "";
@@ -737,6 +857,10 @@ h2 {
   -webkit-transform: scale(0.95);
       -ms-transform: scale(0.95);
           transform: scale(0.95);
+}
+.btn.btn-big {
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .flag {
@@ -1532,24 +1656,31 @@ header .menu {
   cursor: pointer;
   -webkit-box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(0, 0, 0, 0.08);
           box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(0, 0, 0, 0.08);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
 }
 header .menu::before {
   content: "";
   position: absolute;
-  height: 2px;
-  width: 50%;
-  top: 38%;
-  right: 26%;
-  background-color: white;
-}
-header .menu::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 40%;
+  height: 70%;
+  width: 70%;
   top: 55%;
-  right: 26%;
-  background-color: white;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-image: url("/img/settings.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+header .menu:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .icon {

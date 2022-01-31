@@ -1,13 +1,15 @@
 class GeoNerdApp {
 	constructor(props) {
 		document.addEventListener("DOMContentLoaded", () => {
-			this.countries = {};
-			this.letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","y","z"];
+			this.countries = [];
+			this.countriesByLetter = {};
+			this.letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "z"];
 			this.loadCountries(() => {
 				new GeoNerdNavigation();
 				new CountryNerd();
 				new FlagNerd();
 			});
+			new Settings();
 		});
 	}
 
@@ -19,16 +21,20 @@ class GeoNerdApp {
 			if (request.readyState === 4 && request.status === 200) {
 				JSON.parse(request.responseText).forEach(country => {
 					const letter = GeoNerdApp.sanitize(country.name.substr(0, 1));
-					if (!this.countries[letter]) {
-						this.countries[letter] = [];
+					if (!this.countriesByLetter[letter]) {
+						this.countriesByLetter[letter] = [];
 					}
-					this.countries[letter].push({
+					this.countriesByLetter[letter].push({
+						sanitize: GeoNerdApp.sanitize(country.name),
+						name: country.name,
+						code: country.code
+					});
+					this.countries.push({
 						sanitize: GeoNerdApp.sanitize(country.name),
 						name: country.name,
 						code: country.code
 					});
 				});
-				console.log("countries loaded");
 				callback();
 			}
 		};
@@ -48,7 +54,6 @@ const geoNerdApp = new GeoNerdApp();
 
 class CountryNerd {
 	constructor() {
-		console.log("country nerd");
 		this.currentLetter = "a";
 		this.countriesFound = 0;
 		this.loadCountries();
@@ -92,7 +97,7 @@ class CountryNerd {
 					delay: 0.5
 				});
 				letterPlaceholder.innerHTML = letterText;
-				this.tipTotal.innerHTML = geoNerdApp.countries[this.currentLetter].length;
+				this.tipTotal.innerHTML = geoNerdApp.countriesByLetter[this.currentLetter].length;
 				this.firstAnswer.innerHTML = letterText;
 				setTimeout(() => {
 					lettersContainer.style.display = "none";
@@ -123,7 +128,7 @@ class CountryNerd {
 	validateAnswer(answer) {
 		answer = GeoNerdApp.sanitize(answer);
 		let win = false;
-		geoNerdApp.countries[this.currentLetter].forEach(country => {
+		geoNerdApp.countriesByLetter[this.currentLetter].forEach(country => {
 			if (answer === country.sanitize && !country.found) {
 				win = true;
 				this.answerInput.value = "";
@@ -133,7 +138,7 @@ class CountryNerd {
 				rightAnswer.classList.add("valid");
 				this.countriesFound++;
 				this.tipCurrent.innerHTML = this.countriesFound;
-				if (this.countriesFound === geoNerdApp.countries[this.currentLetter].length) {
+				if (this.countriesFound === geoNerdApp.countriesByLetter[this.currentLetter].length) {
 					this.finished = true;
 				}
 				gsap.to(this.answerInput,{
@@ -177,15 +182,129 @@ class CountryNerd {
 
 class FlagNerd {
 	constructor() {
-		const flagsContainer = document.querySelector(".flags-container");
-		geoNerdApp.letters.forEach(letter => {
-			geoNerdApp.countries[letter].forEach(country => {
-				flagsContainer.insertAdjacentHTML("afterbegin", `<span class="flag ${country.code}"></span>`);
+		this.flagContainer = document.querySelector(".flag-nerd .flag-container");
+		this.answerContainer = document.querySelector(".flag-nerd .answer-container");
+		this.attempts = parseInt(localStorage.getItem("flagnerd.attempts")) || 0;
+		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerd.countriesleft"));
+		if (this.countriesLeft) {
+
+			if (this.countriesLeft.length === 0 ){
+				document.querySelector(".flag-nerd .win").classList.add("show");
+				this.updateProgress();
+				this.updateAttempts();
+				return
+			}
+		} else {
+			this.countriesLeft = [];
+			geoNerdApp.countries.forEach(country => {
+				this.countriesLeft.push(country);
+			});
+		}
+		this.updateStorage();
+		this.updateAttempts();
+		this.guessFlag();
+	}
+
+	guessFlag() {
+		this.updateProgress();
+		this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
+		const proposals = [];
+		geoNerdApp.countries.forEach(country => {
+			if (country.code === this.rightAnswer.code) {
+				this.flagContainer.insertAdjacentHTML("afterbegin", `<span class="flag ${country.code}"></span>`);
+				proposals.push({"code": country.code, "name": country.name});
+			}
+		});
+		const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
+		while (proposals.length < maxLength) {
+			const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
+			if (proposal.code !== this.rightAnswer.code) {
+				let duplicate = false;
+				proposals.forEach(prop => {
+					if(prop.code === proposal.code){
+						duplicate = true;
+					}
+				});
+				if(!duplicate){
+					proposals.push({"code": proposal.code, "name": proposal.name});
+				}
+			}
+		}
+		this.shuffle(proposals);
+		proposals.forEach(proposal => {
+			this.answerContainer.insertAdjacentHTML("beforeend", `<div class="country" data-country-code="${proposal.code}">${proposal.name}</div>`);
+		});
+		this.guess();
+	}
+
+	shuffle(array) {
+		let currentIndex = array.length, randomIndex;
+		while (currentIndex !== 0) {
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex--;
+			[array[currentIndex], array[randomIndex]] = [
+				array[randomIndex], array[currentIndex]];
+		}
+		return array;
+	}
+
+	guess() {
+		this.answerContainer.style.pointerEvents = "initial";
+		document.querySelectorAll(".flag-nerd .country").forEach(guess => {
+			guess.addEventListener("click", () => {
+				this.updateAttempts(true);
+				if (guess.dataset.countryCode === this.rightAnswer.code) {
+					guess.classList.add("valid");
+					this.countriesLeft = this.countriesLeft.filter(elem => elem.code !== this.rightAnswer.code);
+					this.updateStorage();
+				} else {
+					document.querySelector(`[data-country-code="${this.rightAnswer.code}"]`).classList.add("valid");
+					guess.classList.add("invalid");
+				}
+				this.answerContainer.style.pointerEvents = "none";
+				setTimeout(() => {
+					gsap.to(this.flagContainer, {
+						opacity: 0,
+						onComplete: () => {
+							this.flagContainer.innerHTML = "";
+							this.flagContainer.style.opacity = "1";
+						}
+					});
+					gsap.to(this.answerContainer, {
+						opacity: 0,
+						onComplete: () => {
+							this.answerContainer.innerHTML = "";
+							this.answerContainer.style.opacity = "1";
+							this.guessFlag();
+						}
+					});
+				}, 700);
 			});
 		});
+	}
+
+	updateStorage() {
+		localStorage.setItem("flagnerd.countriesleft", JSON.stringify(this.countriesLeft));
+	}
+
+	updateProgress() {
+		document.querySelector(".flag-nerd .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
+		document.querySelector(".flag-nerd .progress .total").innerHTML = geoNerdApp.countries.length.toString();
+	}
+
+	updateAttempts(increase) {
+		if (increase) {
+			this.attempts++;
+		}
+		document.querySelector(".flag-nerd .attempts .number").innerHTML = this.attempts;
+		localStorage.setItem("flagnerd.attempts", this.attempts);
+	}
+
+	increaseAttempts() {
 
 	}
 }
+
 
 class GeoNerdNavigation {
 	constructor() {
@@ -201,7 +320,7 @@ class GeoNerdNavigation {
 	changePage() {
 		let navTo = location.hash;
 		if (!navTo){
-			navTo = "home";
+			navTo = "#home";
 		}
 		const nextPage = document.querySelector(navTo);
 		if (nextPage) {
@@ -210,6 +329,31 @@ class GeoNerdNavigation {
 			});
 			nextPage.classList.add("active");
 		}
+	}
+}
+
+class Settings {
+	constructor() {
+		this.settingPage = document.querySelector(".page.settings");
+		this.clearCountryNerd();
+		this.clearFlagNerd();
+	}
+
+	clearCountryNerd() {
+		this.settingPage.querySelector(".clear-country-nerd").addEventListener("click", e => {
+			geoNerdApp.letters.forEach(letter => {
+				localStorage.removeItem("countrynerd.letter." + letter);
+			});
+			e.target.classList.add("done");
+		});
+	}
+
+	clearFlagNerd() {
+		this.settingPage.querySelector(".clear-flag-nerd").addEventListener("click", e => {
+			localStorage.removeItem("flagnerd.countriesleft");
+			localStorage.removeItem("flagnerd.attempts");
+			e.target.classList.add("done");
+		});
 	}
 }
 //# sourceMappingURL=app.js.map

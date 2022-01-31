@@ -12,7 +12,7 @@
 	<meta property="og:description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
 	<!--	<meta property="og:image" content="img/og.jpg"/>-->
 
-	<link rel="stylesheet" href="dist/app.css?v=1.0.5">
+	<link rel="stylesheet" href="dist/app.css?v=1.0.7">
 </head>
 <body>
 <header>
@@ -20,10 +20,10 @@
 		<img src="img/logo.svg" alt="">
 		<span>Geo Nerd</span>
 	</a>
-	<!--	<div class="menu"></div>-->
+	<a href="#settings" class="menu"></a>
 </header>
 <div class="pages">
-	<div id="home" class="page home active">
+	<div id="home" class="page home">
 		<h1>Geo Nerd - Connais tu le monde ?</h1>
 		<div class="game-cards">
 			<div class="game-card">
@@ -33,7 +33,7 @@
 					<small><i>( pays membres de l'ONU, nom en version courte )</i></small>
 				</div>
 				<div class="card-bottom">
-					<div class="btn">GO</div>
+					<div class="btn btn-big">GO</div>
 				</div>
 			</div>
 			<div class="game-card">
@@ -42,7 +42,7 @@
 					<a href="#capital-nerd" class="subtitle card-link">Et les capitales ?</a>
 				</div>
 				<div class="card-bottom">
-					<div class="btn">GO</div>
+					<div class="btn btn-big">GO</div>
 				</div>
 			</div>
 			<div class="game-card">
@@ -51,7 +51,7 @@
 					<a href="#flag-nerd" class="subtitle card-link">Es-tu un pro des drapeaux ?</a>
 				</div>
 				<div class="card-bottom">
-					<div class="btn">GO</div>
+					<div class="btn btn-big">GO</div>
 				</div>
 			</div>
 		</div>
@@ -96,7 +96,7 @@
 				<button type="button" class="validate-input" id="country-answer-validate">OK</button>
 			</div>
 			<div class="tip">Pays trouvés : <span class="found">0</span> / <span class="total"></span></div>
-			<a href="/" class="btn won-link hidden">Bien joué, on essaie une autre lettre ?</a>
+			<p onclick="window.location.href='/#country-nerd';window.location.reload()" class="btn won-link hidden">Bien joué, on essaie une autre lettre ?</p>
 			<div class="answers">
 				<div class="answer"></div>
 			</div>
@@ -110,9 +110,36 @@
 	<div id="flag-nerd" class="page flag-nerd">
 		<div class="title-container">
 			<h1>Connais tu tous les<br>
-				drapeaux du monde ?</h1>
+				drapeaux du monde&nbsp;?</h1>
 		</div>
-		<div class="flags-container"></div>
+		<div class="progress-container">
+			<div class="progress">
+				<span>Pays trouvés :</span>
+				<span class="found"></span>
+				<span class="separator">/</span>
+				<div class="total"></div>
+			</div>
+			<div class="attempts">
+				<span>Nombre de tentatives :</span>
+				<span class="number"></span>
+			</div>
+		</div>
+		<div class="flag-container"></div>
+		<div class="answer-container"></div>
+		<div class="win">
+			<p>Bravo, tu connais tous les pays du monde</p>
+			Peux tu le faire avec moins d'erreurs ? <br>
+			<a class="btn" href="#settings">Recommencer</a>
+		</div>
+	</div>
+	<div id="settings" class="page settings">
+		<div class="title-container">
+			<h1>Paramétrage</h1>
+			<div class="settings-inner">
+				<div class="btn clear-country-nerd">Supprimer la sauvegarde Country Nerd</div>
+				<div class="btn clear-flag-nerd">Supprimer la sauvegarde Flag Nerd</div>
+			</div>
+		</div>
 	</div>
 	<!--	<div class="page page-3">-->
 	<!--		page 3-->
@@ -123,7 +150,7 @@
 		© Florian LUCAS - 2022
 	</div>
 </footer>
-<script src="dist/app.js?v=1.0.5"></script>
+<script src="dist/app.js?v=1.0.7"></script>
 <script src="dist/libs/gsap.min.js"></script>
 </body>
 </html>

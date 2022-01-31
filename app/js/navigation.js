@@ -12,7 +12,7 @@ class GeoNerdNavigation {
 	changePage() {
 		let navTo = location.hash;
 		if (!navTo){
-			navTo = "home";
+			navTo = "#home";
 		}
 		const nextPage = document.querySelector(navTo);
 		if (nextPage) {
