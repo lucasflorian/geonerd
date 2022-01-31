@@ -26,7 +26,10 @@ header {
 		img {
 			width: 1.7rem;
 			transition: transform 0.2s ease;
-			transform: translateY(0.15rem);
+
+			@media (min-width: 768px) {
+				transform: translateY(0.15rem);
+			}
 		}
 
 		span {
@@ -35,7 +38,11 @@ header {
 
 		&:hover {
 			img {
-				transform: translateY(0.15rem) scale(1.2);
+				transform: scale(1.2);
+
+				@media (min-width: 768px) {
+					transform: translateY(0.15rem) scale(1.2);
+				}
 			}
 		}
 	}
