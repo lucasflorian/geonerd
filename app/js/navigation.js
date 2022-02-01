@@ -10,6 +10,7 @@ class GeoNerdNavigation {
 
 		document.querySelectorAll(".reload").forEach(elem => {
 			elem.addEventListener("click", ()=>{
+				localStorage.removeItem("flagnerd.countriesleft");
 				window.location.reload();
 			});
 		});

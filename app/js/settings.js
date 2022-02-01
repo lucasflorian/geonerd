@@ -17,7 +17,8 @@ class Settings {
 	clearFlagNerd() {
 		this.settingPage.querySelector(".clear-flag-nerd").addEventListener("click", e => {
 			localStorage.removeItem("flagnerd.countriesleft");
-			localStorage.removeItem("flagnerd.attempts");
+			localStorage.removeItem("flagnerd.best");
+			localStorage.removeItem("flagnerd.lifes");
 			e.target.classList.add("done");
 		});
 	}
