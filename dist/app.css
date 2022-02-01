@@ -661,10 +661,12 @@ h2 {
 .page.flag-nerd .flag-container {
   margin-top: 1rem;
   margin-bottom: 2rem;
-}
-.page.flag-nerd .flag-container .flag {
   height: 10rem;
   width: 15rem;
+}
+.page.flag-nerd .flag-container img {
+  height: 100%;
+  width: 100%;
 }
 .page.flag-nerd .answer-container {
   display: grid;
@@ -806,15 +808,34 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.2rem;
-  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
 }
 .page.flag-nerd .win-message.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+.page.flag-nerd .win-message p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.flag-nerd .win-message .bigger {
+  font-size: 2em;
+  margin-right: 1rem;
+}
 .page.flag-nerd .win-message .btn {
   margin-top: 1rem;
+}
+@media (max-width: 767px) {
+  .page.flag-nerd .win-message br {
+    display: none;
+  }
 }
 .page.flag-nerd .loose-message {
   position: absolute;

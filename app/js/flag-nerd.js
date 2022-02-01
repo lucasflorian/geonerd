@@ -26,35 +26,43 @@ class FlagNerd {
 	}
 
 	guessFlag() {
+		this.updateStorage();
 		this.updateProgress();
-		this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
-		const proposals = [];
-		geoNerdApp.countries.forEach(country => {
-			if (country.code === this.rightAnswer.code) {
-				this.flagContainer.insertAdjacentHTML("afterbegin", `<span class="flag ${country.code}"></span>`);
-				proposals.push({"code": country.code, "name": country.name});
-			}
-		});
-		const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
-		while (proposals.length < maxLength) {
-			const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
-			if (proposal.code !== this.rightAnswer.code) {
-				let duplicate = false;
-				proposals.forEach(prop => {
-					if (prop.code === proposal.code) {
-						duplicate = true;
+		if (this.countriesLeft.length === 0) {
+			this.winMessage.classList.add("show");
+			localStorage.setItem("flagnerd.best", geoNerdApp.countries.length.toString());
+		} else {
+			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
+			const proposals = [];
+			geoNerdApp.countries.forEach(country => {
+				if (country.code === this.rightAnswer.code) {
+					proposals.push({"code": country.code, "name": country.name});
+					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
+						this.flagContainer.insertAdjacentHTML("afterbegin", `<img src="${dataUrl}"/>`);
+					})
+				}
+			});
+			const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
+			while (proposals.length < maxLength) {
+				const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
+				if (proposal.code !== this.rightAnswer.code) {
+					let duplicate = false;
+					proposals.forEach(prop => {
+						if (prop.code === proposal.code) {
+							duplicate = true;
+						}
+					});
+					if (!duplicate) {
+						proposals.push({"code": proposal.code, "name": proposal.name});
 					}
-				});
-				if (!duplicate) {
-					proposals.push({"code": proposal.code, "name": proposal.name});
 				}
 			}
+			this.shuffle(proposals);
+			proposals.forEach(proposal => {
+				this.answerContainer.insertAdjacentHTML("beforeend", `<div class="country" data-country-code="${proposal.code}">${proposal.name}</div>`);
+			});
+			this.guess();
 		}
-		this.shuffle(proposals);
-		proposals.forEach(proposal => {
-			this.answerContainer.insertAdjacentHTML("beforeend", `<div class="country" data-country-code="${proposal.code}">${proposal.name}</div>`);
-		});
-		this.guess();
 	}
 
 	shuffle(array) {
@@ -107,6 +115,7 @@ class FlagNerd {
 	}
 
 	updateLife(decrease) {
+		console.log(this.lifes);
 		if (decrease) {
 			this.lifes--;
 		}
@@ -120,7 +129,6 @@ class FlagNerd {
 			const currentScore = geoNerdApp.countries.length - this.countriesLeft.length;
 			if (currentScore > currentBest) {
 				localStorage.setItem("flagnerd.best", currentScore.toString());
-				this.updateProgress();
 			}
 			gsap.to(this.flagContainer, {
 				opacity: 0,
@@ -161,5 +169,20 @@ class FlagNerd {
 			this.guessFlag();
 			localStorage.setItem("flagnerd.lifes", this.lifes);
 		}
+		this.updateProgress();
+	}
+
+	toDataURL(url, callback) {
+		const xhr = new XMLHttpRequest();
+		xhr.onload = () => {
+			const reader = new FileReader();
+			reader.onloadend = () => {
+				callback(reader.result);
+			}
+			reader.readAsDataURL(xhr.response);
+		};
+		xhr.open("GET", url);
+		xhr.responseType = "blob";
+		xhr.send();
 	}
 }

@@ -6,8 +6,8 @@ class GeoNerdApp {
 			this.letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "z"];
 			this.loadCountries(() => {
 				new GeoNerdNavigation();
-				new CountryNerd();
-				new FlagNerd();
+				this.countryNerd = new CountryNerd();
+				this.flagNerd = new FlagNerd();
 			});
 			new Settings();
 		});
