@@ -7,7 +7,8 @@ class GeoNerdApp {
 			this.loadCountries(() => {
 				new GeoNerdNavigation();
 				this.countryNerd = new CountryNerd();
-				this.flagNerd = new FlagNerd();
+				this.flagNerd = new FlagNerdClassic();
+				this.flagNerdHard = new FlagNerdHard();
 			});
 			new Settings();
 		});

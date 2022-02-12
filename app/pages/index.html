@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<base href="./">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+	<meta name="author" content="Florian LUCAS">
+	<title>Geo Nerd - Connais tu TOUS les pays du monde 2 ?</title>
+	<meta name="description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
+
+	<meta property="og:title" content="Geo Nerd"/>
+	<meta property="og:description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
+	<!--	<meta property="og:image" content="img/og.jpg"/>-->
+
+	<link rel="stylesheet" href="./app.css?v=1.1.0">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TF373XWBVF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+
+		gtag('js', new Date());
+
+		gtag('config', 'G-TF373XWBVF');
+	</script>
+</head>
+<body>
+<header>
+	<a href="/" class="logo">
+		<img src="img/logo.svg" alt="">
+		<span>Geo Nerd</span>
+	</a>
+	<a href="#settings" class="menu"></a>
+</header>
+<div class="pages">
+	@@include("home.html")
+	@@include("country-nerd.html")
+	@@include("flag-nerd-classic.html")
+	@@include("flag-nerd-hard.html")
+	@@include("settings.html")
+</div>
+<footer>
+	<div class="copyrights">
+		© Florian LUCAS - 2022
+	</div>
+</footer>
+<script src="./app.js?v=1.1.0"></script>
+<script src="./libs/gsap.min.js"></script>
+</body>
+</html>

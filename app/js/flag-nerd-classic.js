@@ -1,13 +1,13 @@
-class FlagNerd {
+class FlagNerdClassic {
 	constructor() {
-		this.flagContainer = document.querySelector(".flag-nerd .flag-container");
-		this.answerContainer = document.querySelector(".flag-nerd .answer-container");
-		this.winMessage = document.querySelector(".flag-nerd .win-message");
-		this.looseMessage = document.querySelector(".flag-nerd .loose-message");
+		this.flagContainer = document.querySelector(".flag-nerd-classic .flag-container");
+		this.answerContainer = document.querySelector(".flag-nerd-classic .answer-container");
+		this.winMessage = document.querySelector(".flag-nerd-classic .win-message");
+		this.looseMessage = document.querySelector(".flag-nerd-classic .loose-message");
 		this.lifes = parseInt(localStorage.getItem("flagnerd.lifes")) || 3;
-		this.life3 = document.querySelector(".flag-nerd .heart-3");
-		this.life2 = document.querySelector(".flag-nerd .heart-2");
-		this.life1 = document.querySelector(".flag-nerd .heart-1");
+		this.life3 = document.querySelector(".flag-nerd-classic .heart-3");
+		this.life2 = document.querySelector(".flag-nerd-classic .heart-2");
+		this.life1 = document.querySelector(".flag-nerd-classic .heart-1");
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -77,7 +77,7 @@ class FlagNerd {
 
 	guess() {
 		this.answerContainer.style.pointerEvents = "initial";
-		document.querySelectorAll(".flag-nerd .country").forEach(guess => {
+		document.querySelectorAll(".flag-nerd-classic .country").forEach(guess => {
 			guess.addEventListener("click", () => {
 				let decreaseLife = false;
 				if (guess.dataset.countryCode === this.rightAnswer.code) {
@@ -110,12 +110,11 @@ class FlagNerd {
 	}
 
 	updateProgress() {
-		document.querySelector(".flag-nerd .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
-		document.querySelector(".flag-nerd .progress .best .value").innerHTML = localStorage.getItem("flagnerd.best") || 0;
+		document.querySelector(".flag-nerd-classic .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
+		document.querySelector(".flag-nerd-classic .progress .best .value").innerHTML = localStorage.getItem("flagnerd.best") || 0;
 	}
 
 	updateLife(decrease) {
-		console.log(this.lifes);
 		if (decrease) {
 			this.lifes--;
 		}

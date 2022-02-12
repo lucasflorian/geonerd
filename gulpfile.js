@@ -15,6 +15,7 @@ const jshint = require('gulp-jshint');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync');
 const del = require('del');
+const fileinclude = require('gulp-file-include');
 
 const appDir = 'app/';
 const distDir = 'dist/';
@@ -25,14 +26,17 @@ const paths = {
 	},
 	css: {
 		src: appDir + 'scss/**/*.scss',
-	}
+	},
+	html: {
+		src: appDir + 'pages/*.html',
+	},
 };
 
 function initBrowserSync(cb){
 	browserSync.init({
 		proxy: vhostName,
 		ghostMode: false,
-		open: false,
+		open: true,
 		logPrefix: vhostName,
 		snippetOptions: {
 			rule: {
@@ -59,6 +63,7 @@ function reset() {
 	return del([
 		distDir + "/app.js",
 		distDir + "/app.css",
+		distDir + "/indel.html",
 	]);
 }
 
@@ -76,6 +81,15 @@ function lint(cb) {
 		.pipe(jshint.reporter('default'));
 }
 
+function fileInclude() {
+	return src([appDir + 'pages/index.html'])
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: appDir + 'pages/'
+		}))
+		.pipe(dest(distDir))
+}
+
 function js() {
 	return src(paths.js.src, { sourcemaps: true })
 		.pipe(concat('app.js'))
@@ -85,6 +99,7 @@ function js() {
 function initWatch() {
 	watch("index.html", series(reload));
 	watch(paths.css.src, series(css));
+	watch(paths.html.src, series(fileInclude, reload));
 	watch(paths.js.src, series(lint, js, reload));
 }
 
@@ -97,6 +112,7 @@ module.build = task('build', series(
 	reset,
 	parallel(
 		css,
+		fileInclude,
 		buildScripts
 	)
 ));
@@ -106,6 +122,7 @@ module.default = task('default', series(
 	reset,
 	parallel(
 		css,
+		fileInclude,
 		buildScripts
 	),
 	parallel(

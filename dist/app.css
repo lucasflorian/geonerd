@@ -646,7 +646,7 @@ h2 {
   width: 60rem;
 }
 
-.page.flag-nerd {
+.page.flag-nerd-classic {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -655,31 +655,31 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.page.flag-nerd h1 {
+.page.flag-nerd-classic h1 {
   margin-bottom: 1rem;
 }
-.page.flag-nerd .flag-container {
+.page.flag-nerd-classic .flag-container {
   margin-top: 1rem;
   margin-bottom: 2rem;
   height: 10rem;
   width: 15rem;
 }
-.page.flag-nerd .flag-container img {
+.page.flag-nerd-classic .flag-container img {
   height: 100%;
   width: 100%;
 }
-.page.flag-nerd .answer-container {
+.page.flag-nerd-classic .answer-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
-  .page.flag-nerd .answer-container {
+  .page.flag-nerd-classic .answer-container {
     gap: 2rem;
   }
 }
-.page.flag-nerd .answer-container .country {
+.page.flag-nerd-classic .answer-container .country {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -706,25 +706,25 @@ h2 {
   will-change: transform;
 }
 @media (min-width: 768px) {
-  .page.flag-nerd .answer-container .country {
+  .page.flag-nerd-classic .answer-container .country {
     padding: 1rem 2rem;
   }
 }
-.page.flag-nerd .answer-container .country:hover {
+.page.flag-nerd-classic .answer-container .country:hover {
   -webkit-transform: scale(1.02);
       -ms-transform: scale(1.02);
           transform: scale(1.02);
 }
-.page.flag-nerd .answer-container .valid {
+.page.flag-nerd-classic .answer-container .valid {
   background-color: #1dd710;
   color: white;
   font-weight: 700;
 }
-.page.flag-nerd .answer-container .invalid {
+.page.flag-nerd-classic .answer-container .invalid {
   background-color: #F05050;
   color: white;
 }
-.page.flag-nerd .progress-container {
+.page.flag-nerd-classic .progress-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -739,14 +739,14 @@ h2 {
   margin: 1rem 0;
 }
 @media (min-width: 768px) {
-  .page.flag-nerd .progress-container {
+  .page.flag-nerd-classic .progress-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
 }
-.page.flag-nerd .progress {
+.page.flag-nerd-classic .progress {
   background-color: #231961;
   color: white;
   width: -webkit-fit-content;
@@ -765,27 +765,27 @@ h2 {
           align-items: center;
   gap: 1rem;
 }
-.page.flag-nerd .progress .best {
+.page.flag-nerd-classic .progress .best {
   font-size: 0.7rem;
 }
-.page.flag-nerd .life-remaining {
+.page.flag-nerd-classic .life-remaining {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 0.3rem;
 }
-.page.flag-nerd .life-remaining .heart {
+.page.flag-nerd-classic .life-remaining .heart {
   height: 2rem;
   width: 2rem;
 }
-.page.flag-nerd .life-remaining .heart svg {
+.page.flag-nerd-classic .life-remaining .heart svg {
   height: 100%;
   width: 100%;
 }
-.page.flag-nerd .life-remaining .heart.loose path {
+.page.flag-nerd-classic .life-remaining .heart.loose path {
   fill: none;
 }
-.page.flag-nerd .game-container {
+.page.flag-nerd-classic .game-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -798,7 +798,7 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.page.flag-nerd .win-message {
+.page.flag-nerd-classic .win-message {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -812,12 +812,12 @@ h2 {
   font-weight: 700;
   text-align: left;
 }
-.page.flag-nerd .win-message.show {
+.page.flag-nerd-classic .win-message.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.page.flag-nerd .win-message p {
+.page.flag-nerd-classic .win-message p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -825,19 +825,19 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.page.flag-nerd .win-message .bigger {
+.page.flag-nerd-classic .win-message .bigger {
   font-size: 2em;
   margin-right: 1rem;
 }
-.page.flag-nerd .win-message .btn {
+.page.flag-nerd-classic .win-message .btn {
   margin-top: 1rem;
 }
 @media (max-width: 767px) {
-  .page.flag-nerd .win-message br {
+  .page.flag-nerd-classic .win-message br {
     display: none;
   }
 }
-.page.flag-nerd .loose-message {
+.page.flag-nerd-classic .loose-message {
   position: absolute;
   top: 0;
   left: 50%;
@@ -861,12 +861,223 @@ h2 {
           align-items: center;
   font-size: 1.2rem;
 }
-.page.flag-nerd .loose-message.show {
+.page.flag-nerd-classic .loose-message.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.page.flag-nerd .loose-message .btn {
+.page.flag-nerd-classic .loose-message .btn {
+  margin-top: 1rem;
+}
+
+.page.flag-nerd-hard {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.flag-nerd-hard h1 {
+  margin-bottom: 1rem;
+}
+.page.flag-nerd-hard .flag-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  height: 10rem;
+  width: 15rem;
+}
+.page.flag-nerd-hard .flag-container img {
+  height: 100%;
+  width: 100%;
+}
+.page.flag-nerd-hard .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+.page.flag-nerd-hard .answer-input {
+  padding: 0 2rem;
+  border: none;
+  outline: none;
+  border-radius: 1000px;
+  font-size: 1.2rem;
+  height: 3rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .page.flag-nerd-hard .answer-input {
+    max-width: 30rem;
+    height: 4rem;
+    font-size: 2rem;
+  }
+}
+.page.flag-nerd-hard .validate-input {
+  height: 4rem;
+  width: 6rem;
+  border-radius: 1000px;
+  background-color: white;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .page.flag-nerd-hard .validate-input {
+    height: 3rem;
+    width: 6rem;
+    font-size: 1.4rem;
+  }
+}
+.page.flag-nerd-hard .progress-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .page.flag-nerd-hard .progress-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.page.flag-nerd-hard .progress {
+  background-color: #231961;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1000px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+.page.flag-nerd-hard .progress .best {
+  font-size: 0.7rem;
+}
+.page.flag-nerd-hard .life-remaining {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.3rem;
+}
+.page.flag-nerd-hard .life-remaining .heart {
+  height: 2rem;
+  width: 2rem;
+}
+.page.flag-nerd-hard .life-remaining .heart svg {
+  height: 100%;
+  width: 100%;
+}
+.page.flag-nerd-hard .life-remaining .heart.loose path {
+  fill: none;
+}
+.page.flag-nerd-hard .game-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.flag-nerd-hard .win-message {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+}
+.page.flag-nerd-hard .win-message.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page.flag-nerd-hard .win-message p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page.flag-nerd-hard .win-message .bigger {
+  font-size: 2em;
+  margin-right: 1rem;
+}
+.page.flag-nerd-hard .win-message .btn {
+  margin-top: 1rem;
+}
+@media (max-width: 767px) {
+  .page.flag-nerd-hard .win-message br {
+    display: none;
+  }
+}
+.page.flag-nerd-hard .loose-message {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 90%;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+.page.flag-nerd-hard .loose-message.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page.flag-nerd-hard .loose-message .btn {
   margin-top: 1rem;
 }
 
