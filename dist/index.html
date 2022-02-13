@@ -12,7 +12,7 @@
 	<meta property="og:description" content="Connais tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
 	<!--	<meta property="og:image" content="img/og.jpg"/>-->
 
-	<link rel="stylesheet" href="./app.css?v=1.1.0">
+	<link rel="stylesheet" href="./app.css?v=1.1.1">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TF373XWBVF"></script>
@@ -39,17 +39,8 @@
 <div class="pages">
 	<div id="home" class="page home">
 	<h1>Geo Nerd - Connais tu le monde&nbsp;?</h1>
+	<small class="h1-subtitle"><i>( pays membres de l'ONU, nom en version courte )</i></small>
 	<div class="game-cards">
-		<div class="game-card">
-			<div class="card-top">
-				<h2 class="card-title">Country Nerd<span class="icon icon-country"></span></h2>
-				<a href="#country-nerd" class="subtitle card-link">Connais tu tous les pays du monde&nbsp;?</a><br>
-				<small><i>( pays membres de l'ONU, nom en version courte )</i></small>
-			</div>
-			<div class="card-bottom">
-				<div class="btn btn-big">GO</div>
-			</div>
-		</div>
 		<div class="game-card">
 			<div class="card-top">
 				<h2 class="card-title">Flag Nerd<br>Classic<span class="icon icon-flag"></span></h2>
@@ -63,6 +54,15 @@
 			<div class="card-top">
 				<h2 class="card-title">Flag Nerd<br>Hard<span class="icon icon-flag"></span></h2>
 				<a href="#flag-nerd-hard" class="subtitle card-link">Es-tu un pro des drapeaux&nbsp;?</a>
+			</div>
+			<div class="card-bottom">
+				<div class="btn btn-big">GO</div>
+			</div>
+		</div>
+		<div class="game-card">
+			<div class="card-top">
+				<h2 class="card-title">Country Nerd<span class="icon icon-country"></span></h2>
+				<a href="#country-nerd" class="subtitle card-link">Connais tu tous les pays du monde&nbsp;?</a><br>
 			</div>
 			<div class="card-bottom">
 				<div class="btn btn-big">GO</div>
@@ -237,8 +237,9 @@
 	<div class="title-container">
 		<h1>Paramétrage</h1>
 		<div class="settings-inner">
+			<div class="btn clear-flag-nerd-classic">Supprimer la sauvegarde Flag Nerd Classic</div>
+			<div class="btn clear-flag-nerd-hard">Supprimer la sauvegarde Flag Nerd Hard</div>
 			<div class="btn clear-country-nerd">Supprimer la sauvegarde Country Nerd</div>
-			<div class="btn clear-flag-nerd">Supprimer la sauvegarde Flag Nerd</div>
 		</div>
 	</div>
 </div>
@@ -249,7 +250,7 @@
 		© Florian LUCAS - 2022
 	</div>
 </footer>
-<script src="./app.js?v=1.1.0"></script>
+<script src="./app.js?v=1.1.1"></script>
 <script src="./libs/gsap.min.js"></script>
 </body>
 </html>

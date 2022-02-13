@@ -213,7 +213,7 @@ class FlagNerdClassic {
 				if (country.code === this.rightAnswer.code) {
 					proposals.push({"code": country.code, "name": country.name});
 					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
-						this.flagContainer.insertAdjacentHTML("afterbegin", `<img src="${dataUrl}"/>`);
+						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 					})
 				}
 			});
@@ -400,7 +400,7 @@ class FlagNerdHard {
 		} else {
 			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 			this.toDataURL(`/img/flags/${this.rightAnswer.code}.svg`, (dataUrl) => {
-				this.flagContainer.insertAdjacentHTML("afterbegin", `<img src="${dataUrl}"/>`);
+				this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 			})
 		}
 	}
@@ -585,7 +585,8 @@ class Settings {
 	constructor() {
 		this.settingPage = document.querySelector(".page.settings");
 		this.clearCountryNerd();
-		this.clearFlagNerd();
+		this.clearFlagNerdClassic();
+		this.clearFlagNerdHard();
 	}
 
 	clearCountryNerd() {
@@ -597,11 +598,20 @@ class Settings {
 		});
 	}
 
-	clearFlagNerd() {
-		this.settingPage.querySelector(".clear-flag-nerd").addEventListener("click", e => {
+	clearFlagNerdClassic() {
+		this.settingPage.querySelector(".clear-flag-nerd-classic").addEventListener("click", e => {
 			localStorage.removeItem("flagnerd.countriesleft");
 			localStorage.removeItem("flagnerd.best");
 			localStorage.removeItem("flagnerd.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearFlagNerdHard() {
+		this.settingPage.querySelector(".clear-flag-nerd-hard").addEventListener("click", e => {
+			localStorage.removeItem("flagnerdhard.countriesleft");
+			localStorage.removeItem("flagnerdhard.best");
+			localStorage.removeItem("flagnerdhard.lifes");
 			e.target.classList.add("done");
 		});
 	}

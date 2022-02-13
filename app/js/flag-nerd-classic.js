@@ -38,7 +38,7 @@ class FlagNerdClassic {
 				if (country.code === this.rightAnswer.code) {
 					proposals.push({"code": country.code, "name": country.name});
 					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
-						this.flagContainer.insertAdjacentHTML("afterbegin", `<img src="${dataUrl}"/>`);
+						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 					})
 				}
 			});

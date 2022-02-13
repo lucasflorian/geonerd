@@ -37,7 +37,7 @@ class FlagNerdHard {
 		} else {
 			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 			this.toDataURL(`/img/flags/${this.rightAnswer.code}.svg`, (dataUrl) => {
-				this.flagContainer.insertAdjacentHTML("afterbegin", `<img src="${dataUrl}"/>`);
+				this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 			})
 		}
 	}

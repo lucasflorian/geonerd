@@ -145,6 +145,12 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
+.page.home h1 {
+  margin-bottom: 0;
+}
+.page.home .h1-subtitle {
+  margin-bottom: 3rem;
+}
 
 .game-cards {
   display: -webkit-box;
@@ -664,9 +670,13 @@ h2 {
   height: 10rem;
   width: 15rem;
 }
-.page.flag-nerd-classic .flag-container img {
+.page.flag-nerd-classic .flag-container .flag {
   height: 100%;
   width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
 }
 .page.flag-nerd-classic .answer-container {
   display: grid;
@@ -888,9 +898,13 @@ h2 {
   height: 10rem;
   width: 15rem;
 }
-.page.flag-nerd-hard .flag-container img {
+.page.flag-nerd-hard .flag-container .flag {
   height: 100%;
   width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
 }
 .page.flag-nerd-hard .input-container {
   display: -webkit-box;
