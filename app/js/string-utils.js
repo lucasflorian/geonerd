@@ -1,5 +1,6 @@
-class StringSimilarity {
-	static stringSimilarity = (a, b) => {
+class StringUtils {
+	static similarity = (a, b) => {
+		a = this.sanitize(a);
 		a = this.prep(a);
 		b = this.prep(b);
 		const bg1 = this.bigrams(a)
@@ -22,4 +23,13 @@ class StringSimilarity {
 
 	static uniq = (xs) =>
 		[...new Set(xs)]
+
+	static sanitize(value) {
+		return value.toLowerCase().normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.replace(/-/g, "")
+			.replace(/'/g, "")
+			.replace(/ /g, "")
+			.replace(/’/g, "");
+	}
 }

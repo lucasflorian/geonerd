@@ -72,10 +72,9 @@ class CountryNerd {
 	}
 
 	validateAnswer(answer) {
-		answer = GeoNerdApp.sanitize(answer);
 		let win = false;
 		geoNerdApp.countriesByLetter[this.currentLetter].forEach(country => {
-			const similarity = StringSimilarity.stringSimilarity(answer, country.sanitize);
+			const similarity = StringUtils.similarity(answer, country.sanitize);
 			if (similarity > 0.85) {
 				// if (answer === country.sanitize && !country.found) {
 				win = true;

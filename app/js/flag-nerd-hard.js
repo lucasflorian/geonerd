@@ -29,7 +29,6 @@ class FlagNerdHard {
 	}
 
 	guessFlag() {
-		console.log("guess flag")
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
@@ -45,7 +44,6 @@ class FlagNerdHard {
 
 
 	buildEvents() {
-		console.log("update storage");
 		this.answerInput.addEventListener("change", e => {
 			this.validateAnswer(e.target.value);
 		});
@@ -55,11 +53,10 @@ class FlagNerdHard {
 	}
 
 	validateAnswer(answer) {
-		console.log("validate answer");
 		let decreaseLife = false;
 		let found = false;
 		this.countriesLeft.forEach(country => {
-			const similarity = StringSimilarity.stringSimilarity(answer, country.sanitize);
+			const similarity = StringUtils.similarity(answer, country.sanitize);
 			if (similarity > 0.85) {
 				found = true;
 			}
@@ -109,18 +106,15 @@ class FlagNerdHard {
 	}
 
 	updateStorage() {
-		console.log("update storage");
 		localStorage.setItem("flagnerdhard.countriesleft", JSON.stringify(this.countriesLeft));
 	}
 
 	updateProgress() {
-		console.log("update progress");
 		document.querySelector(".flag-nerd-hard .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
 		document.querySelector(".flag-nerd-hard .progress .best .value").innerHTML = localStorage.getItem("flagnerdhard.best") || 0;
 	}
 
 	updateLife(decrease) {
-		console.log("update life");
 		if (decrease) {
 			this.lifes--;
 		}

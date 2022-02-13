@@ -21,17 +21,17 @@ class GeoNerdApp {
 		request.onreadystatechange = () => {
 			if (request.readyState === 4 && request.status === 200) {
 				JSON.parse(request.responseText).forEach(country => {
-					const letter = GeoNerdApp.sanitize(country.name.substr(0, 1));
+					const letter = StringUtils.sanitize(country.name.substr(0, 1));
 					if (!this.countriesByLetter[letter]) {
 						this.countriesByLetter[letter] = [];
 					}
 					this.countriesByLetter[letter].push({
-						sanitize: GeoNerdApp.sanitize(country.name),
+						sanitize: StringUtils.sanitize(country.name),
 						name: country.name,
 						code: country.code
 					});
 					this.countries.push({
-						sanitize: GeoNerdApp.sanitize(country.name),
+						sanitize: StringUtils.sanitize(country.name),
 						name: country.name,
 						code: country.code
 					});
@@ -42,14 +42,6 @@ class GeoNerdApp {
 		request.send(null);
 	}
 
-	static sanitize(value) {
-		return value.toLowerCase().normalize("NFD")
-			.replace(/[\u0300-\u036f]/g, "")
-			.replace(/-/g, "")
-			.replace(/'/g, "")
-			.replace(/ /g, "")
-			.replace(/’/g, "");
-	}
 }
 
 const geoNerdApp = new GeoNerdApp();
