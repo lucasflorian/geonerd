@@ -37,7 +37,9 @@ class FlagNerdHard {
 		} else {
 			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 			this.toDataURL(`/img/flags/${this.rightAnswer.code}.svg`, (dataUrl) => {
+				this.flagContainer.innerHTML = "";
 				this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
+				this.answerInput.focus();
 			})
 		}
 	}
@@ -47,9 +49,9 @@ class FlagNerdHard {
 		this.answerInput.addEventListener("change", e => {
 			this.validateAnswer(e.target.value);
 		});
-		this.answerButton.addEventListener("click", e => {
-			this.validateAnswer(this.answerInput.value);
-		});
+		// this.answerButton.addEventListener("click", e => {
+		// 	this.validateAnswer(this.answerInput.value);
+		// });
 	}
 
 	validateAnswer(answer) {
@@ -57,7 +59,7 @@ class FlagNerdHard {
 		let found = false;
 		this.countriesLeft.forEach(country => {
 			const similarity = StringUtils.similarity(answer, country.sanitize);
-			if (similarity > 0.85) {
+			if (similarity > 0.85 && country.code === this.rightAnswer.code) {
 				found = true;
 			}
 		});

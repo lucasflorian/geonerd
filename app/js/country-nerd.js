@@ -4,15 +4,15 @@ class CountryNerd {
 		this.countriesFound = 0;
 		this.loadCountries();
 
-		this.firstAnswer = document.querySelector(".answers .answer");
-		this.answers = document.querySelector(".answers");
-		this.answerContainer = document.querySelector(".answer-container");
+		this.firstAnswer = document.querySelector(".country-nerd .answers .answer");
+		this.answers = document.querySelector(".country-nerd .answers");
+		this.answerContainer = document.querySelector(".country-nerd .answer-container");
 		this.answerInput = document.querySelector("#country-answer-input");
 		this.answerButton = document.querySelector("#country-answer-validate");
-		this.letters = document.querySelectorAll(".letter");
-		this.wonLink = document.querySelector(".won-link");
-		this.tipCurrent = document.querySelector(".tip .found");
-		this.tipTotal = document.querySelector(".tip .total");
+		this.letters = document.querySelectorAll(".country-nerd .letter");
+		this.wonLink = document.querySelector(".country-nerd .won-link");
+		this.tipCurrent = document.querySelector(".country-nerd .tip .found");
+		this.tipTotal = document.querySelector(".country-nerd .tip .total");
 
 		this.buildLetters();
 		this.buildInputs();
