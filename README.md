@@ -1,6 +1,6 @@
 # Geo Nerd 
 
-Connais tu tous les pays du monde ? 
+Connais-tu tous les pays du monde ? 
 
 Et les capitales ?
 

@@ -309,7 +309,7 @@
 		"code": "ec",
 		"name": "Équateur",
 		"date": "Date d'admission : 21-12-1945",
-		"capital": ""
+		"capital": "Quito"
 	},
 	{
 		"code": "er",
@@ -357,804 +357,804 @@
 		"code": "fj",
 		"name": "Fidji",
 		"date": "Date d'admission : 13-10-1970",
-		"capital": ""
+		"capital": "Suva"
 	},
 	{
 		"code": "fi",
 		"name": "Finlande",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Helsinki"
 	},
 	{
 		"code": "fr",
 		"name": "France",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Paris"
 	},
 	{
 		"code": "ga",
 		"name": "Gabon",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Libreville"
 	},
 	{
 		"code": "gm",
 		"name": "Gambie",
 		"date": "Date d'admission : 21-09-1965",
-		"capital": ""
+		"capital": "Banjul"
 	},
 	{
 		"code": "ge",
 		"name": "Géorgie",
 		"date": "Date d'admission : 31-07-1992",
-		"capital": ""
+		"capital": "Tbilissi"
 	},
 	{
 		"code": "gh",
 		"name": "Ghana",
 		"date": "Date d'admission : 08-03-1957",
-		"capital": ""
+		"capital": "Accra"
 	},
 	{
 		"code": "gr",
 		"name": "Grèce",
 		"date": "Date d'admission : 25-10-1945",
-		"capital": ""
+		"capital": "Athènes"
 	},
 	{
 		"code": "gd",
 		"name": "Grenade",
 		"date": "Date d'admission : 17-09-1974",
-		"capital": ""
+		"capital": "Saint-Georges"
 	},
 	{
 		"code": "gt",
 		"name": "Guatemala",
 		"date": "Date d'admission : 21-11-1945",
-		"capital": ""
+		"capital": "Guatemala"
 	},
 	{
 		"code": "gn",
 		"name": "Guinée",
 		"date": "Date d'admission : 12-12-1958",
-		"capital": ""
+		"capital": "Conakry"
 	},
 	{
 		"code": "gw",
 		"name": "Guinée-Bissau",
 		"date": "Date d'admission : 17-09-1974",
-		"capital": ""
+		"capital": "Bissau"
 	},
 	{
 		"code": "gq",
 		"name": "Guinée équatoriale",
 		"date": "Date d'admission : 12-11-1968",
-		"capital": ""
+		"capital": "Malabo"
 	},
 	{
 		"code": "gy",
 		"name": "Guyana",
 		"date": "Date d'admission : 20-09-1966",
-		"capital": ""
+		"capital": "Georgetown"
 	},
 	{
 		"code": "ht",
 		"name": "Haïti",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Port-au-Prince"
 	},
 	{
 		"code": "hn",
 		"name": "Honduras",
 		"date": "Date d'admission : 17-12-1945",
-		"capital": ""
+		"capital": "Tegucigalpa"
 	},
 	{
 		"code": "hu",
 		"name": "Hongrie",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Budapest"
 	},
 	{
 		"code": "mh",
 		"name": "Îles Marshall",
 		"date": "Date d'admission : 17-09-1991",
-		"capital": ""
+		"capital": "Majuro"
 	},
 	{
 		"code": "sb",
 		"name": "Îles Salomon",
 		"date": "Date d'admission : 19-09-1978",
-		"capital": ""
+		"capital": "Honiara"
 	},
 	{
 		"code": "in",
 		"name": "Inde",
 		"date": "Date d'admission : 30-10-1945",
-		"capital": ""
+		"capital": "New Delhi"
 	},
 	{
 		"code": "id",
 		"name": "Indonésie",
 		"date": "Date d'admission : 28-09-1950",
-		"capital": ""
+		"capital": "Jakarta"
 	},
 	{
 		"code": "ir",
 		"name": "Iran",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Téhéran"
 	},
 	{
 		"code": "iq",
-		"name": "Iraq",
+		"name": "Irak",
 		"date": "Date d'admission : 21-12-1945",
-		"capital": ""
+		"capital": "Bagdad"
 	},
 	{
 		"code": "ie",
 		"name": "Irlande",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Dublin"
 	},
 	{
 		"code": "is",
 		"name": "Islande",
 		"date": "Date d'admission : 19-11-1946",
-		"capital": ""
+		"capital": "Reykjavik"
 	},
 	{
 		"code": "il",
 		"name": "Israël",
 		"date": "Date d'admission : 11-05-1949",
-		"capital": ""
+		"capital": "Jérusalem"
 	},
 	{
 		"code": "it",
 		"name": "Italie",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Rome"
 	},
 	{
 		"code": "jm",
 		"name": "Jamaïque",
 		"date": "Date d'admission : 18-09-1962",
-		"capital": ""
+		"capital": "Kingston"
 	},
 	{
 		"code": "jp",
 		"name": "Japon",
 		"date": "Date d'admission : 18-12-1956",
-		"capital": ""
+		"capital": "Tokyo"
 	},
 	{
 		"code": "jo",
 		"name": "Jordanie",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Amman"
 	},
 	{
 		"code": "kz",
 		"name": "Kazakhstan",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Noursoultan"
 	},
 	{
 		"code": "ke",
 		"name": "Kenya",
 		"date": "Date d'admission : 16-12-1963",
-		"capital": ""
+		"capital": "Nairobi"
 	},
 	{
 		"code": "kg",
 		"name": "Kirghizistan",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Bichkek"
 	},
 	{
 		"code": "ki",
 		"name": "Kiribati",
 		"date": "Date d'admission : 14-09-1999",
-		"capital": ""
+		"capital": "Tarawa-Sud"
 	},
 	{
 		"code": "kw",
 		"name": "Koweït",
 		"date": "Date d'admission : 14-05-1963",
-		"capital": ""
+		"capital": "Koweït"
 	},
 	{
 		"code": "ls",
 		"name": "Lesotho",
 		"date": "Date d'admission : 17-10-1966",
-		"capital": ""
+		"capital": "Maseru"
 	},
 	{
 		"code": "lv",
 		"name": "Lettonie",
 		"date": "Date d'admission : 17-09-1991",
-		"capital": ""
+		"capital": "Riga"
 	},
 	{
 		"code": "lb",
 		"name": "Liban",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Beyrouth"
 	},
 	{
 		"code": "lr",
 		"name": "Libéria",
 		"date": "Date d'admission : 02-11-1945",
-		"capital": ""
+		"capital": "Monrovia"
 	},
 	{
 		"code": "ly",
 		"name": "Libye",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Tripoli"
 	},
 	{
 		"code": "li",
 		"name": "Liechtenstein",
 		"date": "Date d'admission : 18-09-1990",
-		"capital": ""
+		"capital": "Vaduz"
 	},
 	{
 		"code": "lt",
 		"name": "Lituanie",
 		"date": "Date d'admission : 17-09-1991",
-		"capital": ""
+		"capital": "Vilnius"
 	},
 	{
 		"code": "lu",
 		"name": "Luxembourg",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Luxembourg"
 	},
 	{
 		"code": "mk",
 		"name": "Macédoine du Nord",
 		"date": "Date d'admission : 08-04-1993",
-		"capital": ""
+		"capital": "Skopje"
 	},
 	{
 		"code": "mg",
 		"name": "Madagascar",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Antananarivo"
 	},
 	{
 		"code": "my",
 		"name": "Malaisie",
 		"date": "Date d'admission : 17-09-1957",
-		"capital": ""
+		"capital": "Kuala Lumpur"
 	},
 	{
 		"code": "mw",
 		"name": "Malawi",
 		"date": "Date d'admission : 01-12-1964",
-		"capital": ""
+		"capital": "Lilongwe"
 	},
 	{
 		"code": "mv",
 		"name": "Maldives",
 		"date": "Date d'admission : 21-09-1965",
-		"capital": ""
+		"capital": "Malé"
 	},
 	{
 		"code": "ml",
 		"name": "Mali",
 		"date": "Date d'admission : 28-09-1960",
-		"capital": ""
+		"capital": "Bamako"
 	},
 	{
 		"code": "mt",
 		"name": "Malte",
 		"date": "Date d'admission : 01-12-1964",
-		"capital": ""
+		"capital": "La Valette"
 	},
 	{
 		"code": "ma",
 		"name": "Maroc",
 		"date": "Date d'admission : 12-11-1956",
-		"capital": ""
+		"capital": "Rabat"
 	},
 	{
 		"code": "mu",
 		"name": "Maurice",
 		"date": "Date d'admission : 24-04-1968",
-		"capital": ""
+		"capital": "Port-Louis"
 	},
 	{
 		"code": "mr",
 		"name": "Mauritanie",
 		"date": "Date d'admission : 27-10-1961",
-		"capital": ""
+		"capital": "Nouakchott"
 	},
 	{
 		"code": "mx",
 		"name": "Mexique",
 		"date": "Date d'admission : 07-11-1945",
-		"capital": ""
+		"capital": "Mexico"
 	},
 	{
 		"code": "fm",
 		"name": "Micronésie",
 		"date": "Date d'admission : 17-09-1991",
-		"capital": ""
+		"capital": "Palikir"
 	},
 	{
 		"code": "mc",
 		"name": "Monaco",
 		"date": "Date d'admission : 28-05-1993",
-		"capital": ""
+		"capital": "Monaco"
 	},
 	{
 		"code": "mn",
 		"name": "Mongolie",
 		"date": "Date d'admission : 27-10-1961",
-		"capital": ""
+		"capital": "Oulan-Bator"
 	},
 	{
 		"code": "me",
 		"name": "Monténégro",
 		"date": "Date d'admission : 28-06-2006",
-		"capital": ""
+		"capital": "Podgorica"
 	},
 	{
 		"code": "mz",
 		"name": "Mozambique",
 		"date": "Date d'admission : 16-09-1975",
-		"capital": ""
+		"capital": "Maputo"
 	},
 	{
 		"code": "mm",
 		"name": "Myanmar",
 		"date": "Date d'admission : 19-04-1948",
-		"capital": ""
+		"capital": "Naypyidaw"
 	},
 	{
 		"code": "na",
 		"name": "Namibie",
 		"date": "Date d'admission : 23-04-1990",
-		"capital": ""
+		"capital": "Windhoek"
 	},
 	{
 		"code": "nr",
 		"name": "Nauru",
 		"date": "Date d'admission : 14-09-1999",
-		"capital": ""
+		"capital": "Yaren"
 	},
 	{
 		"code": "np",
 		"name": "Népal",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Katmandou"
 	},
 	{
 		"code": "ni",
 		"name": "Nicaragua",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Managua"
 	},
 	{
 		"code": "ne",
 		"name": "Niger",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Niamey"
 	},
 	{
 		"code": "ng",
 		"name": "Nigéria",
 		"date": "Date d'admission : 07-10-1960",
-		"capital": ""
+		"capital": "Abuja"
 	},
 	{
 		"code": "no",
 		"name": "Norvège",
 		"date": "Date d'admission : 27-11-1945",
-		"capital": ""
+		"capital": "Oslo"
 	},
 	{
 		"code": "nz",
 		"name": "Nouvelle-Zélande",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Wellington"
 	},
 	{
 		"code": "om",
 		"name": "Oman",
 		"date": "Date d'admission : 07-10-1971",
-		"capital": ""
+		"capital": "Mascate"
 	},
 	{
 		"code": "ug",
 		"name": "Ouganda",
 		"date": "Date d'admission : 25-10-1962",
-		"capital": ""
+		"capital": "Kampala"
 	},
 	{
 		"code": "uz",
 		"name": "Ouzbékistan",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Tachkent"
 	},
 	{
 		"code": "pk",
 		"name": "Pakistan",
 		"date": "Date d'admission : 30-09-1947",
-		"capital": ""
+		"capital": "Islamabad"
 	},
 	{
 		"code": "pw",
 		"name": "Palaos",
 		"date": "Date d'admission : 15-12-1994",
-		"capital": ""
+		"capital": "Ngerulmud"
 	},
 	{
 		"code": "pa",
 		"name": "Panama",
 		"date": "Date d'admission : 13-11-1945",
-		"capital": ""
+		"capital": "Panama"
 	},
 	{
 		"code": "pg",
 		"name": "Papouasie-Nouvelle-Guinée",
 		"date": "Date d'admission : 10-10-1975",
-		"capital": ""
+		"capital": "Port Moresby"
 	},
 	{
 		"code": "py",
 		"name": "Paraguay",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Asuncion"
 	},
 	{
 		"code": "nl",
 		"name": "Pays-Bas",
 		"date": "Date d'admission : 10-12-1945",
-		"capital": ""
+		"capital": "Amsterdam"
 	},
 	{
 		"code": "pe",
 		"name": "Pérou",
 		"date": "Date d'admission : 31-10-1945",
-		"capital": ""
+		"capital": "Lima"
 	},
 	{
 		"code": "ph",
 		"name": "Philippines",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Manille"
 	},
 	{
 		"code": "pl",
 		"name": "Pologne",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Varsovie"
 	},
 	{
 		"code": "pt",
 		"name": "Portugal",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Lisbonne"
 	},
 	{
 		"code": "qa",
 		"name": "Qatar",
 		"date": "Date d'admission : 21-09-1971",
-		"capital": ""
+		"capital": "Doha"
 	},
 	{
 		"code": "sy",
 		"name": "Syrie",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Damas"
 	},
 	{
 		"code": "cf",
 		"name": "République centrafricaine",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Bangui"
 	},
 	{
 		"code": "kr",
 		"name": "Corée du Sud",
 		"date": "Date d'admission : 17-09-1991",
-		"capital": ""
+		"capital": "Séoul"
 	},
 	{
 		"code": "cd",
 		"name": "République démocratique du Congo",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Kinshasa"
 	},
 	{
 		"code": "la",
 		"name": "Laos",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Vientiane"
 	},
 	{
 		"code": "md",
 		"name": "Moldavie",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Chișinău"
 	},
 	{
 		"code": "do",
 		"name": "République dominicaine",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Saint-Domingue"
 	},
 	{
 		"code": "kp",
 		"name": "Corée du Nord",
 		"date": "Date d'admission : 17-09-1991",
-		"capital": ""
+		"capital": "Pyongyang"
 	},
 	{
 		"code": "cz",
 		"name": "Tchéquie",
 		"date": "Date d'admission : 19-01-1993",
-		"capital": ""
+		"capital": "Prague"
 	},
 	{
 		"code": "tz",
 		"name": "Tanzanie",
 		"date": "Date d'admission : 14-12-1961",
-		"capital": ""
+		"capital": "Dodoma"
 	},
 	{
 		"code": "ro",
 		"name": "Roumanie",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Bucarest"
 	},
 	{
 		"code": "gb",
 		"name": "Royaume-Uni",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Londres"
 	},
 	{
 		"code": "rw",
 		"name": "Rwanda",
 		"date": "Date d'admission : 18-09-1962",
-		"capital": ""
+		"capital": "Kigali"
 	},
 	{
 		"code": "lc",
 		"name": "Sainte-Lucie",
 		"date": "Date d'admission : 18-09-1979",
-		"capital": ""
+		"capital": "Castries"
 	},
 	{
 		"code": "kn",
 		"name": "Saint-Kitts-et-Nevis",
 		"date": "Date d'admission : 23-09-1983",
-		"capital": ""
+		"capital": "Basseterre"
 	},
 	{
 		"code": "sm",
 		"name": "Saint-Marin",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Saint-Marin"
 	},
 	{
 		"code": "vc",
 		"name": "Saint-Vincent-et-les Grenadines",
 		"date": "Date d'admission : 16-09-1980",
-		"capital": ""
+		"capital": "Kingstown"
 	},
 	{
 		"code": "ws",
 		"name": "Samoa",
 		"date": "Date d'admission : 15-12-1976",
-		"capital": ""
+		"capital": "Apia"
 	},
 	{
 		"code": "st",
 		"name": "Sao Tomé-et-Principe",
 		"date": "Date d'admission : 16-09-1975",
-		"capital": ""
+		"capital": "São Tomé"
 	},
 	{
 		"code": "sn",
 		"name": "Sénégal",
 		"date": "Date d'admission : 28-09-1960",
-		"capital": ""
+		"capital": "Dakar"
 	},
 	{
 		"code": "rs",
 		"name": "Serbie",
 		"date": "Date d'admission : 01-11-2000",
-		"capital": ""
+		"capital": "Belgrade"
 	},
 	{
 		"code": "sc",
 		"name": "Seychelles",
 		"date": "Date d'admission : 21-09-1976",
-		"capital": ""
+		"capital": "Victoria"
 	},
 	{
 		"code": "sl",
 		"name": "Sierra Leone",
 		"date": "Date d'admission : 27-09-1961",
-		"capital": ""
+		"capital": "Freetown"
 	},
 	{
 		"code": "sg",
 		"name": "Singapour",
 		"date": "Date d'admission : 21-09-1965",
-		"capital": ""
+		"capital": "Singapour"
 	},
 	{
 		"code": "sk",
 		"name": "Slovaquie",
 		"date": "Date d'admission : 19-01-1993",
-		"capital": ""
+		"capital": "Bratislava"
 	},
 	{
 		"code": "si",
 		"name": "Slovénie",
 		"date": "Date d'admission : 22-05-1992",
-		"capital": ""
+		"capital": "Ljubljana"
 	},
 	{
 		"code": "so",
 		"name": "Somalie",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Mogadiscio"
 	},
 	{
 		"code": "sd",
 		"name": "Soudan",
 		"date": "Date d'admission : 12-11-1956",
-		"capital": ""
+		"capital": "Khartoum"
 	},
 	{
 		"code": "ss",
 		"name": "Soudan du Sud",
 		"date": "Date d'admission : 14-07-2011",
-		"capital": ""
+		"capital": "Djouba"
 	},
 	{
 		"code": "lk",
 		"name": "Sri Lanka",
 		"date": "Date d'admission : 14-12-1955",
-		"capital": ""
+		"capital": "Sri Jayawardenapura"
 	},
 	{
 		"code": "se",
 		"name": "Suède",
 		"date": "Date d'admission : 19-11-1946",
-		"capital": ""
+		"capital": "Stockholm"
 	},
 	{
 		"code": "ch",
 		"name": "Suisse",
 		"date": "Date d'admission : 10-09-2002",
-		"capital": ""
+		"capital": "Berne"
 	},
 	{
 		"code": "sr",
 		"name": "Suriname",
 		"date": "Date d'admission : 04-12-1975",
-		"capital": ""
+		"capital": "Paramaribo"
 	},
 	{
 		"code": "tj",
 		"name": "Tadjikistan",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Douchanbé"
 	},
 	{
 		"code": "td",
 		"name": "Tchad",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "N’Djaména"
 	},
 	{
 		"code": "th",
 		"name": "Thaïlande",
 		"date": "Date d'admission : 15-12-1946",
-		"capital": ""
+		"capital": "Bangkok"
 	},
 	{
 		"code": "tl",
 		"name": "Timor oriental",
 		"date": "Date d'admission : 27-09-2002",
-		"capital": ""
+		"capital": "Dili"
 	},
 	{
 		"code": "tg",
 		"name": "Togo",
 		"date": "Date d'admission : 20-09-1960",
-		"capital": ""
+		"capital": "Lomé"
 	},
 	{
 		"code": "to",
 		"name": "Tonga",
 		"date": "Date d'admission : 14-09-1999",
-		"capital": ""
+		"capital": "Nukuʻalofa"
 	},
 	{
 		"code": "tt",
 		"name": "Trinité-et-Tobago",
 		"date": "Date d'admission : 18-09-1962",
-		"capital": ""
+		"capital": "Port-d’Espagne"
 	},
 	{
 		"code": "tn",
 		"name": "Tunisie",
 		"date": "Date d'admission : 12-11-1956",
-		"capital": ""
+		"capital": "Tunis"
 	},
 	{
 		"code": "tm",
 		"name": "Turkménistan",
 		"date": "Date d'admission : 02-03-1992",
-		"capital": ""
+		"capital": "Achgabat"
 	},
 	{
 		"code": "tr",
 		"name": "Turquie",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Ankara"
 	},
 	{
 		"code": "tv",
 		"name": "Tuvalu",
 		"date": "Date d'admission : 05-09-2000",
-		"capital": ""
+		"capital": "Funafuti"
 	},
 	{
 		"code": "ua",
 		"name": "Ukraine",
 		"date": "Date d'admission : 24-10-1945",
-		"capital": ""
+		"capital": "Kiev"
 	},
 	{
 		"code": "uy",
 		"name": "Uruguay",
 		"date": "Date d'admission : 18-12-1945",
-		"capital": ""
+		"capital": "Montevideo"
 	},
 	{
 		"code": "vu",
 		"name": "Vanuatu",
 		"date": "Date d'admission : 15-09-1981",
-		"capital": ""
+		"capital": "Port-Vila"
 	},
 	{
 		"code": "ve",
 		"name": "Venezuela",
 		"date": "Date d'admission : 15-11-1945",
-		"capital": ""
+		"capital": "Caracas"
 	},
 	{
 		"code": "vn",
 		"name": "Viet Nam",
 		"date": "Date d'admission : 20-09-1977",
-		"capital": ""
+		"capital": "Hanoï"
 	},
 	{
 		"code": "ye",
 		"name": "Yémen",
 		"date": "Date d'admission : 30-09-1947",
-		"capital": ""
+		"capital": "Sanaa"
 	},
 	{
 		"code": "zm",
 		"name": "Zambie",
 		"date": "Date d'admission : 01-12-1964",
-		"capital": ""
+		"capital": "Lusaka"
 	},
 	{
 		"code": "zw",
 		"name": "Zimbabwe",
 		"date": "Date d'admission : 25-08-1980",
-		"capital": ""
+		"capital": "Harare"
 	}
 ]
