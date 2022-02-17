@@ -40,7 +40,7 @@ class CapitalNerdClassic {
 					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
 						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="name" >${country.name}</div>`);
 						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
-					})
+					});
 				}
 			});
 			const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
@@ -48,11 +48,11 @@ class CapitalNerdClassic {
 				const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 				if (proposal.code !== this.rightAnswer.code) {
 					let duplicate = false;
-					proposals.forEach(prop => {
+					for (let prop of proposals) {
 						if (prop.code === proposal.code) {
 							duplicate = true;
 						}
-					});
+					}
 					if (!duplicate) {
 						proposals.push({"code": proposal.code, "name": proposal.name, "capital": proposal.capital});
 					}
@@ -178,7 +178,7 @@ class CapitalNerdClassic {
 			const reader = new FileReader();
 			reader.onloadend = () => {
 				callback(reader.result);
-			}
+			};
 			reader.readAsDataURL(xhr.response);
 		};
 		xhr.open("GET", url);

@@ -39,7 +39,7 @@ class FlagNerdClassic {
 					proposals.push({"code": country.code, "name": country.name});
 					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
 						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
-					})
+					});
 				}
 			});
 			const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
@@ -47,11 +47,11 @@ class FlagNerdClassic {
 				const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 				if (proposal.code !== this.rightAnswer.code) {
 					let duplicate = false;
-					proposals.forEach(prop => {
+					for (let prop of proposals) {
 						if (prop.code === proposal.code) {
 							duplicate = true;
 						}
-					});
+					}
 					if (!duplicate) {
 						proposals.push({"code": proposal.code, "name": proposal.name});
 					}
@@ -177,7 +177,7 @@ class FlagNerdClassic {
 			const reader = new FileReader();
 			reader.onloadend = () => {
 				callback(reader.result);
-			}
+			};
 			reader.readAsDataURL(xhr.response);
 		};
 		xhr.open("GET", url);
