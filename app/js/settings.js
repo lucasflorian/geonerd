@@ -4,6 +4,8 @@ class Settings {
 		this.clearCountryNerd();
 		this.clearFlagNerdClassic();
 		this.clearFlagNerdHard();
+		this.clearCapitalNerdClassic();
+		this.clearCapitalNerdHard();
 	}
 
 	clearCountryNerd() {
@@ -29,6 +31,24 @@ class Settings {
 			localStorage.removeItem("flagnerdhard.countriesleft");
 			localStorage.removeItem("flagnerdhard.best");
 			localStorage.removeItem("flagnerdhard.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearCapitalNerdClassic() {
+		this.settingPage.querySelector(".clear-capital-nerd-classic").addEventListener("click", e => {
+			localStorage.removeItem("capitalnerd.countriesleft");
+			localStorage.removeItem("capitalnerd.best");
+			localStorage.removeItem("capitalnerd.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearCapitalNerdHard() {
+		this.settingPage.querySelector(".clear-capital-nerd-hard").addEventListener("click", e => {
+			localStorage.removeItem("capitalnerdhard.countriesleft");
+			localStorage.removeItem("capitalnerdhard.best");
+			localStorage.removeItem("capitalnerdhard.lifes");
 			e.target.classList.add("done");
 		});
 	}

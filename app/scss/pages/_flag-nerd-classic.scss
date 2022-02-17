@@ -1,3 +1,5 @@
+.page.capital-nerd-classic,
+.page.capital-nerd-hard,
 .page.flag-nerd-classic {
 	flex-direction: column;
 	align-items: center;
@@ -8,7 +10,7 @@
 
 	.flag-container {
 		margin-top: 1rem;
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 		height: 10rem;
 		width: 15rem;
 
@@ -19,6 +21,14 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			border: none;
+		}
+		
+		.name{
+			font-size: 1.3rem;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 700;
+			margin-top: 0.5rem;
 		}
 	}
 

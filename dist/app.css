@@ -652,6 +652,8 @@ h2 {
   width: 60rem;
 }
 
+.page.capital-nerd-classic,
+.page.capital-nerd-hard,
 .page.flag-nerd-classic {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -661,15 +663,21 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
+.page.capital-nerd-classic h1,
+.page.capital-nerd-hard h1,
 .page.flag-nerd-classic h1 {
   margin-bottom: 1rem;
 }
+.page.capital-nerd-classic .flag-container,
+.page.capital-nerd-hard .flag-container,
 .page.flag-nerd-classic .flag-container {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   height: 10rem;
   width: 15rem;
 }
+.page.capital-nerd-classic .flag-container .flag,
+.page.capital-nerd-hard .flag-container .flag,
 .page.flag-nerd-classic .flag-container .flag {
   height: 100%;
   width: 100%;
@@ -678,6 +686,17 @@ h2 {
   background-position: center;
   border: none;
 }
+.page.capital-nerd-classic .flag-container .name,
+.page.capital-nerd-hard .flag-container .name,
+.page.flag-nerd-classic .flag-container .name {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+.page.capital-nerd-classic .answer-container,
+.page.capital-nerd-hard .answer-container,
 .page.flag-nerd-classic .answer-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -685,10 +704,14 @@ h2 {
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
-  .page.flag-nerd-classic .answer-container {
+  .page.capital-nerd-classic .answer-container,
+.page.capital-nerd-hard .answer-container,
+.page.flag-nerd-classic .answer-container {
     gap: 2rem;
   }
 }
+.page.capital-nerd-classic .answer-container .country,
+.page.capital-nerd-hard .answer-container .country,
 .page.flag-nerd-classic .answer-container .country {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -716,24 +739,34 @@ h2 {
   will-change: transform;
 }
 @media (min-width: 768px) {
-  .page.flag-nerd-classic .answer-container .country {
+  .page.capital-nerd-classic .answer-container .country,
+.page.capital-nerd-hard .answer-container .country,
+.page.flag-nerd-classic .answer-container .country {
     padding: 1rem 2rem;
   }
 }
+.page.capital-nerd-classic .answer-container .country:hover,
+.page.capital-nerd-hard .answer-container .country:hover,
 .page.flag-nerd-classic .answer-container .country:hover {
   -webkit-transform: scale(1.02);
       -ms-transform: scale(1.02);
           transform: scale(1.02);
 }
+.page.capital-nerd-classic .answer-container .valid,
+.page.capital-nerd-hard .answer-container .valid,
 .page.flag-nerd-classic .answer-container .valid {
   background-color: #1dd710;
   color: white;
   font-weight: 700;
 }
+.page.capital-nerd-classic .answer-container .invalid,
+.page.capital-nerd-hard .answer-container .invalid,
 .page.flag-nerd-classic .answer-container .invalid {
   background-color: #F05050;
   color: white;
 }
+.page.capital-nerd-classic .progress-container,
+.page.capital-nerd-hard .progress-container,
 .page.flag-nerd-classic .progress-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -749,13 +782,17 @@ h2 {
   margin: 1rem 0;
 }
 @media (min-width: 768px) {
-  .page.flag-nerd-classic .progress-container {
+  .page.capital-nerd-classic .progress-container,
+.page.capital-nerd-hard .progress-container,
+.page.flag-nerd-classic .progress-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
 }
+.page.capital-nerd-classic .progress,
+.page.capital-nerd-hard .progress,
 .page.flag-nerd-classic .progress {
   background-color: #231961;
   color: white;
@@ -775,26 +812,38 @@ h2 {
           align-items: center;
   gap: 1rem;
 }
+.page.capital-nerd-classic .progress .best,
+.page.capital-nerd-hard .progress .best,
 .page.flag-nerd-classic .progress .best {
   font-size: 0.7rem;
 }
+.page.capital-nerd-classic .life-remaining,
+.page.capital-nerd-hard .life-remaining,
 .page.flag-nerd-classic .life-remaining {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 0.3rem;
 }
+.page.capital-nerd-classic .life-remaining .heart,
+.page.capital-nerd-hard .life-remaining .heart,
 .page.flag-nerd-classic .life-remaining .heart {
   height: 2rem;
   width: 2rem;
 }
+.page.capital-nerd-classic .life-remaining .heart svg,
+.page.capital-nerd-hard .life-remaining .heart svg,
 .page.flag-nerd-classic .life-remaining .heart svg {
   height: 100%;
   width: 100%;
 }
+.page.capital-nerd-classic .life-remaining .heart.loose path,
+.page.capital-nerd-hard .life-remaining .heart.loose path,
 .page.flag-nerd-classic .life-remaining .heart.loose path {
   fill: none;
 }
+.page.capital-nerd-classic .game-container,
+.page.capital-nerd-hard .game-container,
 .page.flag-nerd-classic .game-container {
   position: relative;
   display: -webkit-box;
@@ -808,6 +857,8 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
+.page.capital-nerd-classic .win-message,
+.page.capital-nerd-hard .win-message,
 .page.flag-nerd-classic .win-message {
   display: none;
   -webkit-box-orient: vertical;
@@ -822,11 +873,15 @@ h2 {
   font-weight: 700;
   text-align: left;
 }
+.page.capital-nerd-classic .win-message.show,
+.page.capital-nerd-hard .win-message.show,
 .page.flag-nerd-classic .win-message.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+.page.capital-nerd-classic .win-message p,
+.page.capital-nerd-hard .win-message p,
 .page.flag-nerd-classic .win-message p {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -835,18 +890,26 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
+.page.capital-nerd-classic .win-message .bigger,
+.page.capital-nerd-hard .win-message .bigger,
 .page.flag-nerd-classic .win-message .bigger {
   font-size: 2em;
   margin-right: 1rem;
 }
+.page.capital-nerd-classic .win-message .btn,
+.page.capital-nerd-hard .win-message .btn,
 .page.flag-nerd-classic .win-message .btn {
   margin-top: 1rem;
 }
 @media (max-width: 767px) {
-  .page.flag-nerd-classic .win-message br {
+  .page.capital-nerd-classic .win-message br,
+.page.capital-nerd-hard .win-message br,
+.page.flag-nerd-classic .win-message br {
     display: none;
   }
 }
+.page.capital-nerd-classic .loose-message,
+.page.capital-nerd-hard .loose-message,
 .page.flag-nerd-classic .loose-message {
   position: absolute;
   top: 0;
@@ -871,11 +934,15 @@ h2 {
           align-items: center;
   font-size: 1.2rem;
 }
+.page.capital-nerd-classic .loose-message.show,
+.page.capital-nerd-hard .loose-message.show,
 .page.flag-nerd-classic .loose-message.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+.page.capital-nerd-classic .loose-message .btn,
+.page.capital-nerd-hard .loose-message .btn,
 .page.flag-nerd-classic .loose-message .btn {
   margin-top: 1rem;
 }
