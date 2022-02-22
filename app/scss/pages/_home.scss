@@ -4,12 +4,22 @@
 	align-items: center;
 
 	h1 {
-		margin-bottom: 0;
-	}
+		text-align: center;
 
-	.h1-subtitle {
+		small {
+			display: block;
+			font-size: 0.6em;
+			opacity: 0.6;
+			line-height: 100%;
+		}
+
 		margin-bottom: 3rem;
 	}
+
+	//
+	//.h1-subtitle {
+	//	margin-bottom: 3rem;
+	//}
 }
 
 .game-cards {
