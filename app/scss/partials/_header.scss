@@ -24,9 +24,8 @@ header {
 		will-change: transform;
 
 		img {
-			width: 1.7rem;
-			transition: transform 0.2s ease;
-			transform: translateY(0.15rem);
+			width: 11rem;
+			transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 		}
 
 		span {
@@ -35,7 +34,13 @@ header {
 
 		&:hover {
 			img {
-				transform: translateY(0.15rem) scale(1.2);
+				opacity: 0.9;
+			}
+		}
+
+		&:active{
+			img{
+				transform: scale(0.96);
 			}
 		}
 	}
