@@ -10,6 +10,9 @@ class FlagNerdHard {
 		this.life3 = this.page.querySelector(".heart-3");
 		this.life2 = this.page.querySelector(".heart-2");
 		this.life1 = this.page.querySelector(".heart-1");
+
+		this.reloadButton();
+
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -26,7 +29,6 @@ class FlagNerdHard {
 		this.updateStorage();
 		this.updateLife();
 		this.buildEvents();
-		this.reloadButton();
 	}
 
 	guessFlag() {

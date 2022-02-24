@@ -124,32 +124,6 @@ class Settings {
 	}
 }
 
-class GeoNerdNavigation {
-	constructor() {
-		this.pages = document.querySelectorAll(".pages .page");
-
-		this.changePage();
-
-		window.addEventListener("hashchange", e => {
-			this.changePage();
-		});
-	}
-
-	changePage() {
-		let navTo = location.hash;
-		if (!navTo){
-			navTo = "#home";
-		}
-		const nextPage = document.querySelector(navTo);
-		if (nextPage) {
-			this.pages.forEach(page => {
-				page.classList.remove("active");
-			});
-			nextPage.classList.add("active");
-		}
-	}
-}
-
 class CapitalNerdClassic {
 	constructor() {
 		this.page = document.querySelector(".capital-nerd-classic");
@@ -161,6 +135,9 @@ class CapitalNerdClassic {
 		this.life3 = this.page.querySelector(".heart-3");
 		this.life2 = this.page.querySelector(".heart-2");
 		this.life1 = this.page.querySelector(".heart-1");
+
+		this.reloadButton();
+
 		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -176,7 +153,6 @@ class CapitalNerdClassic {
 		}
 		this.updateStorage();
 		this.updateLife();
-		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -337,6 +313,9 @@ class CapitalNerdHard {
 		this.life3 = this.page.querySelector(".heart-3");
 		this.life2 = this.page.querySelector(".heart-2");
 		this.life1 = this.page.querySelector(".heart-1");
+
+		this.reloadButton();
+
 		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -352,7 +331,6 @@ class CapitalNerdHard {
 		}
 		this.updateStorage();
 		this.updateLife();
-		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -640,6 +618,9 @@ class FlagNerdClassic {
 		this.life3 = this.page.querySelector(".heart-3");
 		this.life2 = this.page.querySelector(".heart-2");
 		this.life1 = this.page.querySelector(".heart-1");
+
+		this.reloadButton();
+
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -655,7 +636,6 @@ class FlagNerdClassic {
 		}
 		this.updateStorage();
 		this.updateLife();
-		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -816,6 +796,9 @@ class FlagNerdHard {
 		this.life3 = this.page.querySelector(".heart-3");
 		this.life2 = this.page.querySelector(".heart-2");
 		this.life1 = this.page.querySelector(".heart-1");
+
+		this.reloadButton();
+
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -832,7 +815,6 @@ class FlagNerdHard {
 		this.updateStorage();
 		this.updateLife();
 		this.buildEvents();
-		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -983,6 +965,32 @@ class FlagNerdHard {
 				window.location.reload();
 			});
 		});
+	}
+}
+
+class GeoNerdNavigation {
+	constructor() {
+		this.pages = document.querySelectorAll(".pages .page");
+
+		this.changePage();
+
+		window.addEventListener("hashchange", e => {
+			this.changePage();
+		});
+	}
+
+	changePage() {
+		let navTo = location.hash;
+		if (!navTo){
+			navTo = "#home";
+		}
+		const nextPage = document.querySelector(navTo);
+		if (nextPage) {
+			this.pages.forEach(page => {
+				page.classList.remove("active");
+			});
+			nextPage.classList.add("active");
+		}
 	}
 }
 
