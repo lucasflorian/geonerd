@@ -1,13 +1,14 @@
 class FlagNerdClassic {
 	constructor() {
-		this.flagContainer = document.querySelector(".flag-nerd-classic .flag-container");
-		this.answerContainer = document.querySelector(".flag-nerd-classic .answer-container");
-		this.winMessage = document.querySelector(".flag-nerd-classic .win-message");
-		this.looseMessage = document.querySelector(".flag-nerd-classic .loose-message");
+		this.page = document.querySelector(".flag-nerd-classic");
+		this.flagContainer = this.page.querySelector(".flag-container");
+		this.answerContainer = this.page.querySelector(".answer-container");
+		this.winMessage = this.page.querySelector(".win-message");
+		this.looseMessage = this.page.querySelector(".loose-message");
 		this.lifes = parseInt(localStorage.getItem("flagnerd.lifes")) || 3;
-		this.life3 = document.querySelector(".flag-nerd-classic .heart-3");
-		this.life2 = document.querySelector(".flag-nerd-classic .heart-2");
-		this.life1 = document.querySelector(".flag-nerd-classic .heart-1");
+		this.life3 = this.page.querySelector(".heart-3");
+		this.life2 = this.page.querySelector(".heart-2");
+		this.life1 = this.page.querySelector(".heart-1");
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -23,6 +24,7 @@ class FlagNerdClassic {
 		}
 		this.updateStorage();
 		this.updateLife();
+		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -37,7 +39,7 @@ class FlagNerdClassic {
 			geoNerdApp.countries.forEach(country => {
 				if (country.code === this.rightAnswer.code) {
 					proposals.push({"code": country.code, "name": country.name});
-					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
+					FileUtils.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
 						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 					});
 				}
@@ -57,7 +59,7 @@ class FlagNerdClassic {
 					}
 				}
 			}
-			this.shuffle(proposals);
+			ArrayUtils.shuffle(proposals);
 			proposals.forEach(proposal => {
 				this.answerContainer.insertAdjacentHTML("beforeend", `<div class="country" data-country-code="${proposal.code}">${proposal.name}</div>`);
 			});
@@ -65,19 +67,9 @@ class FlagNerdClassic {
 		}
 	}
 
-	shuffle(array) {
-		let currentIndex = array.length, randomIndex;
-		while (currentIndex !== 0) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex--;
-			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-		}
-		return array;
-	}
-
 	guess() {
 		this.answerContainer.style.pointerEvents = "initial";
-		document.querySelectorAll(".flag-nerd-classic .country").forEach(guess => {
+		this.page.querySelectorAll(".country").forEach(guess => {
 			guess.addEventListener("click", () => {
 				let decreaseLife = false;
 				if (guess.dataset.countryCode === this.rightAnswer.code) {
@@ -85,7 +77,7 @@ class FlagNerdClassic {
 					this.countriesLeft = this.countriesLeft.filter(elem => elem.code !== this.rightAnswer.code);
 					this.updateStorage();
 				} else {
-					document.querySelector(`[data-country-code="${this.rightAnswer.code}"]`).classList.add("valid");
+					this.page.querySelector(`[data-country-code="${this.rightAnswer.code}"]`).classList.add("valid");
 					guess.classList.add("invalid");
 					decreaseLife = true;
 				}
@@ -110,8 +102,8 @@ class FlagNerdClassic {
 	}
 
 	updateProgress() {
-		document.querySelector(".flag-nerd-classic .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
-		document.querySelector(".flag-nerd-classic .progress .best .value").innerHTML = localStorage.getItem("flagnerd.best") || 0;
+		this.page.querySelector(".progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
+		this.page.querySelector(".progress .best .value").innerHTML = localStorage.getItem("flagnerd.best") || 0;
 	}
 
 	updateLife(decrease) {
@@ -171,17 +163,12 @@ class FlagNerdClassic {
 		this.updateProgress();
 	}
 
-	toDataURL(url, callback) {
-		const xhr = new XMLHttpRequest();
-		xhr.onload = () => {
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				callback(reader.result);
-			};
-			reader.readAsDataURL(xhr.response);
-		};
-		xhr.open("GET", url);
-		xhr.responseType = "blob";
-		xhr.send();
+	reloadButton() {
+		this.page.querySelectorAll(".reload").forEach(button => {
+			button.addEventListener("click", () => {
+				localStorage.removeItem("flagnerd.countriesleft");
+				window.location.reload();
+			});
+		});
 	}
 }

@@ -7,13 +7,6 @@ class GeoNerdNavigation {
 		window.addEventListener("hashchange", e => {
 			this.changePage();
 		});
-
-		document.querySelectorAll(".reload").forEach(elem => {
-			elem.addEventListener("click", ()=>{
-				localStorage.removeItem("flagnerd.countriesleft");
-				window.location.reload();
-			});
-		});
 	}
 
 	changePage() {

@@ -12,6 +12,6 @@ class HomeCards {
 	closeCards() {
 		this.cards.forEach(card => {
 			card.classList.remove("show-second-step");
-		})
+		});
 	}
 }

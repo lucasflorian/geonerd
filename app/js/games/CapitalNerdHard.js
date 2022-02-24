@@ -1,14 +1,15 @@
-class CapitalNerdClassic {
+class CapitalNerdHard {
 	constructor() {
-		this.flagContainer = document.querySelector(".capital-nerd-classic .flag-container");
-		this.answerContainer = document.querySelector(".capital-nerd-classic .answer-container");
-		this.winMessage = document.querySelector(".capital-nerd-classic .win-message");
-		this.looseMessage = document.querySelector(".capital-nerd-classic .loose-message");
-		this.lifes = parseInt(localStorage.getItem("capitalnerd.lifes")) || 3;
-		this.life3 = document.querySelector(".capital-nerd-classic .heart-3");
-		this.life2 = document.querySelector(".capital-nerd-classic .heart-2");
-		this.life1 = document.querySelector(".capital-nerd-classic .heart-1");
-		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerd.countriesleft"));
+		this.page = document.querySelector(".capital-nerd-hard");
+		this.flagContainer = this.page.querySelector(".flag-container");
+		this.answerContainer = this.page.querySelector(".answer-container");
+		this.winMessage = this.page.querySelector(".win-message");
+		this.looseMessage = this.page.querySelector(".loose-message");
+		this.lifes = parseInt(localStorage.getItem("capitalnerdhard.lifes")) || 3;
+		this.life3 = this.page.querySelector(".heart-3");
+		this.life2 = this.page.querySelector(".heart-2");
+		this.life1 = this.page.querySelector(".heart-1");
+		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
 				this.winMessage.classList.add("show");
@@ -23,6 +24,7 @@ class CapitalNerdClassic {
 		}
 		this.updateStorage();
 		this.updateLife();
+		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -30,15 +32,14 @@ class CapitalNerdClassic {
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
 			this.winMessage.classList.add("show");
-			localStorage.setItem("capitalnerd.best", geoNerdApp.countries.length.toString());
+			localStorage.setItem("capitalnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {
 			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 			const proposals = [];
 			geoNerdApp.countries.forEach(country => {
 				if (country.code === this.rightAnswer.code) {
 					proposals.push({"code": country.code, "name": country.name, "capital": country.capital});
-					this.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
-						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="name" >${country.name}</div>`);
+					FileUtils.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
 						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 					});
 				}
@@ -58,7 +59,7 @@ class CapitalNerdClassic {
 					}
 				}
 			}
-			this.shuffle(proposals);
+			ArrayUtils.shuffle(proposals);
 			proposals.forEach(proposal => {
 				this.answerContainer.insertAdjacentHTML("beforeend", `<div class="country" data-country-code="${proposal.code}">${proposal.capital}</div>`);
 			});
@@ -66,19 +67,9 @@ class CapitalNerdClassic {
 		}
 	}
 
-	shuffle(array) {
-		let currentIndex = array.length, randomIndex;
-		while (currentIndex !== 0) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex--;
-			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-		}
-		return array;
-	}
-
 	guess() {
 		this.answerContainer.style.pointerEvents = "initial";
-		document.querySelectorAll(".capital-nerd-classic .country").forEach(guess => {
+		this.page.querySelectorAll(".country").forEach(guess => {
 			guess.addEventListener("click", () => {
 				let decreaseLife = false;
 				if (guess.dataset.countryCode === this.rightAnswer.code) {
@@ -86,7 +77,7 @@ class CapitalNerdClassic {
 					this.countriesLeft = this.countriesLeft.filter(elem => elem.code !== this.rightAnswer.code);
 					this.updateStorage();
 				} else {
-					document.querySelector(`[data-country-code="${this.rightAnswer.code}"]`).classList.add("valid");
+					this.page.querySelector(`[data-country-code="${this.rightAnswer.code}"]`).classList.add("valid");
 					guess.classList.add("invalid");
 					decreaseLife = true;
 				}
@@ -107,12 +98,12 @@ class CapitalNerdClassic {
 	}
 
 	updateStorage() {
-		localStorage.setItem("capitalnerd.countriesleft", JSON.stringify(this.countriesLeft));
+		localStorage.setItem("capitalnerdhard.countriesleft", JSON.stringify(this.countriesLeft));
 	}
 
 	updateProgress() {
-		document.querySelector(".capital-nerd-classic .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
-		document.querySelector(".capital-nerd-classic .progress .best .value").innerHTML = localStorage.getItem("capitalnerd.best") || 0;
+		this.page.querySelector(".progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
+		this.page.querySelector(".progress .best .value").innerHTML = localStorage.getItem("capitalnerdhard.best") || 0;
 	}
 
 	updateLife(decrease) {
@@ -123,12 +114,12 @@ class CapitalNerdClassic {
 			this.life1.classList.add("loose");
 			this.life2.classList.add("loose");
 			this.life3.classList.add("loose");
-			localStorage.removeItem("capitalnerd.countriesleft");
-			localStorage.removeItem("capitalnerd.lifes");
-			const currentBest = localStorage.getItem("capitalnerd.best") || 0;
+			localStorage.removeItem("capitalnerdhard.countriesleft");
+			localStorage.removeItem("capitalnerdhard.lifes");
+			const currentBest = localStorage.getItem("capitalnerdhard.best") || 0;
 			const currentScore = geoNerdApp.countries.length - this.countriesLeft.length;
 			if (currentScore > currentBest) {
-				localStorage.setItem("capitalnerd.best", currentScore.toString());
+				localStorage.setItem("capitalnerdhard.best", currentScore.toString());
 			}
 			gsap.to(this.flagContainer, {
 				opacity: 0,
@@ -167,22 +158,17 @@ class CapitalNerdClassic {
 					break;
 			}
 			this.guessFlag();
-			localStorage.setItem("capitalnerd.lifes", this.lifes);
+			localStorage.setItem("capitalnerdhard.lifes", this.lifes);
 		}
 		this.updateProgress();
 	}
 
-	toDataURL(url, callback) {
-		const xhr = new XMLHttpRequest();
-		xhr.onload = () => {
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				callback(reader.result);
-			};
-			reader.readAsDataURL(xhr.response);
-		};
-		xhr.open("GET", url);
-		xhr.responseType = "blob";
-		xhr.send();
+	reloadButton() {
+		this.page.querySelectorAll(".reload").forEach(button => {
+			button.addEventListener("click", () => {
+				localStorage.removeItem("capitalnerdhard.countriesleft");
+				window.location.reload();
+			});
+		});
 	}
 }

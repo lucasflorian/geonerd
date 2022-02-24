@@ -1,15 +1,15 @@
 class FlagNerdHard {
 	constructor() {
-		this.flagContainer = document.querySelector(".flag-nerd-hard .flag-container");
-		this.answerContainer = document.querySelector(".flag-nerd-hard .answer-container");
+		this.page = document.querySelector(".flag-nerd-hard");
+		this.flagContainer = this.page.querySelector(".flag-container");
+		this.answerContainer = this.page.querySelector(".answer-container");
 		this.answerInput = this.answerContainer.querySelector(".answer-input");
-		this.answerButton = this.answerContainer.querySelector(".validate-input");
-		this.winMessage = document.querySelector(".flag-nerd-hard .win-message");
-		this.looseMessage = document.querySelector(".flag-nerd-hard .loose-message");
+		this.winMessage = this.page.querySelector(".win-message");
+		this.looseMessage = this.page.querySelector(".loose-message");
 		this.lifes = parseInt(localStorage.getItem("flagnerdhard.lifes")) || 3;
-		this.life3 = document.querySelector(".flag-nerd-hard .heart-3");
-		this.life2 = document.querySelector(".flag-nerd-hard .heart-2");
-		this.life1 = document.querySelector(".flag-nerd-hard .heart-1");
+		this.life3 = this.page.querySelector(".heart-3");
+		this.life2 = this.page.querySelector(".heart-2");
+		this.life1 = this.page.querySelector(".heart-1");
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
@@ -26,6 +26,7 @@ class FlagNerdHard {
 		this.updateStorage();
 		this.updateLife();
 		this.buildEvents();
+		this.reloadButton();
 	}
 
 	guessFlag() {
@@ -36,7 +37,7 @@ class FlagNerdHard {
 			localStorage.setItem("flagnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {
 			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
-			this.toDataURL(`/img/flags/${this.rightAnswer.code}.svg`, (dataUrl) => {
+			FileUtils.toDataURL(`/img/flags/${this.rightAnswer.code}.svg`, (dataUrl) => {
 				this.flagContainer.innerHTML = "";
 				this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 				this.answerInput.focus();
@@ -49,9 +50,6 @@ class FlagNerdHard {
 		this.answerInput.addEventListener("change", e => {
 			this.validateAnswer(e.target.value);
 		});
-		// this.answerButton.addEventListener("click", e => {
-		// 	this.validateAnswer(this.answerInput.value);
-		// });
 	}
 
 	validateAnswer(answer) {
@@ -112,8 +110,8 @@ class FlagNerdHard {
 	}
 
 	updateProgress() {
-		document.querySelector(".flag-nerd-hard .progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
-		document.querySelector(".flag-nerd-hard .progress .best .value").innerHTML = localStorage.getItem("flagnerdhard.best") || 0;
+		this.page.querySelector(".progress .found").innerHTML = (geoNerdApp.countries.length - this.countriesLeft.length).toString();
+		this.page.querySelector(".progress .best .value").innerHTML = localStorage.getItem("flagnerdhard.best") || 0;
 	}
 
 	updateLife(decrease) {
@@ -172,17 +170,12 @@ class FlagNerdHard {
 		this.updateProgress();
 	}
 
-	toDataURL(url, callback) {
-		const xhr = new XMLHttpRequest();
-		xhr.onload = () => {
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				callback(reader.result);
-			};
-			reader.readAsDataURL(xhr.response);
-		};
-		xhr.open("GET", url);
-		xhr.responseType = "blob";
-		xhr.send();
+	reloadButton() {
+		this.page.querySelectorAll(".reload").forEach(button => {
+			button.addEventListener("click", () => {
+				localStorage.removeItem("flagnerd.countriesleft");
+				window.location.reload();
+			});
+		});
 	}
 }

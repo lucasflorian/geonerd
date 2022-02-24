@@ -4,25 +4,26 @@ class CountryNerd {
 		this.countriesFound = 0;
 		this.loadCountries();
 
-		this.firstAnswer = document.querySelector(".country-nerd .answers .answer");
-		this.answers = document.querySelector(".country-nerd .answers");
-		this.answerContainer = document.querySelector(".country-nerd .answer-container");
-		this.answerInput = document.querySelector("#country-answer-input");
-		this.answerButton = document.querySelector("#country-answer-validate");
-		this.letters = document.querySelectorAll(".country-nerd .letter");
-		this.wonLink = document.querySelector(".country-nerd .won-link");
-		this.tipCurrent = document.querySelector(".country-nerd .tip .found");
-		this.tipTotal = document.querySelector(".country-nerd .tip .total");
+		this.page = document.querySelector(".page.country-nerd");
+		this.firstAnswer = this.page.querySelector(".answers .answer");
+		this.answers = this.page.querySelector(".answers");
+		this.answerContainer = this.page.querySelector(".answer-container");
+		this.answerInput = this.page.querySelector("#country-answer-input");
+		this.answerButton = this.page.querySelector("#country-answer-validate");
+		this.letters = this.page.querySelectorAll(".letter");
+		this.wonLink = this.page.querySelector(".won-link");
+		this.tipCurrent = this.page.querySelector(".tip .found");
+		this.tipTotal = this.page.querySelector(".tip .total");
 
 		this.buildLetters();
 		this.buildInputs();
 	}
 
 	buildLetters() {
-		const letterPlaceholder = document.querySelector(".letter-placeholder");
-		const mainTitle = document.querySelector(".country-nerd h1");
-		const gameTitle = document.querySelector(".game-title");
-		const lettersContainer = document.querySelector(".letters");
+		const letterPlaceholder = this.page.querySelector(".letter-placeholder");
+		const mainTitle = this.page.querySelector("h1");
+		const gameTitle = this.page.querySelector(".game-title");
+		const lettersContainer = this.page.querySelector(".letters");
 
 		this.letters.forEach(letter => {
 			const letterText = letter.innerHTML.toLowerCase();
@@ -80,7 +81,7 @@ class CountryNerd {
 				win = true;
 				this.answerInput.value = "";
 				country.found = true;
-				const rightAnswer = document.querySelector(".answers .answer:first-child");
+				const rightAnswer = this.page.querySelector(".answers .answer:first-child");
 				rightAnswer.innerHTML = `${country.name}<span class="flag ${country.code}"></span>`;
 				rightAnswer.classList.add("valid");
 				this.countriesFound++;

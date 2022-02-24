@@ -1,5 +1,5 @@
 class GeoNerdApp {
-	constructor(props) {
+	constructor() {
 		document.addEventListener("DOMContentLoaded", () => {
 			this.countries = [];
 			this.countriesByLetter = {};
@@ -46,7 +46,6 @@ class GeoNerdApp {
 		};
 		request.send(null);
 	}
-
 }
 
 const geoNerdApp = new GeoNerdApp();
