@@ -173,7 +173,7 @@ class FlagNerdHard {
 	reloadButton() {
 		this.page.querySelectorAll(".reload").forEach(button => {
 			button.addEventListener("click", () => {
-				localStorage.removeItem("flagnerd.countriesleft");
+				localStorage.removeItem("flagnerdhard.countriesleft");
 				window.location.reload();
 			});
 		});

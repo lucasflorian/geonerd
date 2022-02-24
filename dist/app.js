@@ -50,6 +50,106 @@ class GeoNerdApp {
 
 const geoNerdApp = new GeoNerdApp();
 
+class HomeCards {
+	constructor() {
+		this.cards = document.querySelectorAll(".game-card.has-levels");
+		document.querySelectorAll(".game-card.has-levels").forEach(card => {
+			card.querySelector(".card-first-step").addEventListener("click", () => {
+				this.closeCards();
+				card.classList.add("show-second-step");
+			});
+		});
+	}
+
+	closeCards() {
+		this.cards.forEach(card => {
+			card.classList.remove("show-second-step");
+		});
+	}
+}
+
+class Settings {
+	constructor() {
+		this.settingPage = document.querySelector(".page.settings");
+		this.clearCountryNerd();
+		this.clearFlagNerdClassic();
+		this.clearFlagNerdHard();
+		this.clearCapitalNerdClassic();
+		this.clearCapitalNerdHard();
+	}
+
+	clearCountryNerd() {
+		this.settingPage.querySelector(".clear-country-nerd").addEventListener("click", e => {
+			geoNerdApp.letters.forEach(letter => {
+				localStorage.removeItem("countrynerd.letter." + letter);
+			});
+			e.target.classList.add("done");
+		});
+	}
+
+	clearFlagNerdClassic() {
+		this.settingPage.querySelector(".clear-flag-nerd-classic").addEventListener("click", e => {
+			localStorage.removeItem("flagnerd.countriesleft");
+			localStorage.removeItem("flagnerd.best");
+			localStorage.removeItem("flagnerd.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearFlagNerdHard() {
+		this.settingPage.querySelector(".clear-flag-nerd-hard").addEventListener("click", e => {
+			localStorage.removeItem("flagnerdhard.countriesleft");
+			localStorage.removeItem("flagnerdhard.best");
+			localStorage.removeItem("flagnerdhard.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearCapitalNerdClassic() {
+		this.settingPage.querySelector(".clear-capital-nerd-classic").addEventListener("click", e => {
+			localStorage.removeItem("capitalnerd.countriesleft");
+			localStorage.removeItem("capitalnerd.best");
+			localStorage.removeItem("capitalnerd.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearCapitalNerdHard() {
+		this.settingPage.querySelector(".clear-capital-nerd-hard").addEventListener("click", e => {
+			localStorage.removeItem("capitalnerdhard.countriesleft");
+			localStorage.removeItem("capitalnerdhard.best");
+			localStorage.removeItem("capitalnerdhard.lifes");
+			e.target.classList.add("done");
+		});
+	}
+}
+
+class GeoNerdNavigation {
+	constructor() {
+		this.pages = document.querySelectorAll(".pages .page");
+
+		this.changePage();
+
+		window.addEventListener("hashchange", e => {
+			this.changePage();
+		});
+	}
+
+	changePage() {
+		let navTo = location.hash;
+		if (!navTo){
+			navTo = "#home";
+		}
+		const nextPage = document.querySelector(navTo);
+		if (nextPage) {
+			this.pages.forEach(page => {
+				page.classList.remove("active");
+			});
+			nextPage.classList.add("active");
+		}
+	}
+}
+
 class CapitalNerdClassic {
 	constructor() {
 		this.page = document.querySelector(".capital-nerd-classic");
@@ -879,83 +979,9 @@ class FlagNerdHard {
 	reloadButton() {
 		this.page.querySelectorAll(".reload").forEach(button => {
 			button.addEventListener("click", () => {
-				localStorage.removeItem("flagnerd.countriesleft");
+				localStorage.removeItem("flagnerdhard.countriesleft");
 				window.location.reload();
 			});
-		});
-	}
-}
-
-class HomeCards {
-	constructor() {
-		this.cards = document.querySelectorAll(".game-card.has-levels");
-		document.querySelectorAll(".game-card.has-levels").forEach(card => {
-			card.querySelector(".card-first-step").addEventListener("click", () => {
-				this.closeCards();
-				card.classList.add("show-second-step");
-			});
-		});
-	}
-
-	closeCards() {
-		this.cards.forEach(card => {
-			card.classList.remove("show-second-step");
-		});
-	}
-}
-
-class Settings {
-	constructor() {
-		this.settingPage = document.querySelector(".page.settings");
-		this.clearCountryNerd();
-		this.clearFlagNerdClassic();
-		this.clearFlagNerdHard();
-		this.clearCapitalNerdClassic();
-		this.clearCapitalNerdHard();
-	}
-
-	clearCountryNerd() {
-		this.settingPage.querySelector(".clear-country-nerd").addEventListener("click", e => {
-			geoNerdApp.letters.forEach(letter => {
-				localStorage.removeItem("countrynerd.letter." + letter);
-			});
-			e.target.classList.add("done");
-		});
-	}
-
-	clearFlagNerdClassic() {
-		this.settingPage.querySelector(".clear-flag-nerd-classic").addEventListener("click", e => {
-			localStorage.removeItem("flagnerd.countriesleft");
-			localStorage.removeItem("flagnerd.best");
-			localStorage.removeItem("flagnerd.lifes");
-			e.target.classList.add("done");
-		});
-	}
-
-	clearFlagNerdHard() {
-		this.settingPage.querySelector(".clear-flag-nerd-hard").addEventListener("click", e => {
-			localStorage.removeItem("flagnerdhard.countriesleft");
-			localStorage.removeItem("flagnerdhard.best");
-			localStorage.removeItem("flagnerdhard.lifes");
-			e.target.classList.add("done");
-		});
-	}
-
-	clearCapitalNerdClassic() {
-		this.settingPage.querySelector(".clear-capital-nerd-classic").addEventListener("click", e => {
-			localStorage.removeItem("capitalnerd.countriesleft");
-			localStorage.removeItem("capitalnerd.best");
-			localStorage.removeItem("capitalnerd.lifes");
-			e.target.classList.add("done");
-		});
-	}
-
-	clearCapitalNerdHard() {
-		this.settingPage.querySelector(".clear-capital-nerd-hard").addEventListener("click", e => {
-			localStorage.removeItem("capitalnerdhard.countriesleft");
-			localStorage.removeItem("capitalnerdhard.best");
-			localStorage.removeItem("capitalnerdhard.lifes");
-			e.target.classList.add("done");
 		});
 	}
 }
@@ -1028,32 +1054,6 @@ class StringUtils {
 			.replace(/'/g, "")
 			.replace(/ /g, "")
 			.replace(/’/g, "");
-	}
-}
-
-class GeoNerdNavigation {
-	constructor() {
-		this.pages = document.querySelectorAll(".pages .page");
-
-		this.changePage();
-
-		window.addEventListener("hashchange", e => {
-			this.changePage();
-		});
-	}
-
-	changePage() {
-		let navTo = location.hash;
-		if (!navTo){
-			navTo = "#home";
-		}
-		const nextPage = document.querySelector(navTo);
-		if (nextPage) {
-			this.pages.forEach(page => {
-				page.classList.remove("active");
-			});
-			nextPage.classList.add("active");
-		}
 	}
 }
 //# sourceMappingURL=app.js.map
