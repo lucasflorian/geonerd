@@ -87,7 +87,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .page {
@@ -153,6 +153,7 @@ h2 {
 }
 .page.home h1 {
   text-align: center;
+  font-size: 3rem;
   margin-bottom: 3rem;
 }
 .page.home h1 small {
@@ -171,7 +172,7 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .page.country-nerd {
@@ -1205,12 +1206,12 @@ h2 {
 .btn {
   position: relative;
   display: block;
-  padding: 1.2rem 3rem 1.5rem 3rem;
+  padding: 1rem 2.5rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   min-width: 6rem;
-  color: white;
+  color: #231961;
   border-radius: 1000px;
   font-family: Albula, sans-serif;
   text-align: center;
@@ -1233,39 +1234,14 @@ h2 {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #F05050;
+  background-color: white;
   border-radius: 1000px;
   z-index: -1;
-}
-.btn::after {
-  content: "";
-  position: absolute;
-  height: 30rem;
-  width: 30rem;
-  top: 50%;
-  left: 1%;
-  -webkit-transform: translate(-50%, -50%) scale(0);
-      -ms-transform: translate(-50%, -50%) scale(0);
-          transform: translate(-50%, -50%) scale(0);
-  background-color: #ee3939;
-  border-radius: 50%;
-  z-index: -1;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  -o-transition: transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-  will-change: transform;
 }
 .btn:hover {
   -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
           transform: scale(1.05);
-}
-.btn:hover::after {
-  -webkit-transform: translate(-50%, -50%) scale(1);
-      -ms-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
 }
 .btn:active {
   -webkit-transform: scale(0.95);
@@ -1897,18 +1873,16 @@ footer .copyrights {
 }
 @media (min-width: 768px) {
   .game-card {
-    width: 20rem;
+    width: 14rem;
   }
 }
-.game-card::before {
-  content: "";
+.game-card .background {
   position: absolute;
-  z-index: -1;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #231961;
+  z-index: -1;
   border-radius: 2rem;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
@@ -1916,6 +1890,61 @@ footer .copyrights {
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
+  overflow: hidden;
+}
+.game-card .background::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #231961;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.game-card .background::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 25, 97, 0.8)), to(rgba(35, 25, 97, 0.6)));
+  background-image: -o-linear-gradient(top, rgba(35, 25, 97, 0.8), rgba(35, 25, 97, 0.6));
+  background-image: linear-gradient(to bottom, rgba(35, 25, 97, 0.8), rgba(35, 25, 97, 0.6));
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+}
+.game-card.flag-nerd-hard .background::before {
+  background-image: url("/img/cards/flag-nerd-hard.jpg");
+}
+.game-card.flag-nerd-classic .background::before {
+  background-image: url("/img/cards/flag-nerd-classic.jpg");
+}
+.game-card.capital-nerd-classic .background::before {
+  background-image: url("/img/cards/capital-nerd-classic.jpg");
+}
+.game-card.capital-nerd-hard .background::before {
+  background-image: url("/img/cards/capital-nerd-hard.jpg");
+}
+.game-card.country-nerd .background::before {
+  background-image: url("/img/cards/country-nerd.jpg");
+}
+.game-card.country-nerd .background::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 25, 97, 0.8)), to(rgba(35, 25, 97, 0.6)));
+  background-image: -o-linear-gradient(top, rgba(35, 25, 97, 0.8), rgba(35, 25, 97, 0.6));
+  background-image: linear-gradient(to bottom, rgba(35, 25, 97, 0.8), rgba(35, 25, 97, 0.6));
 }
 .game-card .card-title {
   margin-top: 0;
@@ -1927,10 +1956,21 @@ footer .copyrights {
   right: -0.4em;
   margin-left: 0.5rem;
 }
+.game-card .card-title .classic {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.game-card .card-title .hard {
+  color: rgba(240, 80, 80, 0.9);
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
 .game-card .card-link {
   color: white;
   text-decoration: none;
   max-width: 10rem;
+  font-size: 0.8rem;
 }
 .game-card .card-link::after {
   content: "";
@@ -1957,15 +1997,18 @@ footer .copyrights {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
 }
-.game-card:hover::before {
+.game-card:hover .background {
+  overflow: hidden;
+}
+.game-card:hover .background::before {
   -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
           transform: scale(1.05);
 }
 .game-card:hover .btn {
-  -webkit-transform: scale(1.15);
-      -ms-transform: scale(1.15);
-          transform: scale(1.15);
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 header {
@@ -2061,7 +2104,7 @@ header .menu:hover {
 }
 
 .icon {
-  display: block;
+  display: none;
   height: 1.5em;
   width: 1.5em;
   background-size: 70%;

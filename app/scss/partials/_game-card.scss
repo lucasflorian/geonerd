@@ -8,21 +8,90 @@
 	width: 100%;
 
 	@media (min-width: 768px) {
-		width: 20rem;
+		width: 14rem;
 	}
 
-	&::before {
-		content: '';
+	.background {
 		position: absolute;
-		z-index: -1;
 		height: 100%;
 		width: 100%;
 		top: 0;
 		left: 0;
-		background-color: $color-blue-darker;
+		z-index: -1;
 		border-radius: 2rem;
 		transition: transform 0.2s ease;
 		will-change: transform;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-color: $color-blue-darker;
+			transition: transform 0.2s ease;
+			will-change: transform;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background-image: linear-gradient(to bottom, rgba($color-blue-darker, 0.8), rgba($color-blue-darker, 0.6));
+			transition: transform 0.2s ease;
+			will-change: transform;
+		}
+	}
+
+	&.flag-nerd-hard {
+		.background {
+			&::before {
+				background-image: url('/img/cards/flag-nerd-hard.jpg');
+			}
+		}
+	}
+
+	&.flag-nerd-classic {
+		.background {
+			&::before {
+				background-image: url('/img/cards/flag-nerd-classic.jpg');
+			}
+		}
+	}
+
+	&.capital-nerd-classic {
+		.background {
+			&::before {
+				background-image: url('/img/cards/capital-nerd-classic.jpg');
+			}
+		}
+	}
+
+	&.capital-nerd-hard {
+		.background {
+			&::before {
+				background-image: url('/img/cards/capital-nerd-hard.jpg');
+			}
+		}
+	}
+
+	&.country-nerd {
+		.background {
+			&::before {
+				background-image: url('/img/cards/country-nerd.jpg');
+			}
+
+			&::after {
+				background-image: linear-gradient(to bottom, rgba($color-blue-darker, 0.8), rgba($color-blue-darker, 0.6));
+			}
+		}
 	}
 
 	.card-title {
@@ -35,12 +104,25 @@
 			right: -0.4em;
 			margin-left: 0.5rem;
 		}
+
+		.classic {
+			color: rgba(white, 0.5);
+			text-transform: uppercase;
+			font-size: 0.9em;
+		}
+
+		.hard {
+			color: rgba($color-red, 0.9);
+			text-transform: uppercase;
+			font-size: 0.9em;
+		}
 	}
 
 	.card-link {
 		color: white;
 		text-decoration: none;
 		max-width: 10rem;
+		font-size: 0.8rem;
 
 		&::after {
 			content: "";
@@ -67,12 +149,16 @@
 	}
 
 	&:hover {
-		&::before {
-			transform: scale(1.05);
+		.background {
+			overflow: hidden;
+
+			&::before {
+				transform: scale(1.05);
+			}
 		}
 
 		.btn {
-			transform: scale(1.15);
+			transform: scale(1.05);
 		}
 	}
 }
