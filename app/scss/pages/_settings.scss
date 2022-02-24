@@ -1,6 +1,7 @@
 .page.settings {
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 2rem;
 
 	h1 {
 		margin-bottom: 1rem;
@@ -16,6 +17,8 @@
 	}
 
 	.btn {
+		width: 100%;
+
 		&.done {
 			&::before,
 			&::after {

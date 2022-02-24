@@ -12,7 +12,7 @@
 	<meta property="og:description" content="Connais-tu tous les pays du monde ? et leurs capitales, ok mais les drapeaux aussi ?"/>
 	<!--	<meta property="og:image" content="img/og.jpg"/>-->
 
-	<link rel="stylesheet" href="./app.css?v=0.3.0">
+	<link rel="stylesheet" href="./app.css?v=0.3.1">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TF373XWBVF"></script>
@@ -38,52 +38,57 @@
 <div class="pages">
 	<div id="home" class="page home">
 	<h1><small>Geo Nerd</small>Connais-tu le monde&nbsp;?</h1>
-<!--	<small class="h1-subtitle"><i>( pays membres de l'ONU, nom en version courte )</i></small>-->
+	<!--	<small class="h1-subtitle"><i>( pays membres de l'ONU, nom en version courte )</i></small>-->
 	<div class="game-cards">
-		<div class="game-card flag-nerd-classic">
+		<!-- --------- -->
+		<!-- FLAG NERD -->
+		<!-- --------- -->
+		<div class="game-card has-levels flag-nerd">
 			<div class="background"></div>
-			<div class="card-top">
-				<h2 class="card-title"><div class="classic">Classic</div>Flag<br>Nerd<span class="icon icon-flag"></span></h2>
-				<a href="#flag-nerd-classic" class="subtitle card-link">4 propositions de drapeaux</a>
-			</div>
-			<div class="card-bottom">
-				<div class="btn btn-big">GO</div>
+			<div class="card-inner">
+				<div class="card-first-step">
+					<div class="card-top">
+						<h2 class="card-title">Flag<br>Nerd<span class="icon icon-flag"></span></h2>
+						<p class="subtitle">Pro des drapeaux&nbsp;?</p>
+					</div>
+					<div class="card-bottom">
+						<div class="btn btn-big">GO</div>
+					</div>
+				</div>
+				<div class="card-second-step">
+					<a href="#flag-nerd-classic" class="btn btn-big card-mode-link classic">Classic</a>
+					<a href="#flag-nerd-hard" class="btn btn-big card-mode-link hard">Hard</a>
+				</div>
 			</div>
 		</div>
-		<div class="game-card flag-nerd-hard">
+		<!-- ------------ -->
+		<!-- CAPITAL NERD -->
+		<!-- ------------ -->
+		<div class="game-card has-levels capital-nerd">
 			<div class="background"></div>
-			<div class="card-top">
-				<h2 class="card-title"><div class="hard">Hard</div>Flag<br>Nerd<span class="icon icon-flag"></span></h2>
-				<a href="#flag-nerd-hard" class="subtitle card-link">Aucune proposition&nbsp;!</a>
-			</div>
-			<div class="card-bottom">
-				<div class="btn btn-big">GO</div>
+			<div class="card-inner">
+				<div class="card-first-step">
+					<div class="card-top">
+						<h2 class="card-title">Capital<br>Nerd<span class="icon icon-flag"></span></h2>
+						<p class="subtitle">Pro des capitales&nbsp;?</p>
+					</div>
+					<div class="card-bottom">
+						<div class="btn btn-big">GO</div>
+					</div>
+				</div>
+				<div class="card-second-step">
+					<a href="#capital-nerd-classic" class="btn btn-big card-mode-link classic">Classic</a>
+					<a href="#capital-nerd-hard" class="btn btn-big card-mode-link hard">Hard</a>
+				</div>
 			</div>
 		</div>
-		<div class="game-card capital-nerd-classic">
-			<div class="background"></div>
-			<div class="card-top">
-				<h2 class="card-title"><div class="classic">Classic</div>Capital Nerd<span class="icon icon-capital"></span></h2>
-				<a href="#capital-nerd-classic" class="subtitle card-link">Le drapeau du pays + 4 propositions</a>
-			</div>
-			<div class="card-bottom">
-				<div class="btn btn-big">GO</div>
-			</div>
-		</div>
-		<div class="game-card capital-nerd-hard">
-			<div class="background"></div>
-			<div class="card-top">
-				<h2 class="card-title"><div class="hard">Hard</div>Capital Nerd<span class="icon icon-capital"></span></h2>
-				<a href="#capital-nerd-hard" class="subtitle card-link">Le drapeau du pays uniquement&nbsp;!</a>
-			</div>
-			<div class="card-bottom">
-				<div class="btn btn-big">GO</div>
-			</div>
-		</div>
+		<!-- ------------ -->
+		<!-- COUNTRY NERD -->
+		<!-- ------------ -->
 		<div class="game-card country-nerd">
 			<div class="background"></div>
 			<div class="card-top">
-				<h2 class="card-title"><div class="hard">Hard</div>Country Nerd<span class="icon icon-country"></span></h2>
+				<h2 class="card-title">Country Nerd<span class="icon icon-country"></span></h2>
 				<a href="#country-nerd" class="subtitle card-link">Connais-tu tous les pays du monde&nbsp;?</a><br>
 			</div>
 			<div class="card-bottom">
@@ -369,11 +374,14 @@
 	<div class="title-container">
 		<h1>Paramétrage</h1>
 		<div class="settings-inner">
-			<div class="btn clear-flag-nerd-classic">Supprimer la sauvegarde Flag Nerd Classic</div>
-			<div class="btn clear-flag-nerd-hard">Supprimer la sauvegarde Flag Nerd Hard</div>
-			<div class="btn clear-capital-nerd-classic">Supprimer la sauvegarde Capital City Nerd Classic</div>
-			<div class="btn clear-capital-nerd-hard">Supprimer la sauvegarde Capital City Nerd Hard</div>
-			<div class="btn clear-country-nerd">Supprimer la sauvegarde Country Nerd</div>
+			<h2>Flag nerd</h2>
+			<div class="btn clear-flag-nerd-classic classic">Supprimer la sauvegarde Classic</div>
+			<div class="btn clear-flag-nerd-hard hard">Supprimer la sauvegarde Hard</div>
+			<h2>Capital Nerd</h2>
+			<div class="btn clear-capital-nerd-classic classic">Supprimer la sauvegarde Classic</div>
+			<div class="btn clear-capital-nerd-hard hard">Supprimer la sauvegarde Hard</div>
+			<h2>Country Nerd</h2>
+			<div class="btn clear-country-nerd classic">Supprimer la sauvegarde</div>
 		</div>
 	</div>
 </div>
@@ -381,10 +389,10 @@
 </div>
 <footer>
 	<div class="copyrights">
-		© Florian LUCAS - 2022 - v0.3.0
+		© Florian LUCAS - 2022 - v0.3.1
 	</div>
 </footer>
-<script src="./app.js?v=0.3.0"></script>
+<script src="./app.js?v=0.3.1"></script>
 <script src="./libs/gsap.min.js"></script>
 </body>
 </html>

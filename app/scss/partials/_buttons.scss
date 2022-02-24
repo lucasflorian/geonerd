@@ -6,7 +6,7 @@
 	width: fit-content;
 	min-width: 6rem;
 
-	color: $color-blue-darker;
+	color: white;
 
 	border-radius: 1000px;
 
@@ -28,7 +28,7 @@
 		width: 100%;
 		top: 0;
 		left: 0;
-		background-color: white;
+		background-color: $color-red;
 		border-radius: 1000px;
 		z-index: -1;
 	}
@@ -44,6 +44,18 @@
 	&.btn-big{
 		font-weight: 900;
 		text-transform: uppercase;
+	}
+
+	&.classic {
+		&::before {
+			background-color: $color-blue-darker;
+		}
+	}
+
+	&.hard {
+		&::before {
+			background-color: $color-red;
+		}
 	}
 }
 

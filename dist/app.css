@@ -1178,6 +1178,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 2rem;
 }
 .page.settings h1 {
   margin-bottom: 1rem;
@@ -1199,6 +1200,9 @@ h2 {
           align-items: center;
   gap: 2rem;
 }
+.page.settings .btn {
+  width: 100%;
+}
 .page.settings .btn.done::before, .page.settings .btn.done::after {
   background-color: #1dd710;
 }
@@ -1211,7 +1215,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
   min-width: 6rem;
-  color: #231961;
+  color: white;
   border-radius: 1000px;
   font-family: Albula, sans-serif;
   text-align: center;
@@ -1234,7 +1238,7 @@ h2 {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: #F05050;
   border-radius: 1000px;
   z-index: -1;
 }
@@ -1251,6 +1255,12 @@ h2 {
 .btn.btn-big {
   font-weight: 900;
   text-transform: uppercase;
+}
+.btn.classic::before {
+  background-color: #231961;
+}
+.btn.hard::before {
+  background-color: #F05050;
 }
 
 .flag {
@@ -1873,7 +1883,7 @@ footer .copyrights {
 }
 @media (min-width: 768px) {
   .game-card {
-    width: 14rem;
+    width: 16rem;
   }
 }
 .game-card .background {
@@ -1926,17 +1936,11 @@ footer .copyrights {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
 }
-.game-card.flag-nerd-hard .background::before {
-  background-image: url("/img/cards/flag-nerd-hard.jpg");
+.game-card.flag-nerd .background::before {
+  background-image: url("/img/cards/flag-nerd.jpg");
 }
-.game-card.flag-nerd-classic .background::before {
-  background-image: url("/img/cards/flag-nerd-classic.jpg");
-}
-.game-card.capital-nerd-classic .background::before {
-  background-image: url("/img/cards/capital-nerd-classic.jpg");
-}
-.game-card.capital-nerd-hard .background::before {
-  background-image: url("/img/cards/capital-nerd-hard.jpg");
+.game-card.capital-nerd .background::before {
+  background-image: url("/img/cards/capital-nerd.jpg");
 }
 .game-card.country-nerd .background::before {
   background-image: url("/img/cards/country-nerd.jpg");
@@ -1946,25 +1950,67 @@ footer .copyrights {
   background-image: -o-linear-gradient(top, rgba(35, 25, 97, 0.8), rgba(35, 25, 97, 0.6));
   background-image: linear-gradient(to bottom, rgba(35, 25, 97, 0.8), rgba(35, 25, 97, 0.6));
 }
+.game-card .card-inner {
+  position: relative;
+  height: 100%;
+}
+.game-card .card-first-step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.game-card .card-second-step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+.game-card .card-second-step .card-mode-link {
+  width: 100%;
+}
+.game-card.show-second-step .background::after {
+  background-color: black;
+}
+.game-card.show-second-step .card-first-step {
+  opacity: 0;
+  pointer-events: none;
+}
+.game-card.show-second-step .card-second-step {
+  opacity: 1;
+  pointer-events: initial;
+}
 .game-card .card-title {
   margin-top: 0;
   position: relative;
-}
-.game-card .card-title .icon {
-  position: absolute;
-  top: -0.2em;
-  right: -0.4em;
-  margin-left: 0.5rem;
-}
-.game-card .card-title .classic {
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  font-size: 0.9em;
-}
-.game-card .card-title .hard {
-  color: rgba(240, 80, 80, 0.9);
-  text-transform: uppercase;
-  font-size: 0.9em;
 }
 .game-card .card-link {
   color: white;

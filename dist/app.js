@@ -6,11 +6,12 @@ class GeoNerdApp {
 			this.letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "z"];
 			this.loadCountries(() => {
 				new GeoNerdNavigation();
-				this.capitalNerdClassic = new CapitalNerdClassic();
-				this.capitalNerdHard = new CapitalNerdHard();
-				this.countryNerd = new CountryNerd();
-				this.flagNerdClassic = new FlagNerdClassic();
-				this.flagNerdHard = new FlagNerdHard();
+				new HomeCards();
+				new CapitalNerdClassic();
+				new CapitalNerdHard();
+				new CountryNerd();
+				new FlagNerdClassic();
+				new FlagNerdHard();
 			});
 			new Settings();
 		});
@@ -928,6 +929,24 @@ class FlagNerdHard {
 		xhr.open("GET", url);
 		xhr.responseType = "blob";
 		xhr.send();
+	}
+}
+
+class HomeCards {
+	constructor() {
+		this.cards = document.querySelectorAll(".game-card.has-levels");
+		document.querySelectorAll(".game-card.has-levels").forEach(card => {
+			card.querySelector(".card-first-step").addEventListener("click", () => {
+				this.closeCards();
+				card.classList.add("show-second-step");
+			});
+		});
+	}
+
+	closeCards() {
+		this.cards.forEach(card => {
+			card.classList.remove("show-second-step");
+		})
 	}
 }
 

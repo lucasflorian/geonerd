@@ -8,7 +8,7 @@
 	width: 100%;
 
 	@media (min-width: 768px) {
-		width: 14rem;
+		width: 16rem;
 	}
 
 	.background {
@@ -50,34 +50,19 @@
 		}
 	}
 
-	&.flag-nerd-hard {
+	&.flag-nerd {
 		.background {
 			&::before {
-				background-image: url('/img/cards/flag-nerd-hard.jpg');
+				background-image: url('/img/cards/flag-nerd.jpg');
 			}
 		}
 	}
 
-	&.flag-nerd-classic {
-		.background {
-			&::before {
-				background-image: url('/img/cards/flag-nerd-classic.jpg');
-			}
-		}
-	}
 
-	&.capital-nerd-classic {
+	&.capital-nerd {
 		.background {
 			&::before {
-				background-image: url('/img/cards/capital-nerd-classic.jpg');
-			}
-		}
-	}
-
-	&.capital-nerd-hard {
-		.background {
-			&::before {
-				background-image: url('/img/cards/capital-nerd-hard.jpg');
+				background-image: url('/img/cards/capital-nerd.jpg');
 			}
 		}
 	}
@@ -94,28 +79,60 @@
 		}
 	}
 
+	.card-inner {
+		position: relative;
+		height: 100%;
+	}
+
+	.card-first-step {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		cursor: pointer;
+		transition: opacity 0.3s ease-out;
+	}
+
+	.card-second-step {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease-out;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+
+		.card-mode-link {
+			width: 100%;
+		}
+	}
+
+	&.show-second-step {
+		.background {
+			&::after {
+				background-color: black;
+			}
+		}
+
+		.card-first-step {
+			opacity: 0;
+			pointer-events: none;
+		}
+		.card-second-step {
+			opacity: 1;
+			pointer-events: initial;
+		}
+	}
+
 	.card-title {
 		margin-top: 0;
 		position: relative;
-
-		.icon {
-			position: absolute;
-			top: -0.2em;
-			right: -0.4em;
-			margin-left: 0.5rem;
-		}
-
-		.classic {
-			color: rgba(white, 0.5);
-			text-transform: uppercase;
-			font-size: 0.9em;
-		}
-
-		.hard {
-			color: rgba($color-red, 0.9);
-			text-transform: uppercase;
-			font-size: 0.9em;
-		}
 	}
 
 	.card-link {
@@ -133,9 +150,6 @@
 			left: 0;
 			z-index: 1;
 		}
-	}
-
-	.card-top {
 	}
 
 	.card-bottom {
