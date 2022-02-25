@@ -14,8 +14,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-jshint": "^2.1.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.49.0",
+    "sass": "^1.49.9",
     "gulp-file-include": "^2.3.0"
   }
 }
-

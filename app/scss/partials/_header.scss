@@ -23,6 +23,9 @@ header {
 		transition: transform 0.2s ease;
 		will-change: transform;
 
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 		img {
 			width: 11rem;
 			transition: opacity 0.2s ease-out, transform 0.2s ease-out;
@@ -55,6 +58,8 @@ header {
 		box-shadow: 0.1rem 0.1rem 1rem 0.5rem rgba(0, 0, 0, 0.08);
 		transition: transform 0.2s ease;
 		will-change: transform;
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 		&::before {
 			content: '';

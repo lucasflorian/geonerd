@@ -54,6 +54,8 @@
 			box-shadow: 0.5rem 0.5rem 3rem 1rem rgba(0, 0, 0, 0.19);
 			transition: transform 0.2s ease, background-color 0.2s ease;
 			will-change: transform;
+			outline: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 			@media (min-width: 768px) {
 				padding: 1rem 2rem;
@@ -61,6 +63,9 @@
 
 			&:hover {
 				transform: scale(1.02);
+			}
+			&:active {
+				transform: scale(0.98);
 			}
 		}
 

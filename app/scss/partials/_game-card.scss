@@ -6,6 +6,8 @@
 	gap: 2rem;
 	padding: 2rem;
 	width: 100%;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	@media (min-width: 768px) {
 		width: 16rem;
@@ -124,6 +126,7 @@
 			opacity: 0;
 			pointer-events: none;
 		}
+
 		.card-second-step {
 			opacity: 1;
 			pointer-events: initial;
@@ -133,6 +136,10 @@
 	.card-title {
 		margin-top: 0;
 		position: relative;
+	}
+
+	.subtitle {
+		font-size: 0.8rem;
 	}
 
 	.card-link {

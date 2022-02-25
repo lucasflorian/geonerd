@@ -411,6 +411,8 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: #1c1c1c;
   font-size: 2rem;
   font-weight: 900;
@@ -569,6 +571,7 @@ h2 {
   font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 @media (max-width: 767px) {
   .page.country-nerd .validate-input {
@@ -746,6 +749,8 @@ h2 {
   transition: transform 0.2s ease, background-color 0.2s ease;
   transition: transform 0.2s ease, background-color 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 @media (min-width: 768px) {
   .page.capital-nerd-classic .answer-container .country,
@@ -760,6 +765,13 @@ h2 {
   -webkit-transform: scale(1.02);
       -ms-transform: scale(1.02);
           transform: scale(1.02);
+}
+.page.capital-nerd-classic .answer-container .country:active,
+.page.capital-nerd-hard .answer-container .country:active,
+.page.flag-nerd-classic .answer-container .country:active {
+  -webkit-transform: scale(0.98);
+      -ms-transform: scale(0.98);
+          transform: scale(0.98);
 }
 .page.capital-nerd-classic .answer-container .valid,
 .page.capital-nerd-hard .answer-container .valid,
@@ -1016,6 +1028,8 @@ h2 {
   font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 @media (max-width: 767px) {
   .page.flag-nerd-hard .validate-input {
@@ -1230,6 +1244,8 @@ h2 {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .btn::before {
   content: "";
@@ -1880,6 +1896,8 @@ footer .copyrights {
   gap: 2rem;
   padding: 2rem;
   width: 100%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 @media (min-width: 768px) {
   .game-card {
@@ -2012,6 +2030,9 @@ footer .copyrights {
   margin-top: 0;
   position: relative;
 }
+.game-card .subtitle {
+  font-size: 0.8rem;
+}
 .game-card .card-link {
   color: white;
   text-decoration: none;
@@ -2093,6 +2114,8 @@ header .logo {
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 header .logo img {
   width: 11rem;
@@ -2128,6 +2151,8 @@ header .menu {
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   will-change: transform;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 header .menu::before {
   content: "";

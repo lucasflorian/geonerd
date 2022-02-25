@@ -139,6 +139,8 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
+		outline: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 		color: $color-black;
 		font-size: 2rem;
@@ -280,6 +282,7 @@
 		font-size: 1.8rem;
 		font-weight: 700;
 		cursor: pointer;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		@media (max-width: 767px) {
 			height: 3rem;
 			width: 6rem;
