@@ -22,6 +22,8 @@ class Settings {
 			localStorage.removeItem("flagnerd.countriesleft");
 			localStorage.removeItem("flagnerd.best");
 			localStorage.removeItem("flagnerd.lifes");
+			localStorage.removeItem("flagnerd.proposals");
+			localStorage.removeItem("flagnerd.current");
 			e.target.classList.add("done");
 		});
 	}
