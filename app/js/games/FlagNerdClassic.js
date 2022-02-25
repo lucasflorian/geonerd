@@ -37,8 +37,7 @@ class FlagNerdClassic {
 			localStorage.setItem("flagnerd.best", geoNerdApp.countries.length.toString());
 		} else {
 			let refreshDeteced = false;
-			let current = localStorage.getItem("flagnerd.current");
-			current = JSON.parse(current);
+			let current = JSON.parse(localStorage.getItem("flagnerd.current"));
 			if(!current || current.found){
 				this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
 			}

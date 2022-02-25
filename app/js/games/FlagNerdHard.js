@@ -38,7 +38,13 @@ class FlagNerdHard {
 			this.winMessage.classList.add("show");
 			localStorage.setItem("flagnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {
-			this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
+			let current = JSON.parse(localStorage.getItem("flagnerdhard.current"));
+			if(!current || current.found) {
+				this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
+				localStorage.setItem("flagnerdhard.current", JSON.stringify(this.rightAnswer));
+			}else{
+				this.rightAnswer = JSON.parse(localStorage.getItem("flagnerdhard.current"));
+			}
 			FileUtils.toDataURL(`/img/flags/${this.rightAnswer.code}.svg`, (dataUrl) => {
 				this.flagContainer.innerHTML = "";
 				this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
@@ -64,6 +70,7 @@ class FlagNerdHard {
 			}
 		});
 		if (found) {
+			localStorage.setItem("flagnerdhard.current", JSON.stringify({found: true}));
 			this.countriesLeft = this.countriesLeft.filter(elem => elem.code !== this.rightAnswer.code);
 			this.updateStorage();
 			gsap.to(this.answerInput, {
@@ -79,6 +86,8 @@ class FlagNerdHard {
 				}
 			});
 		} else {
+
+			localStorage.removeItem("flagnerdhard.current");
 			decreaseLife = true;
 			gsap.to(this.answerInput, {
 				backgroundColor: "#F05050",
@@ -176,6 +185,7 @@ class FlagNerdHard {
 		this.page.querySelectorAll(".reload").forEach(button => {
 			button.addEventListener("click", () => {
 				localStorage.removeItem("flagnerdhard.countriesleft");
+				localStorage.removeItem("flagnerdhard.current");
 				window.location.reload();
 			});
 		});
