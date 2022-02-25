@@ -175,6 +175,10 @@ h2 {
   gap: 1rem;
 }
 
+.page.capital-nerd-classic .flag-container {
+  min-height: 13rem !important;
+}
+
 .page.country-nerd {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -687,6 +691,7 @@ h2 {
 .page.flag-nerd-classic .flag-container {
   margin-top: 1rem;
   width: 15rem;
+  min-height: 10rem;
 }
 .page.capital-nerd-classic .flag-container .flag,
 .page.capital-nerd-hard .flag-container .flag,
@@ -714,6 +719,7 @@ h2 {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: 1rem;
+  min-height: 9rem;
 }
 @media (min-width: 768px) {
   .page.capital-nerd-classic .answer-container,
@@ -984,6 +990,7 @@ h2 {
   margin-top: 1rem;
   margin-bottom: 2rem;
   width: 15rem;
+  height: 10rem;
 }
 .page.flag-nerd-hard .flag-container .flag {
   height: 10rem;

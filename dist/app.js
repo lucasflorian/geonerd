@@ -585,6 +585,7 @@ class FlagNerdClassic {
 			geoNerdApp.countries.forEach(country => {
 				if (country.code === this.rightAnswer.code) {
 					proposals.push({"code": country.code, "name": country.name});
+					this.flagContainer.innerHTML = "";
 					FileUtils.toDataURL(`/img/flags/${country.code}.svg`, (dataUrl) => {
 						this.flagContainer.insertAdjacentHTML("afterbegin", `<div class="flag" style="background-image: url(${dataUrl})"></div>`);
 					});
@@ -613,6 +614,7 @@ class FlagNerdClassic {
 				localStorage.setItem("flagnerd.proposals", JSON.stringify(proposals));
 			}
 
+			this.answerContainer.innerHTML = "";
 			proposals.forEach(proposal => {
 				this.answerContainer.insertAdjacentHTML("beforeend", `<div class="country" data-country-code="${proposal.code}">${proposal.name}</div>`);
 			});
@@ -688,10 +690,8 @@ class FlagNerdClassic {
 			});
 		} else {
 
-			this.flagContainer.innerHTML = "";
 			this.flagContainer.style.opacity = "1";
 
-			this.answerContainer.innerHTML = "";
 			this.answerContainer.style.opacity = "1";
 
 			switch (this.lifes) {
@@ -925,6 +925,32 @@ class FlagNerdHard {
 	}
 }
 
+class GeoNerdNavigation {
+	constructor() {
+		this.pages = document.querySelectorAll(".pages .page");
+
+		this.changePage();
+
+		window.addEventListener("hashchange", e => {
+			this.changePage();
+		});
+	}
+
+	changePage() {
+		let navTo = location.hash;
+		if (!navTo){
+			navTo = "#home";
+		}
+		const nextPage = document.querySelector(navTo);
+		if (nextPage) {
+			this.pages.forEach(page => {
+				page.classList.remove("active");
+			});
+			nextPage.classList.add("active");
+		}
+	}
+}
+
 class HomeCards {
 	constructor() {
 		this.cards = document.querySelectorAll(".game-card.has-levels");
@@ -998,32 +1024,6 @@ class Settings {
 			localStorage.removeItem("capitalnerdhard.lifes");
 			e.target.classList.add("done");
 		});
-	}
-}
-
-class GeoNerdNavigation {
-	constructor() {
-		this.pages = document.querySelectorAll(".pages .page");
-
-		this.changePage();
-
-		window.addEventListener("hashchange", e => {
-			this.changePage();
-		});
-	}
-
-	changePage() {
-		let navTo = location.hash;
-		if (!navTo){
-			navTo = "#home";
-		}
-		const nextPage = document.querySelector(navTo);
-		if (nextPage) {
-			this.pages.forEach(page => {
-				page.classList.remove("active");
-			});
-			nextPage.classList.add("active");
-		}
 	}
 }
 
