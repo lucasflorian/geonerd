@@ -1962,13 +1962,13 @@ footer .copyrights {
   will-change: transform;
 }
 .game-card.flag-nerd .background::before {
-  background-image: url("/img/cards/flag-nerd.jpg");
+  background-image: url("/img/cards/flag-nerd.webp");
 }
 .game-card.capital-nerd .background::before {
-  background-image: url("/img/cards/capital-nerd.jpg");
+  background-image: url("/img/cards/capital-nerd.webp");
 }
 .game-card.country-nerd .background::before {
-  background-image: url("/img/cards/country-nerd.jpg");
+  background-image: url("/img/cards/country-nerd.webp");
 }
 .game-card.country-nerd .background::after {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 25, 97, 0.8)), to(rgba(35, 25, 97, 0.6)));

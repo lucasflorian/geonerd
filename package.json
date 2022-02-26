@@ -1,7 +1,7 @@
 {
   "name": "geonerd",
   "private": true,
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
   "author": "Florian LUCAS",
