@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Geo Nerd",
+    "short_name": "Geo Nerd",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#402DB3",
+    "background_color": "#402DB3",
     "display": "standalone"
 }
