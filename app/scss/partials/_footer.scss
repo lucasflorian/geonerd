@@ -3,8 +3,12 @@ footer {
 	display: flex;
 	justify-content: center;
 
-	.copyrights{
+	.copyrights {
 		font-size: 0.7rem;
 		opacity: 0.8;
+
+		a {
+			color: white;
+		}
 	}
 }
