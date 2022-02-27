@@ -741,9 +741,14 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: white;
   color: #231961;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   border-radius: 1000px;
   font-size: 1.2rem;
   cursor: pointer;
