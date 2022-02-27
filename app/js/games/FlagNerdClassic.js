@@ -15,6 +15,9 @@ class FlagNerdClassic {
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.innerHTML = "";
+				this.answerContainer.innerHTML = "";
+				console.log("ici")
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -33,15 +36,16 @@ class FlagNerdClassic {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("flagnerd.best", geoNerdApp.countries.length.toString());
 		} else {
 			let refreshDeteced = false;
 			let current = JSON.parse(localStorage.getItem("flagnerd.current"));
-			if(!current || current.found){
+			if (!current || current.found) {
 				this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
-			}
-			else{
+			} else {
 				this.rightAnswer = JSON.parse(localStorage.getItem("flagnerd.current"));
 				refreshDeteced = true;
 			}
@@ -56,10 +60,9 @@ class FlagNerdClassic {
 					});
 				}
 			});
-			if (refreshDeteced){
+			if (refreshDeteced) {
 				proposals = JSON.parse(localStorage.getItem("flagnerd.proposals"));
-			}
-			else{
+			} else {
 				const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
 				while (proposals.length < maxLength) {
 					const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];

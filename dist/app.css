@@ -1887,6 +1887,9 @@ footer .copyrights {
   font-size: 0.7rem;
   opacity: 0.8;
 }
+footer .copyrights a {
+  color: white;
+}
 
 .game-card {
   position: relative;

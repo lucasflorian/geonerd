@@ -50,6 +50,32 @@ class GeoNerdApp {
 
 const geoNerdApp = new GeoNerdApp();
 
+class GeoNerdNavigation {
+	constructor() {
+		this.pages = document.querySelectorAll(".pages .page");
+
+		this.changePage();
+
+		window.addEventListener("hashchange", e => {
+			this.changePage();
+		});
+	}
+
+	changePage() {
+		let navTo = location.hash;
+		if (!navTo){
+			navTo = "#home";
+		}
+		const nextPage = document.querySelector(navTo);
+		if (nextPage) {
+			this.pages.forEach(page => {
+				page.classList.remove("active");
+			});
+			nextPage.classList.add("active");
+		}
+	}
+}
+
 class CapitalNerdClassic {
 	constructor() {
 		this.page = document.querySelector(".capital-nerd-classic");
@@ -67,6 +93,8 @@ class CapitalNerdClassic {
 		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.remove();
+				this.answerContainer.remove();
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -85,6 +113,8 @@ class CapitalNerdClassic {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("capitalnerd.best", geoNerdApp.countries.length.toString());
 		} else {
@@ -245,6 +275,8 @@ class CapitalNerdHard {
 		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.remove();
+				this.answerContainer.remove();
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -263,6 +295,8 @@ class CapitalNerdHard {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("capitalnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {
@@ -550,6 +584,9 @@ class FlagNerdClassic {
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerd.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.innerHTML = "";
+				this.answerContainer.innerHTML = "";
+				console.log("ici")
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -568,15 +605,16 @@ class FlagNerdClassic {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("flagnerd.best", geoNerdApp.countries.length.toString());
 		} else {
 			let refreshDeteced = false;
 			let current = JSON.parse(localStorage.getItem("flagnerd.current"));
-			if(!current || current.found){
+			if (!current || current.found) {
 				this.rightAnswer = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
-			}
-			else{
+			} else {
 				this.rightAnswer = JSON.parse(localStorage.getItem("flagnerd.current"));
 				refreshDeteced = true;
 			}
@@ -591,10 +629,9 @@ class FlagNerdClassic {
 					});
 				}
 			});
-			if (refreshDeteced){
+			if (refreshDeteced) {
 				proposals = JSON.parse(localStorage.getItem("flagnerd.proposals"));
-			}
-			else{
+			} else {
 				const maxLength = this.countriesLeft.length < 4 ? this.countriesLeft.length : 4;
 				while (proposals.length < maxLength) {
 					const proposal = this.countriesLeft[Math.floor(Math.random() * this.countriesLeft.length)];
@@ -749,6 +786,8 @@ class FlagNerdHard {
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.remove();
+				this.answerContainer.remove();
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -768,6 +807,8 @@ class FlagNerdHard {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("flagnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {
@@ -998,32 +1039,6 @@ class Settings {
 			localStorage.removeItem("capitalnerdhard.lifes");
 			e.target.classList.add("done");
 		});
-	}
-}
-
-class GeoNerdNavigation {
-	constructor() {
-		this.pages = document.querySelectorAll(".pages .page");
-
-		this.changePage();
-
-		window.addEventListener("hashchange", e => {
-			this.changePage();
-		});
-	}
-
-	changePage() {
-		let navTo = location.hash;
-		if (!navTo){
-			navTo = "#home";
-		}
-		const nextPage = document.querySelector(navTo);
-		if (nextPage) {
-			this.pages.forEach(page => {
-				page.classList.remove("active");
-			});
-			nextPage.classList.add("active");
-		}
 	}
 }
 

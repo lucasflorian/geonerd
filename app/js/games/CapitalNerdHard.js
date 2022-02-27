@@ -15,6 +15,8 @@ class CapitalNerdHard {
 		this.countriesLeft = JSON.parse(localStorage.getItem("capitalnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.remove();
+				this.answerContainer.remove();
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -33,6 +35,8 @@ class CapitalNerdHard {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("capitalnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {

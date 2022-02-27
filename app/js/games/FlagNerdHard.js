@@ -16,6 +16,8 @@ class FlagNerdHard {
 		this.countriesLeft = JSON.parse(localStorage.getItem("flagnerdhard.countriesleft"));
 		if (this.countriesLeft) {
 			if (this.countriesLeft.length === 0) {
+				this.flagContainer.remove();
+				this.answerContainer.remove();
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;
@@ -35,6 +37,8 @@ class FlagNerdHard {
 		this.updateStorage();
 		this.updateProgress();
 		if (this.countriesLeft.length === 0) {
+			this.flagContainer.remove();
+			this.answerContainer.remove();
 			this.winMessage.classList.add("show");
 			localStorage.setItem("flagnerdhard.best", geoNerdApp.countries.length.toString());
 		} else {
