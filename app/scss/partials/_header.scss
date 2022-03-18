@@ -3,6 +3,7 @@ header {
 	z-index: 1;
 	padding: 2rem;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 	@media (max-width: 767px) {
 		padding: 1rem;
@@ -32,6 +33,7 @@ header {
 
 		img {
 			width: 11rem;
+			height: 3rem;
 			transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 		}
 

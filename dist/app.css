@@ -2029,6 +2029,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2067,6 +2070,7 @@ header .logo {
 }
 header .logo img {
   width: 11rem;
+  height: 3rem;
   -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
   transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
   -o-transition: opacity 0.2s ease-out, transform 0.2s ease-out;
