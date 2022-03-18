@@ -17,7 +17,6 @@ class FlagNerdClassic {
 			if (this.countriesLeft.length === 0) {
 				this.flagContainer.innerHTML = "";
 				this.answerContainer.innerHTML = "";
-				console.log("ici")
 				this.winMessage.classList.add("show");
 				this.updateProgress();
 				return;

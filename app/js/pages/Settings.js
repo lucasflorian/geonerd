@@ -6,6 +6,7 @@ class Settings {
 		this.clearFlagNerdHard();
 		this.clearCapitalNerdClassic();
 		this.clearCapitalNerdHard();
+		this.clearMapNerdClassic();
 	}
 
 	clearCountryNerd() {
@@ -51,6 +52,17 @@ class Settings {
 			localStorage.removeItem("capitalnerdhard.countriesleft");
 			localStorage.removeItem("capitalnerdhard.best");
 			localStorage.removeItem("capitalnerdhard.lifes");
+			e.target.classList.add("done");
+		});
+	}
+
+	clearMapNerdClassic() {
+		this.settingPage.querySelector(".clear-map-nerd-classic").addEventListener("click", e => {
+			localStorage.removeItem("mapnerdclassic.countriesleft");
+			localStorage.removeItem("mapnerdclassic.best");
+			localStorage.removeItem("mapnerdclassic.lifes");
+			localStorage.removeItem("mapnerdclassic.proposals");
+			localStorage.removeItem("mapnerdclassic.current");
 			e.target.classList.add("done");
 		});
 	}

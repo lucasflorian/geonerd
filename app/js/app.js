@@ -2,6 +2,7 @@ class GeoNerdApp {
 	constructor() {
 		document.addEventListener("DOMContentLoaded", () => {
 			this.countries = [];
+			this.easyCountries = [];
 			this.countriesByLetter = {};
 			this.letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "y", "z"];
 			this.loadCountries(() => {
@@ -12,6 +13,9 @@ class GeoNerdApp {
 				new CountryNerd();
 				new FlagNerdClassic();
 				new FlagNerdHard();
+			});
+			this.loadEasyCountries(() => {
+				new MapNerdClassic();
 			});
 			new Settings();
 		});
@@ -35,6 +39,26 @@ class GeoNerdApp {
 						capital: country.capital
 					});
 					this.countries.push({
+						sanitize: StringUtils.sanitize(country.name),
+						name: country.name,
+						code: country.code,
+						capital: country.capital
+					});
+				});
+				callback();
+			}
+		};
+		request.send(null);
+	}
+
+	loadEasyCountries(callback) {
+		const request = new XMLHttpRequest();
+		request.overrideMimeType("application/json");
+		request.open('GET', '/data/countries-easy-fr.json', true);
+		request.onreadystatechange = () => {
+			if (request.readyState === 4 && request.status === 200) {
+				JSON.parse(request.responseText).forEach(country => {
+					this.easyCountries.push({
 						sanitize: StringUtils.sanitize(country.name),
 						name: country.name,
 						code: country.code,

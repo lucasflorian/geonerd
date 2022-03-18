@@ -9,6 +9,9 @@
 	outline: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+	@media (min-width: 390px) {
+		width: 47%;
+	}
 	@media (min-width: 768px) {
 		width: 16rem;
 	}
@@ -65,6 +68,14 @@
 		.background {
 			&::before {
 				background-image: url('/img/cards/capital-nerd.webp');
+			}
+		}
+	}
+
+	&.map-nerd {
+		.background {
+			&::before {
+				background-image: url('/img/cards/map-nerd.webp');
 			}
 		}
 	}

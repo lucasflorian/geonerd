@@ -1,12 +1,16 @@
 header {
+	position: relative;
+	z-index: 1;
 	padding: 2rem;
 	display: flex;
 	justify-content: space-between;
 	@media (max-width: 767px) {
 		padding: 1rem;
 	}
+	pointer-events: none;
 
 	.logo {
+		pointer-events: initial;
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -41,14 +45,15 @@ header {
 			}
 		}
 
-		&:active{
-			img{
+		&:active {
+			img {
 				transform: scale(0.96);
 			}
 		}
 	}
 
 	.menu {
+		pointer-events: initial;
 		height: 4rem;
 		width: 4rem;
 		background-color: $color-blue-medium;

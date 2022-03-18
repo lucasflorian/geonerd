@@ -2,7 +2,10 @@
 	position: relative;
 	display: block;
 
-	padding: 1rem 2.5rem;
+	padding: 1rem 1.5rem;
+	@media (min-width: 768px) {
+		padding: 1rem 2.5rem;
+	}
 	width: fit-content;
 	min-width: 6rem;
 
