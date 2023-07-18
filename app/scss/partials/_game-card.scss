@@ -73,6 +73,9 @@
 	}
 
 	&.map-nerd {
+		@media (max-width: 767px) {
+			display: none;
+		}
 		.background {
 			&::before {
 				background-image: url('/img/cards/map-nerd.webp');

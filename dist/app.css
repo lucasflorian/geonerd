@@ -54,8 +54,8 @@ body {
 
 body {
   background: #402DB3;
-  background: -o-linear-gradient(86deg, rgb(14, 10, 103) 0%, rgb(36, 25, 119) 0%, rgb(64, 43, 187) 58%);
-  background: linear-gradient(4deg, rgb(14, 10, 103) 0%, rgb(36, 25, 119) 0%, rgb(64, 43, 187) 58%);
+  background: -o-radial-gradient(circle, #362496 0%, #0e0a67 63%);
+  background: radial-gradient(circle, #362496 0%, #0e0a67 63%);
   background-attachment: fixed;
   font-family: Roboto;
   color: white;
@@ -1900,6 +1900,11 @@ footer .copyrights a {
 }
 .game-card.capital-nerd .background::before {
   background-image: url("/img/cards/capital-nerd.webp");
+}
+@media (max-width: 767px) {
+  .game-card.map-nerd {
+    display: none;
+  }
 }
 .game-card.map-nerd .background::before {
   background-image: url("/img/cards/map-nerd.webp");

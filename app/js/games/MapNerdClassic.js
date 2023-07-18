@@ -16,9 +16,14 @@ class MapNerdClassic {
 	}
 
 	buildClickEvent() {
+		document.addEventListener('mousedown', () => this.drag = false);
+		document.addEventListener('mousemove', () => this.drag = true);
+
 		this.countries.forEach(country => {
-			country.addEventListener("click", () => {
-				this.guess(country.id);
+			country.addEventListener("click", e => {
+				if (!this.drag) {
+					this.guess(country.id);
+				}
 			});
 		});
 	}
