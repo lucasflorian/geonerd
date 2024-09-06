@@ -6,7 +6,7 @@ class Settings {
 		this.clearFlagNerdHard();
 		this.clearCapitalNerdClassic();
 		this.clearCapitalNerdHard();
-		this.clearMapNerdClassic();
+		// this.clearMapNerdClassic();
 	}
 
 	clearCountryNerd() {

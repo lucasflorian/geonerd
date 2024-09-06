@@ -15,7 +15,7 @@ class GeoNerdApp {
 				new FlagNerdHard();
 			});
 			this.loadEasyCountries(() => {
-				new MapNerdClassic();
+				// new MapNerdClassic();
 			});
 			new Settings();
 		});
